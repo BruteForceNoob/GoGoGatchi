@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">GoGoGatchi</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Create an Account</string>
+    <string name="login">Log-In</string>
+
 </resources>
