@@ -20,6 +20,7 @@ public class Utils {
             Gson gson = builder.create();
             JSONArray array = new JSONArray(loadJSONFromAsset(context, "profiles.json"));
             List<Profile> profileList = new ArrayList<>();
+
             for(int i=0;i<array.length();i++){
                 Profile profile = gson.fromJson(array.getString(i), Profile.class);
                 profileList.add(profile);

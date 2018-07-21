@@ -1,104 +1,202 @@
 [  
    {  
-      "url":"https://pbs.twimg.com/profile_images/572905100960485376/GK09QnNG.jpeg",
-      "name":"Sofia",
-      "age":20,
-      "location":"New York"
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/pyramid.jpg",
+      "destination":"The Walter Pyramid",
+      "city":"@ The Beach",
+      "description":"The 18-story Pyramid encompasses three full basketball courts, five volleyball courts and is home to our Division 1 men/women’s basketball and volleyball teams. It houses a full-service fitness center and The Pointe, an educational conference center, the Walter Pyramid is the newest icon at Long Beach State.\n",
+      "phone":"",
+      "website":""
    },
    {  
-      "url":"http://cdn.cavemancircus.com//wp-content/uploads/images/2015/june/pretty_girls_3/pretty_girls_15.jpg",
-      "name":"Roma",
-      "age":22,
-      "location":"California"
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/japanese.jpg",
+      "destination":"Earl Burns Miller Japanese Garden",
+      "city":"@ The Beach",
+      "description":"This beautiful 1.5 acre garden is inspired by the natural beauty of Japanese landscapes. The garden, koi pond and traditional teahouse provide a quiet sanctuary on campus. Special events and guided tours may be arranged by calling (562) 985-8885.\n",
+      "phone":"",
+      "website":""
    },
    {  
-      "url":"http://i.imgur.com/N6SaAlZ.jpg",
-      "name":"Zoya",
-      "age":23,
-      "location":"Atlantic City"
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/musuem.jpg",
+      "destination":"University Art Museum",
+      "city":"@ The Beach",
+      "description":"Ranked in the top 10% of the nation’s 7,000-plus museums and the only one accredited in the CSU system, CSULB’s Art Museum has achieved worldwide acclaim for its exhibitions, publications and collections of artwork.\n",
+      "phone":"",
+      "website":""
    },
    {  
-      "url":"http://cdn.cavemancircus.com//wp-content/uploads/images/2015/january/pretty_girls_2/pretty_girls_5.jpg",
-      "name":"Carol",
-      "age":19,
-      "location":"New City"
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/carpenter.jpg",
+      "destination":"Carpenter Performing Arts Center",
+      "city":"@ The Beach",
+      "description":"The Richard and Karen Carpenter Performing Arts Center, the premier presenting theatre in Long Beach, enriches and entertains audiences with inspiring arts experiences that reveal the imagination, creativity, and discipline of artists from around the world! Each season the Carpenter Center presents a variety of music, dance, family, comedy, and cabaret events by some of the country’s leading artists and ensembles.\n",
+      "phone":"",
+      "website":""
    },
    {  
-      "url":"http://www.qqxxzx.com/images/pretty-girls-pictures/pretty-girls-pictures-17.jpg",
-      "name":"Saansa",
-      "age":20,
-      "location":"Manhattan"
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/carlson_000.jpg",
+      "destination":"Carlson Bloc Bell Tower",
+      "city":"@ The Beach",
+      "description":"Bell towers are historically known as symbols of communication and were constructed by many 19th century universities. Music can be heard from the bell tower through speakers installed on the top of the McIntosh Humanities Building and in other locations on campus\n",
+      "phone":"",
+      "website":""
    },
    {  
-      "url":"http://www.qqxxzx.com/images/pretty-girls-pictures/pretty-girls-pictures-18.jpg",
-      "name":"Khaleesi",
-      "age":24,
-      "location":"Future Westros"
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/prospectorpete.jpg",
+      "destination":"Prospector Pete",
+      "city":"@ The Beach",
+      "description":"The “Forty-Niner Prospector” stands in representation of the school mascot and of the drive toward greatness. The sculpture personifies the spirit of the 49er.\n",
+      "phone":"",
+      "website":""
    },
    {  
-      "url":"http://oddpad.com/wp-content/uploads/2015/05/pretty_girls_51.jpg",
-      "name":"Heena",
-      "age":21,
-      "location":"India"
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/fountain.jpg",
+      "destination":"Lymon Lough Fountain",
+      "city":"@ The Beach",
+      "description":"This is a replica of the fountain at Christchurch Town Hall in New Zealand. The fountain, with its three spherical lighted structures encircled by a spray of water, is designed to represent water molecules.\n",
+      "phone":"",
+      "website":""
    },
    {  
-      "url":"http://oddpad.com/wp-content/uploads/2014/12/pretty_girls_13.jpg",
-      "name":"Jasmin",
-      "age":23,
-      "location":"Taxes"
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/now.jpg",
+      "destination":"Now Sculpture",
+      "city":"@ The Beach",
+      "description":"This sculpture was created by Piotr Kowalski in 1965 as part of the first International Art Symposium. The stainless steel sculpture's unique shapes were formed by using dynamite charges underwater.\n",
+      "phone":"",
+      "website":""
    },
    {  
-      "url":"http://www.spyderonlines.com/images/wallpapers/pretty-girls-pictures/pretty-girls-pictures-16.jpg",
-      "name":"Monica",
-      "age":23,
-      "location":"New York"
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/artstore.jpg",
+      "destination":"Art Store",
+      "city":"@ The Beach",
+      "description":"The University Art Store provides supplies students will need for many art classes offered on campus. From watercolor and oil paint to brushes and art literature—it’s all here!\n",
+      "phone":"",
+      "website":""
    },
    {  
-      "url":"http://cdn.cavemancircus.com//wp-content/uploads/images/2015/june/pretty_girls_3/pretty_girls_20.jpg",
-      "name":"Phoebe",
-      "age":22,
-      "location":"New York City"
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/eatery.jpg",
+      "destination":"Dining Services",
+      "city":"@ The Beach",
+      "description":"There are a variety of campus eateries that serve your favorite foods such as: Carl’s Jr., El Pollo Loco, Subway and Taco Bell, offering quick meals for students on the go. Students can also make reservations at the Chart Room for a sit-down meal. ",
+      "phone":"",
+      "website":""
+   },
+   {
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/brotman.jpg",
+      "destination":"Brotman Hall",
+      "city":"@ The Beach",
+      "description":"Here you will find Admission, Financial Aid, the Career Development Center, Testing and Evaluation Services, University Outreach and School Relations and much more to meet your student needs.\n",
+      "phone":"",
+      "website":""
+   },
+   {
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/studentunion.jpg",
+      "destination":"University Student Union",
+      "city":"@ The Beach",
+      "description":"CSULB’s University Student Union (USU) offers dining, study and event facilities, and recreation such as bowling, swimming, arcade games and entertainment services.\n",
+      "phone":"",
+      "website":""
    },
    {  
-      "url":"http://cdn.cavemancircus.com//wp-content/uploads/images/2015/march/pretty_girls_2/pretty_girls_12.jpg",
-      "name":"Rachel",
-      "age":22,
-      "location":"Central Perk"
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/dancecenter.jpg",
+      "destination":"Dance Center",
+      "city":"@ The Beach",
+      "description":"CSULB’s unique Dance Center provides 93,000 square-feet of studio space, a 250-seat theater, a Dance Therapy Clinic and a Dance Notation Computer Lab. The theater, named for Martha B. Knoebel, has a resilient basket weave floor construction and a permanent harlequin cascade dance floor for the entire stage.\n",
+      "phone":"",
+      "website":""
    },
    {  
-      "url":"https://s-media-cache-ak0.pinimg.com/736x/de/87/7b/de877bcccc2295a58fe8758fee0ebc7d.jpg",
-      "name":"Jainis",
-      "age":24,
-      "location":"New York"
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/macintosh.jpg",
+      "destination":"McIntosh Building",
+      "city":"@ The Beach",
+      "description":"The nine-story McIntosh Humanities Building contains department and faculty offices for the College of Liberal Arts, the largest college at CSULB. The sculpture outside, entitled \"U as a Set\" was created using copper tubing and pipes that have developed an attractive patina. The sculpture is surrounded by a fountain with a backdrop of spraying water.\n",
+      "phone":"",
+      "website":""
    },
    {  
-      "url":"https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10986280_404995676329336_1177563605_n.jpg",
-      "name":"Samia",
-      "age":19,
-      "location":"India"
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/library.jpg",
+      "destination":"University Library",
+      "city":"@ The Beach",
+      "description":"Boasting more than one million books and periodicals, an online catalog (COAST), web-based reference sources and extensive computing resources, the library connects students, faculty, staff and members of the local community for study, research and recreation.\n",
+      "phone":"",
+      "website":""
    },
    {  
-      "url":"http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/10624158_694652173966291_65999198_n.jpg",
-      "name":"Hornol",
-      "age":24,
-      "location":"Caltech"
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/horncenter.jpg",
+      "destination":"Horn Center",
+      "city":"@ The Beach",
+      "description":"The Horn Center houses the internationally recognized New Media Center, the largest open-access lab in the CSU system and our accredited University Art Museum – renowned for its extensive collections of contemporary works of art.\n",
+      "phone":"",
+      "website":""
    },
    {  
-      "url":"http://i.imgur.com/wqsvWT4.jpg",
-      "name":"Korial",
-      "age":21,
-      "location":"Japan"
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/bookstore.jpg",
+      "destination":"University Bookstore",
+      "city":"@ The Beach",
+      "description":"Visit the University Bookstore for trendy CSULB attire, gifts, textbooks, supplies, computer products and much more!",
+      "phone":"",
+      "website":""
    },
-   {  
-      "url":"http://data.whicdn.com/images/60103426/large.jpg",
-      "name":"Chin Si",
-      "age":23,
-      "location":"China"
+   {
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/cota.jpg",
+      "destination":"College of the Arts",
+      "city":"@ The Beach",
+      "description":"With several Oscar, Emmy and Grammy award winners as well as prominent artists, dancers, designers and musicians among its alumni, the College of the Arts is one of the largest and most respected state-supported arts schools in the country.\n",
+      "phone":"",
+      "website":""
    },
-   {  
-      "url":"http://oddpad.com/wp-content/uploads/2015/03/pretty_girls_31.jpg",
-      "name":"SDF",
-      "age":21,
-      "location":"America"
+   {
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/cba.jpg",
+      "destination":"College of Business Administration",
+      "city":"@ The Beach",
+      "description":"If you’re looking for a career in business, CSULB’s Association to Advance Collegiate Schools of Business (AACSB) accredited College of Business Administration can prepare you to excel in entrepreneurship, international business, management of technology and more! \n",
+      "phone":"",
+      "website":""
+   },
+   {
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/coed.jpg",
+      "destination":"College of Education",
+      "city":"@ The Beach",
+      "description":"You can make a profound difference for future generations through the College of Education and with the Accelerated Four-Year option, you can obtain both your BA in Liberal Studies and preliminary multiple subject teaching credential in just four years.\n",
+      "phone":"",
+      "website":""
+   },
+   {
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/chhs.jpg",
+      "destination":"College of Health & Human Services",
+      "city":"@ The Beach",
+      "description":"The College of Health and Human Services offers you a breadth of majors from health-related fields such as kinesiology, nursing, physical therapy, and social fields such as consumer science, criminal justice and social work.\n",
+      "phone":"",
+      "website":""
+   },
+   {
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/coe.jpg",
+      "destination":"College of Engineering ",
+      "city":"@ The Beach",
+      "description":"From rockets to roller coasters, you can find a specialty area in the College of Engineering to meet your career goals.\n",
+      "phone":"",
+      "website":""
+   },
+   {
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/cola.jpg",
+      "destination":"College of Liberal Arts",
+      "city":"@ The Beach",
+      "description":"In the departments housed within the College of Liberal Arts, students discover the diversity of cultural studies, art, language, world science and literature in a curriculum centered strongly on exploring the individual and their place in global society.\n",
+      "phone":"",
+      "website":""
+   },
+   {
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/cnsm.jpg",
+      "destination":"College of Natural Science & Mathematics",
+      "city":"@ The Beach",
+      "description":"The College of Natural Sciences and Mathematics receives funding from nearly every major science foundation for its programs and provides state-of-the-art labs for our future chemists, doctors, geologists and mathematicians.\n",
+      "phone":"",
+      "website":""
+   },
+   {
+      "url":"https://web.csulb.edu/divisions/students/uosr/Campus_Tours/Hot_Spots_@_The_Beach/images/srwc.jpg",
+      "destination":"Student Recreation & Wellness Center",
+      "city":"@ The Beach",
+      "description":"The Student Recreation and Wellness Center (SRWC) is a 126,500-square-foot, two-story, state-of-the-art recreation facility located on the east side of the California State University, Long Beach campus. The facility is a hub for recreational activities, programs, and opportunities for Intramural Sports, Fitness, and Wellness services. The SRWC is managed by Associated Students Inc. Recreation and is open to all CSULB students, associates, and affiliates. The facility contains a three-court gym, a multi activity court gym, indoor jogging track, 20,000 square feet of weight and cardio equipment, racquetball courts, activity rooms for group exercise, a custom-made rock climbing wall, a wellness center, swimming pool and spa, as well as many other services. The SRWC is LEED (Leadership in Environmental and Energy Design) certified and offers many technological advances, such as biometric hand scanners for entry, filtered water fountains, and flat screens with touch technology. Plus, more than 180 new jobs were made available to CSULB undergraduate and graduate students.\n",
+      "phone":"",
+      "website":""
    }
 ]

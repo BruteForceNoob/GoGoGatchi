@@ -1,10 +1,9 @@
 package com.gogogatchi.gogogatchi;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
 import android.view.View;
-
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
@@ -16,9 +15,9 @@ public class HomeSwipeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home_swipe);
 
-        mSwipeView = (SwipePlaceHolderView)findViewById(R.id.swipeView);
+        mSwipeView = findViewById(R.id.swipeView);
         mContext = getApplicationContext();
 
         mSwipeView.getBuilder()
@@ -26,12 +25,12 @@ public class HomeSwipeActivity extends AppCompatActivity {
                 .setSwipeDecor(new SwipeDecor()
                         .setPaddingTop(20)
                         .setRelativeScale(0.01f)
-                        .setSwipeInMsgLayoutId(R.layout.tinder_swipe_in_msg_view)
-                        .setSwipeOutMsgLayoutId(R.layout.tinder_swipe_out_msg_view));
+                        .setSwipeInMsgLayoutId(R.layout.location_swipe_right)
+                        .setSwipeOutMsgLayoutId(R.layout.location_swipe_left));
 
 
         for(Profile profile : Utils.loadProfiles(this.getApplicationContext())){
-            mSwipeView.addView(new TinderCard(mContext, profile, mSwipeView));
+            mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
         }
 
         findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {

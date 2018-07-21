@@ -5,51 +5,45 @@ import com.google.gson.annotations.SerializedName;
 
 public class Profile {
 
-    @SerializedName("name")
+    @SerializedName("destination")
     @Expose
-    private String name;
+    private String destinationName;
 
     @SerializedName("url")
     @Expose
     private String imageUrl;
 
-    @SerializedName("age")
+    @SerializedName("city")
     @Expose
-    private Integer age;
+    private String city;
 
-    @SerializedName("location")
+    @SerializedName("description")
     @Expose
-    private String location;
+    private String description;
 
-    public String getName() {
-        return name;
+    @SerializedName("distance")
+    @Expose
+    private double distance;
+
+    @SerializedName("phone")
+    @Expose
+    private String phone;
+
+    @SerializedName("website")
+    @Expose
+    private String website;
+
+    public String getDestinationName() { return destinationName; }
+    public String getImageUrl() { return imageUrl; }
+    public String getCity() { return city; }
+    public String getDescription() { return description; }
+
+    public double getDistance() {
+        //Derive from location data
+        return distance;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
+    public void setDistance(double d) { this.distance = d; }
+    public String getPhone() { return phone; }
+    public String getWebsite() { return website; }
 }
