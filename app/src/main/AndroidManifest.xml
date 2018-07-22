@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/icon_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FeedActivity">
+        <activity android:name=".HomeSwipeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey">
+    android:background="@color/light_grey">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -45,11 +45,12 @@
         android:layout_marginBottom="155dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:background="@color/bg_color">
+        android:background="@color/white">
+
         <ImageButton
             android:id="@+id/rejectBtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginTop="0dp"
             android:background="@mipmap/icon_cancel"/>
         <ImageButton
@@ -59,6 +60,33 @@
             android:layout_marginLeft="30dp"
             android:background="@mipmap/icon_confirm"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="374dp"
+        android:layout_marginTop="70dp"
+        android:background="@color/light_grey"></LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="105dp"
+        app:srcCompat="@mipmap/icon_legendary"
+        android:alpha="0.2" />
+
+   <TextView
+       android:id="@+id/textView"
+       android:layout_width="200dp"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="100dp"
+       android:layout_marginTop="200dp"
+       android:text="Please check again later for more ideas."
+       android:textAlignment="center"
+       android:textColor="@color/colorPrimary"
+       android:textStyle="bold"
+       android:textSize="25sp"/>
 
     <com.mindorks.placeholderview.SwipePlaceHolderView
         android:id="@+id/swipeView"
@@ -71,5 +99,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp" />
+
     </com.mindorks.placeholderview.SwipePlaceHolderView>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="85dp"
+        android:background="@color/colorPrimary"
+        />
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="145dp"
+        android:background="@color/colorPrimary"
+        android:text="Companion: Play with me Daddy"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+
+        />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="153dp"
+        android:layout_height="153dp"
+        app:srcCompat="@mipmap/icon_companion"
+        android:layout_gravity="bottom" />
+
+
 </FrameLayout>
