@@ -5,4 +5,8 @@
     <string name="register">Create an Account</string>
     <string name="login">Log-In</string>
 
+    <string name="title_activity_monster_hatch">MonsterHatchActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
 </resources>

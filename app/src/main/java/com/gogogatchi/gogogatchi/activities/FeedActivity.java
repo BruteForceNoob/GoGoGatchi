@@ -1,7 +1,9 @@
-package com.gogogatchi.gogogatchi;
+package com.gogogatchi.gogogatchi.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.gogogatchi.gogogatchi.R;
 
 public class FeedActivity extends AppCompatActivity {
 

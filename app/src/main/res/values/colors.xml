@@ -12,4 +12,6 @@
     <color name="shadow">#77BBBBBB</color>
     <color name="grey">#e5e5e5</color>
     <color name="light_grey">#f2f2f2</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

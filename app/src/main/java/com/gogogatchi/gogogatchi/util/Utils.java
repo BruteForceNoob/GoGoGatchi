@@ -1,8 +1,10 @@
-package com.gogogatchi.gogogatchi;
+package com.gogogatchi.gogogatchi.util;
 
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
+
+import com.gogogatchi.gogogatchi.core.Profile;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.json.JSONArray;

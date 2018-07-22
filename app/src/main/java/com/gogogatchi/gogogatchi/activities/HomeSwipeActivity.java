@@ -1,9 +1,14 @@
-package com.gogogatchi.gogogatchi;
+package com.gogogatchi.gogogatchi.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.content.Context;
 import android.view.View;
+
+import com.gogogatchi.gogogatchi.core.LocationCard;
+import com.gogogatchi.gogogatchi.core.Profile;
+import com.gogogatchi.gogogatchi.R;
+import com.gogogatchi.gogogatchi.util.Utils;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 

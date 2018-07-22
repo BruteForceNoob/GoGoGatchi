@@ -1,10 +1,11 @@
-package com.gogogatchi.gogogatchi;
+package com.gogogatchi.gogogatchi.core;
 
 import android.content.Context;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.gogogatchi.gogogatchi.R;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 import com.mindorks.placeholderview.annotations.Layout;
 import com.mindorks.placeholderview.annotations.Resolve;

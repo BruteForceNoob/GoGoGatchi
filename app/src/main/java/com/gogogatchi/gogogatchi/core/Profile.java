@@ -1,4 +1,4 @@
-package com.gogogatchi.gogogatchi;
+package com.gogogatchi.gogogatchi.core;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
