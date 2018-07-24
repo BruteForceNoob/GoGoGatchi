@@ -33,3 +33,10 @@ public class LocationCard {
         mSwipeView = swipeView;
     }
 }
+
+@Resolve
+private void onResolved(){
+    Glide.with(mContext).load(mProfile.getImageUrl()).into(profileImageView);
+    destNameTxt.setText(mProfile.getDestinationName());
+    cityNameTxt.setText(mProfile.getCity());
+}
