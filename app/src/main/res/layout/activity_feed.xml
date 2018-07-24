@@ -7,36 +7,29 @@
     android:layout_height="match_parent"
     android:background="@color/light_grey">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:background="@color/white">
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar"
+        ></include>
 
-        <ImageButton
-            android:id="@+id/button4"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:background="@mipmap/icon_ham_menu" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <ImageButton
-            android:id="@+id/button6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="125dp"
-            android:background="@mipmap/icon_compass_unselected" />
-
-        <ImageButton
-            android:id="@+id/button7"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="115dp"
-            android:layout_marginRight="10dp"
-            android:background="@mipmap/icon_feed_selected" />
-
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="396dp"
+                android:layout_height="210dp"
+                android:background="@drawable/csulb1"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

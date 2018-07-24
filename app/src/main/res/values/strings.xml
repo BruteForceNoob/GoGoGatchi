@@ -8,7 +8,10 @@
     <string name="username">Username</string>
     <string name="bio">Enter your interests here</string>
     <string name="interests">Interests</string>
-
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="menu_icon">menu_icon</string>
+    <string name="news"> news_icon</string>
     <string name="title_activity_monster_hatch">MonsterHatchActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
