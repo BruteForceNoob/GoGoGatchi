@@ -21,6 +21,6 @@ public class MonsterHatchActivity extends AppCompatActivity {
             public void run() {
                 startActivity(new Intent(getApplicationContext(), HomeSwipeActivity.class));
             }
-        }, 4875);
+        }, 3000);
     }
 }

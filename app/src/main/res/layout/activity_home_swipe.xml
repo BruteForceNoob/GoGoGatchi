@@ -13,7 +13,7 @@
         android:background="@color/white">
 
         <ImageButton
-            android:id="@+id/button4"
+            android:id="@+id/button5"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -39,6 +39,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/LinearLayoutSwipe"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="bottom"
@@ -118,7 +119,7 @@
         android:layout_marginBottom="25dp"
         android:layout_marginLeft="145dp"
         android:background="@color/colorPrimary"
-        android:text="Companion: Play with me Daddy"
+        android:text="Companion: Play with me"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="20dp"
