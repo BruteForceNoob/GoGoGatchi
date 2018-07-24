@@ -133,7 +133,12 @@ public class HomeSwipeActivity extends AppCompatActivity {
                             }
 
                             case R.id.nav_logout:{
-                                finishAffinity();
+                                //finishAffinity();
+
+                                Intent intent = new Intent (getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
+
+                                break;
 
                             }
 
