@@ -5,6 +5,9 @@
     <string name="register">Create an Account</string>
     <string name="login">Log-In</string>
     <string name="update">Update</string>
+    <string name="username">Username</string>
+    <string name="bio">Enter your interests here</string>
+    <string name="interests">Interests</string>
 
     <string name="title_activity_monster_hatch">MonsterHatchActivity</string>
     <string name="dummy_button">Dummy Button</string>
