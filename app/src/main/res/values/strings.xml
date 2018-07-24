@@ -4,6 +4,7 @@
     <string name="password">Password</string>
     <string name="register">Create an Account</string>
     <string name="login">Log-In</string>
+    <string name="update">Update</string>
 
     <string name="title_activity_monster_hatch">MonsterHatchActivity</string>
     <string name="dummy_button">Dummy Button</string>
