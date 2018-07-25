@@ -21,7 +21,8 @@
         <activity android:name=".activities.MonsterHatchActivity" />
         <activity android:name=".activities.HomeSwipeActivity" />
         <activity android:name=".activities.FeedActivity" />
-        <activity android:name=".activities.ProfileActivity"></activity>
+        <activity android:name=".activities.ProfileActivity" />
+        <activity android:name=".activities.SettingsActivity"></activity>
     </application>
 
 </manifest>
