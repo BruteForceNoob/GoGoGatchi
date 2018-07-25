@@ -8,6 +8,9 @@
     <string name="username">Username</string>
     <string name="bio">Enter your interests here</string>
     <string name="interests">Interests</string>
+    <string name="cultural">Cultural</string>
+    <string name="monuments">Monuments</string>
+    <string name="athletics">Athletics</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="menu_icon">menu_icon</string>
