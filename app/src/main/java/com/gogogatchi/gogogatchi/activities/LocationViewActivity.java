@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
@@ -25,6 +26,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.core.Profile;
 
@@ -32,6 +34,7 @@ import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -50,6 +53,17 @@ public class LocationViewActivity extends AppCompatActivity {
         }
     }
 
+    Bitmap drawable_from_url(String url) throws java.net.MalformedURLException, java.io.IOException {
+
+        HttpURLConnection connection = (HttpURLConnection)new URL(url) .openConnection();
+        connection.setRequestProperty("User-agent","Mozilla/4.0");
+
+        connection.connect();
+        InputStream input = connection.getInputStream();
+
+        return BitmapFactory.decodeStream(input);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,10 +76,8 @@ public class LocationViewActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView5);
         textView = findViewById(R.id.textView4);
 
-        Drawable img = LoadFromURL(mProfile.getImageUrl());
-
-        if (img != null)
-            imageView.setImageDrawable(img);
+        Context context = getApplicationContext();
+        Glide.with(context).load(mProfile.getImageUrl()).into(imageView);
 
         textView.setText(mProfile.getDestinationName());
     }

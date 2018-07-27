@@ -18,6 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.LocationViewActivity" />
         <activity android:name=".activities.MonsterHatchActivity" />
         <activity android:name=".activities.HomeSwipeActivity" />
         <activity android:name=".activities.FeedActivity" />

@@ -62,12 +62,6 @@ public class LocationCard {
         bundle.putParcelable("mProfile", mProfile);
         intent.putExtras(bundle);
         mContext.startActivity(intent);
-
-        /*
-        Intent intent = new Intent(mContext.getApplicationContext(), LocationViewActivity.class);
-        intent.putExtra("mProfile", mProfile);
-        mContext.startActivity(intent);
-        */
     }
 
     // Swipe Left
@@ -79,7 +73,6 @@ public class LocationCard {
     // Swiped, but let go
     @SwipeCancelState
     private void onSwipeCancelState(){
-
     }
 
     //Swipe Right
