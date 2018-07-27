@@ -22,7 +22,6 @@
         <activity android:name=".activities.MonsterHatchActivity" />
         <activity android:name=".activities.HomeSwipeActivity" />
         <activity android:name=".activities.FeedActivity" />
-        <activity android:name=".activities.LocationViewActivity" />
         <activity android:name=".activities.ProfileActivity"></activity>
     </application>
 
