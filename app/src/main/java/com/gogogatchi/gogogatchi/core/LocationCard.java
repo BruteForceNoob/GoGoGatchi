@@ -1,21 +1,16 @@
 package com.gogogatchi.gogogatchi.core;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.MultiTransformation;
 import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.activities.LocationViewActivity;
 
-import com.gogogatchi.gogogatchi.activities.MonsterHatchActivity;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
-import com.mindorks.placeholderview.Utils;
 import com.mindorks.placeholderview.annotations.Click;
 import com.mindorks.placeholderview.annotations.Layout;
 import com.mindorks.placeholderview.annotations.Resolve;
