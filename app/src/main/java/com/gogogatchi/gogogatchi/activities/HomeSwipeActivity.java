@@ -17,9 +17,11 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.gogogatchi.gogogatchi.core.LocationCard;
+import com.gogogatchi.gogogatchi.core.LocationProfile;
 import com.gogogatchi.gogogatchi.core.Profile;
 import com.gogogatchi.gogogatchi.R;
 
+import com.gogogatchi.gogogatchi.util.Utils;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
@@ -39,6 +41,8 @@ public class HomeSwipeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_swipe);
+
+        /*** Begin Menu Code ***/
         appBar=(Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(appBar);
         // getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -46,6 +50,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24px);
         // actionBar.setIcon(R.drawable.ic_newspaper);
+        /*** End Menu Code ***/
 
         mSwipeView = findViewById(R.id.swipeView);
         mContext = getApplicationContext();
@@ -59,10 +64,18 @@ public class HomeSwipeActivity extends AppCompatActivity {
                         .setSwipeOutMsgLayoutId(R.layout.location_swipe_left));
 
         //Load all Profiles from JSON query
-        for(Profile profile : loadProfiles(this.getApplicationContext()))
-            mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
 
-        //BEGIN MENU CODE **************************************************************************
+        for(Profile profile : loadProfiles(this.getApplicationContext())) {
+            mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
+        }
+
+    /*
+        for(LocationProfile profile : Utils.loadLocationProfiles(this.getApplicationContext())) {
+            mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
+        }
+    */
+
+        /*** BEGIN MENU CODE ***/
         NavigationView navigationView = findViewById(R.id.navMenu);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -95,7 +108,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
                         return true;
                     }
                 });
-        //End MENU CODE ****************************************************************************
+        /***END MENU CODE ***/
     }
 
     @Override

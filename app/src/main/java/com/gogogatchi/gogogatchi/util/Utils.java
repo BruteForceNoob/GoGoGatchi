@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
 
+import com.gogogatchi.gogogatchi.core.LocationProfile;
 import com.gogogatchi.gogogatchi.core.Profile;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -16,6 +17,7 @@ import java.util.List;
 public class Utils {
     private static final String TAG = "Utils";
 
+    /*** For use with CSULB Profiles ***/
     public static List<Profile> loadProfiles(Context context){
         try{
             GsonBuilder builder = new GsonBuilder();
@@ -29,6 +31,26 @@ public class Utils {
             }
             return profileList;
         }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /*** Modified for use with Places API ***/
+    public static List<LocationProfile> loadLocationProfiles(Context context){
+        try{
+            GsonBuilder builder = new GsonBuilder();
+            Gson gson = builder.create();
+            JSONArray array = new JSONArray(loadJSONFromAsset(context, "locations.json"));
+            List<LocationProfile> profileList = new ArrayList<>();
+
+            for (int i=0; i<array.length(); i++) {
+                LocationProfile locationProfile = gson.fromJson(array.getString(i), LocationProfile.class);
+                profileList.add(locationProfile);
+            }
+
+            return profileList;
+        }catch (Exception e) {
             e.printStackTrace();
             return null;
         }

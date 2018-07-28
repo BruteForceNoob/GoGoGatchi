@@ -33,9 +33,12 @@ public class LocationCard {
     @View(R.id.locationNameTxt)
     private TextView cityNameTxt;
 
+    //private Profile mProfile;
+    private LocationProfile mLocationProfile;
     private Profile mProfile;
     private Context mContext;
     private SwipePlaceHolderView mSwipeView;
+
 
     public LocationCard(Context context, Profile profile, SwipePlaceHolderView swipeView) {
         mContext = context;
@@ -59,6 +62,29 @@ public class LocationCard {
         mContext.startActivity(intent);
     }
 
+   /*
+    public LocationCard(Context context, LocationProfile profile, SwipePlaceHolderView swipeView) {
+        mContext = context;
+        mLocationProfile = profile;
+        mSwipeView = swipeView;
+    }
+
+    @Resolve
+    private void onResolved(){
+        Glide.with(mContext).load(mLocationProfile.getImageUrl()).into(profileImageView);
+        destNameTxt.setText(mLocationProfile.getLocationName());
+        cityNameTxt.setText(mLocationProfile.getVicinity());
+    }
+
+    @Click(R.id.profileImageView)
+    private void onClick(){
+        Intent intent = new Intent(mContext.getApplicationContext(), LocationViewActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("mLocationProfile", mLocationProfile);
+        intent.putExtras(bundle);
+        mContext.startActivity(intent);
+    }
+*/
     // Swipe Left
     @SwipeOut
     private void onSwipedOut(){

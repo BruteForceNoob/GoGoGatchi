@@ -58,16 +58,6 @@ public class Profile implements Parcelable {
         }
     };
 
-    public Profile() {
-        destinationName = "Erick";
-        imageUrl = "google.com";
-        city = "Bolen";
-        distance = 2.2;
-        description = "NO";
-        phone = "fdhfd";
-        website = "sfa";
-    }
-
     public String getDestinationName() { return destinationName; }
     public void setDestinationName(String str) { destinationName = str; }
 
