@@ -19,4 +19,37 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
+    <!--- gender drop list-->
+    <string-array name="gender">
+        <item>Select Option..</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <!--- ethnicity drop list-->
+    <string-array name="ethnicity">
+        <item>Select Option..</item>
+        <item>American Indian or Alaska Native</item>
+        <item>Asian</item>
+        <item>Black or African American</item>
+        <item>Decline to State</item>
+        <item>Hispanic or Latino</item>
+        <item>Other</item>
+        <item>Native Hawaiian or Other Pacific Islander</item>
+        <item>White</item>
+    </string-array>
+
+    <!--- age drop list-->
+    <string-array name="age">
+        <item>Select Option..</item>
+        <item>Below 18</item>
+        <item>18–24</item>
+        <item>25–34</item>
+        <item>35–44</item>
+        <item>45–54</item>
+        <item>65 or more</item>
+    </string-array>
+
+
 </resources>
