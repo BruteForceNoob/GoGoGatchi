@@ -36,14 +36,18 @@ public class ProfileActivity extends AppCompatActivity {
         mSendData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mRef.child("Username").setValue(user);
                 DatabaseReference mChildRef= mRef.child("Username");
-                DatabaseReference mGrandChildRef1= mChildRef.child("Athletics");
+                mChildRef.child("Athletics").setValue(isCheckAth.isChecked());
+                mChildRef.child("Cultural").setValue(isCheckCul.isChecked());
+                mChildRef.child("Monuments").setValue(isCheckMonu.isChecked());
+                /*DatabaseReference mGrandChildRef1= mChildRef.child("Athletics");
                 mGrandChildRef1.setValue(isCheckAth.isChecked());
                 DatabaseReference mGrandChildRef2= mChildRef.child("Cultural");
                 mGrandChildRef2.setValue(isCheckCul.isChecked());
                 DatabaseReference mGrandChildRef3= mChildRef.child("Monuments");
                 mGrandChildRef3.setValue(isCheckMonu.isChecked());
-                mChildRef.setValue("Ankush Bhandare");
+                mChildRef.setValue("Ankush Bhandare");*/
             }
         });
         }
