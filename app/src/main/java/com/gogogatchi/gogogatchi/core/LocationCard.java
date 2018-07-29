@@ -21,6 +21,8 @@ import com.mindorks.placeholderview.annotations.swipe.SwipeInState;
 import com.mindorks.placeholderview.annotations.swipe.SwipeOut;
 import com.mindorks.placeholderview.annotations.swipe.SwipeOutState;
 
+import java.net.MalformedURLException;
+
 @Layout(R.layout.location_card)
 public class LocationCard {
 
@@ -34,11 +36,12 @@ public class LocationCard {
     private TextView cityNameTxt;
 
     //private Profile mProfile;
-    private LocationProfile mLocationProfile;
+    private LocationData mLocationProfile;
     private Profile mProfile;
     private Context mContext;
     private SwipePlaceHolderView mSwipeView;
 
+    /*** For use with CSULB Location Profiles ***/
 
     public LocationCard(Context context, Profile profile, SwipePlaceHolderView swipeView) {
         mContext = context;
@@ -62,29 +65,27 @@ public class LocationCard {
         mContext.startActivity(intent);
     }
 
-   /*
-    public LocationCard(Context context, LocationProfile profile, SwipePlaceHolderView swipeView) {
+    /*** For use with Google Places API Locations ***/
+    /*
+    public LocationCard(Context context, LocationData profile, SwipePlaceHolderView swipeView) {
         mContext = context;
         mLocationProfile = profile;
         mSwipeView = swipeView;
     }
 
     @Resolve
-    private void onResolved(){
+    private void onResolved() throws MalformedURLException {
         Glide.with(mContext).load(mLocationProfile.getImageUrl()).into(profileImageView);
         destNameTxt.setText(mLocationProfile.getLocationName());
-        cityNameTxt.setText(mLocationProfile.getVicinity());
+        cityNameTxt.setText(mLocationProfile.getPlaceID());
     }
 
     @Click(R.id.profileImageView)
     private void onClick(){
-        Intent intent = new Intent(mContext.getApplicationContext(), LocationViewActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putParcelable("mLocationProfile", mLocationProfile);
-        intent.putExtras(bundle);
-        mContext.startActivity(intent);
+
     }
-*/
+    */
+
     // Swipe Left
     @SwipeOut
     private void onSwipedOut(){

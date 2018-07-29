@@ -11,23 +11,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.content.Context;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.gogogatchi.gogogatchi.core.LocationCard;
-import com.gogogatchi.gogogatchi.core.LocationProfile;
-import com.gogogatchi.gogogatchi.core.Profile;
 import com.gogogatchi.gogogatchi.R;
+import com.gogogatchi.gogogatchi.core.LocationData;
+import com.gogogatchi.gogogatchi.core.Profile;
+import com.gogogatchi.gogogatchi.util.*;
 
-import com.gogogatchi.gogogatchi.util.Utils;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
-import java.util.List;
+import org.json.JSONException;
 
-import static com.gogogatchi.gogogatchi.util.Utils.loadProfiles;
+import java.io.FileNotFoundException;
+
+import static com.gogogatchi.gogogatchi.util.Utils.loadLocationProfiles;
 
 public class HomeSwipeActivity extends AppCompatActivity {
 
@@ -43,7 +42,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_swipe);
 
         /*** Begin Menu Code ***/
-        appBar=(Toolbar) findViewById(R.id.app_bar);
+        appBar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(appBar);
         // getSupportActionBar().setDisplayShowTitleEnabled(false);
         ActionBar actionBar = getSupportActionBar();
@@ -64,16 +63,22 @@ public class HomeSwipeActivity extends AppCompatActivity {
                         .setSwipeOutMsgLayoutId(R.layout.location_swipe_left));
 
         //Load all Profiles from JSON query
+        /*** For use with CSULB Profiles ***/
 
-        for(Profile profile : loadProfiles(this.getApplicationContext())) {
+        for(Profile profile : Utils.loadProfiles(this.getApplicationContext())) {
             mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
         }
 
-    /*
-        for(LocationProfile profile : Utils.loadLocationProfiles(this.getApplicationContext())) {
-            mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
+        /*** For use with Google Places API ***/
+        /*
+        try {
+            for(LocationData profile : loadLocationProfiles(mContext)) {
+                mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
+            }
+        } catch (JSONException e1) {
+            e1.printStackTrace();
         }
-    */
+        */
 
         /*** BEGIN MENU CODE ***/
         NavigationView navigationView = findViewById(R.id.navMenu);

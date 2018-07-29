@@ -4,13 +4,21 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
 
-import com.gogogatchi.gogogatchi.core.LocationProfile;
+import com.gogogatchi.gogogatchi.core.GoogleQuery;
+import com.gogogatchi.gogogatchi.core.LocationData;
 import com.gogogatchi.gogogatchi.core.Profile;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
+
 import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,26 +45,14 @@ public class Utils {
     }
 
     /*** Modified for use with Places API ***/
-    public static List<LocationProfile> loadLocationProfiles(Context context){
-        try{
-            GsonBuilder builder = new GsonBuilder();
-            Gson gson = builder.create();
-            JSONArray array = new JSONArray(loadJSONFromAsset(context, "locations.json"));
-            List<LocationProfile> profileList = new ArrayList<>();
+    public static List<LocationData> loadLocationProfiles(Context context) throws JSONException {
+        Gson g = new Gson();
+        final String strWithData = loadJSONFromAsset(context, "locations.json");
 
-            for (int i=0; i<array.length(); i++) {
-                LocationProfile locationProfile = gson.fromJson(array.getString(i), LocationProfile.class);
-                profileList.add(locationProfile);
-            }
-
-            return profileList;
-        }catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+        return g.fromJson(strWithData, GoogleQuery.class).getData();
     }
 
-    private static String loadJSONFromAsset(Context context, String jsonFileName) {
+    public static String loadJSONFromAsset(Context context, String jsonFileName) {
         String json = null;
         InputStream is=null;
         try {
