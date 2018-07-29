@@ -97,6 +97,11 @@ public class HomeSwipeActivity extends AppCompatActivity {
 
                                 break;
                             }
+                            case R.id.nav_settings: {
+                                Intent intent= new Intent(getApplicationContext(),SettingsActivity.class);
+                                startActivity(intent);
+                                break;
+                            }
                             case R.id.nav_feed: {
                                 //menuItem.setChecked(false);
                                 Intent intent= new Intent(getApplicationContext(),FeedActivity.class);

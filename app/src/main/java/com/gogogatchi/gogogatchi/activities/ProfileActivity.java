@@ -37,7 +37,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mRef.child("Username").setValue(user);
-                DatabaseReference mChildRef= mRef.child("Username");
+                DatabaseReference mChildRef= mRef.child(user);
                 mChildRef.child("Athletics").setValue(isCheckAth.isChecked());
                 mChildRef.child("Cultural").setValue(isCheckCul.isChecked());
                 mChildRef.child("Monuments").setValue(isCheckMonu.isChecked());
