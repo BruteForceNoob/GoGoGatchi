@@ -43,7 +43,7 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="94dp"
-        android:layout_height="28dp"
+        android:layout_height="23dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="60dp"
         android:text="@string/username"

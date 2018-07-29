@@ -1,0 +1,956 @@
+{
+    "html_attributions": [],
+    "next_page_token": "CsQCMgEAAEvuduNXL7UEtesDlwbwsNcZXy4RQsoj-3S4QKE-Ug4MSgdKWEajpFW_l8N22MOqNgYCq0QDarTRujcPfBlbbVfNrXybzGyvUvtjuSw6a8yZDnwNawrhvZBk3ScmlD-QXnYT-CiDrswR7bpkykzSIr4i6bcsMGBei3nxdmzHe0VdBFjxsj6pH3Eb4rcHv1xZSEZCVawLglY_JY9GrhFhSLr831MKqUbu4nc9-VIjE_SrvGn2GHpCbbUAE74gFC853D7h5IhlMrcMo0_bYXL1hKgfYSDh8JAyK6-gi02UUvaXM_R_cRPUgCLDXEJN1TY6XIPJzqunIAl5KBScK4ZqfOec11TrDaycdQv1QsoOnaOMNhjJ6mb6Y8swix_4NUkf3nvneWft84JA2yoM-KH3ZpQnpoiFYrXOrk5v9FV5CBHKEhBJMGjhux4HS_rT97z4cMATGhRIddYnmkur_XcTPpc2YMJrJ8gr1g",
+    "results": [
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.7700504,
+                    "lng": -118.1937395
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.8854591,
+                        "lng": -118.063253
+                    },
+                    "southwest": {
+                        "lat": 33.714957,
+                        "lng": -118.248966
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+            "id": "71b374acb987b8be875a091969db9d11158f8712",
+            "name": "Long Beach",
+            "photos": [
+                {
+                    "height": 2220,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/113399694841584946398/photos\">Maria Nunez</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAwVyrHd9DsMlKd2yAPmKzZXmR5woEgIU3eWqYgaJtKxwHlJ1cIPlrNPD6j5DQWbTtgd1vm6WwiPJhuEmm37KsYmcm6hOcGk5iTdiVE5wfO2Iu-fi_ZwScy1KtczCumKEyEhCxM_F10AVyG0_iObXkgMjPGhT-JmiPLu0yIVChthW9EfaPx074rg",
+                    "width": 1080
+                }
+            ],
+            "place_id": "ChIJWdeZQOjKwoARqo8qxPo6AKE",
+            "reference": "CmRbAAAAxwtDt-4BKCyoJxkQJ2stIF3d4-wQw4phNpUdH7ujZI9DLTfvSMWmTkkvwtLqZZq0BfOI06K8zmtH7n40GXryfKkHv6FDHSd3O6Fi2-EvSF9jOeSq4pQ8uque5jlzwpAHEhDcH5-x_xQqzNQa3h6sWeoHGhRHkwvZ53NWYt1yw0RVfokwNGv3nQ",
+            "scope": "GOOGLE",
+            "types": [
+                "locality",
+                "political"
+            ],
+            "vicinity": "Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.7817344,
+                    "lng": -118.1303228
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.78297338029149,
+                        "lng": -118.1294947197085
+                    },
+                    "southwest": {
+                        "lat": 33.7802754197085,
+                        "lng": -118.1321926802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+            "id": "ad3111f823e88206cb31e478a0f73a6eb6b6da08",
+            "name": "Hotel Current Long Beach",
+            "opening_hours": {
+                "open_now": false
+            },
+            "photos": [
+                {
+                    "height": 353,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/118303911271054409562/photos\">Hotel Current Long Beach</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAdVSlipNVt4oyXLtOP4TMkeyRyzXsTiyymvgHxFHLBd7DH58CB4TPbJcl5EAdvZNusha8yhBkiqVfqC1rpKPxK_1K1SDh64tJxg8GZvgy9L97oDHBiscyX6TrKpjJsmHoEhCE2YR3kBt6xEYLLQrzN7S4GhR_C8xtzRtnaoKxjFHdoQp9nO2Czg",
+                    "width": 610
+                }
+            ],
+            "place_id": "ChIJodLCmsYx3YAROPzWsXMDjbk",
+            "plus_code": {
+                "compound_code": "QVJ9+MV Long Beach, California, United States",
+                "global_code": "8553QVJ9+MV"
+            },
+            "rating": 4.3,
+            "reference": "CmRSAAAAC2lmxJDtGPQd-H8Xu_i4UeU_oo6JgUKoodcW1asKe2NGiCmagKHRxZfpNv22h5TBjZF8agragCEtmt7AYXuPLOj0qvICU8ubKvj5k6FEVmL85xDru9Dmy0k0nZXYGIuXEhB5PeW69XV_pZczBPF2ewH4GhS8tvvb7exFP0sNTwUUH-C3nP5zGA",
+            "scope": "GOOGLE",
+            "types": [
+                "lodging",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "5325 Pacific Coast Highway, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.76528799999999,
+                    "lng": -118.115514
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.7665578302915,
+                        "lng": -118.1144423697085
+                    },
+                    "southwest": {
+                        "lat": 33.7638598697085,
+                        "lng": -118.1171403302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+            "id": "9286d9d8d057180ee3e4ec064581df7d19fd2263",
+            "name": "Best Western Golden Sails Hotel",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 426,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/102471191853622597798/photos\">Best Western Golden Sails Hotel</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAfU7nvNsLk-ebbPnP7X0WAs0v2IkF-HGTZ7BVZfTAePo2Xm9nmynHKkGBLU-zCegf9Ii1bA5uKf7MyHQHHHC4gZjrkJc1Xjf0G7JZHcvkyjvgfmnn4qDi3843E-kNAnt6EhC13B1iC-wCEVCBzQG2Ilk0GhSe89MwoP9tQVR8WKZ9aip6jl9sfA",
+                    "width": 640
+                }
+            ],
+            "place_id": "ChIJh-Hqeykw3YARw3N-8vTCBGM",
+            "plus_code": {
+                "compound_code": "QV8M+4Q Long Beach, California, United States",
+                "global_code": "8553QV8M+4Q"
+            },
+            "rating": 3.9,
+            "reference": "CmRRAAAA3QVgGzkwp4qAygxe8HTeLtPd5lux7D9J0s_QnJh_JGmBlVQ46PH0-RyRA5YM5fKwA1uHU16k69-GwOxSVIPNerXyFoQm5CAYhSzz_NSe6_qGSSD8iemaodsrJtu6-Qr2EhDIUhq-EFjoMILINcb36P2oGhQJObOgmEgZwNux3BgysM920o5gcg",
+            "scope": "GOOGLE",
+            "types": [
+                "lodging",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "6285 East Pacific Coast Highway, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.8040691,
+                    "lng": -118.1417885
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.8053438302915,
+                        "lng": -118.1406401697085
+                    },
+                    "southwest": {
+                        "lat": 33.8026458697085,
+                        "lng": -118.1433381302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+            "id": "588ce3f0481504486ba5e2eee9b398bf6ab2abb2",
+            "name": "Holiday Inn Long Beach Airport",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3744,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/107658101035034597888/photos\">Holiday Inn Long Beach Airport</a>"
+                    ],
+                    "photo_reference": "CmRaAAAApkiZdqVsuI-Zcd4HGu9f_ZB2YCL0ZZtVi-uU7_eLYQ4UK9-CUY0dkwTBDwLFjsVoBaFfi-2ItKR6_MX083LbJYkR_pvk7lxfvrVlVbVZ9rDRaurAEnqc8okacXVd_9ZLEhBkxghZaoMO5dDfl4tYtD-FGhTGR-Bc4f-ELxIfpLetc7IDQAgJCw",
+                    "width": 5616
+                }
+            ],
+            "place_id": "ChIJGdQGnIkx3YARHcjYXaRh0NE",
+            "plus_code": {
+                "compound_code": "RV35+J7 Long Beach, California, United States",
+                "global_code": "8553RV35+J7"
+            },
+            "rating": 4.1,
+            "reference": "CmRSAAAAY1bmaQyCDHi4fbQluB-NhFOxSZqugva_jUNfAugT0vgkBAd5CBDUvOnYGTu1VZMHfgUvG3qdbxWeQs33LhXlGY7mCFhK5i2oPzLMPQrblqtf7W_jhdT4OzzjxpAvGqgNEhD1_auZ2_7ohtV3U2-LAbyjGhT0swgideYmZ0who9K5Lf5b8pdzhg",
+            "scope": "GOOGLE",
+            "types": [
+                "bar",
+                "lodging",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "2640 North Lakewood Boulevard, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.803945,
+                    "lng": -118.1448683
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.8051936302915,
+                        "lng": -118.1432588697085
+                    },
+                    "southwest": {
+                        "lat": 33.8024956697085,
+                        "lng": -118.1459568302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+            "id": "76106271c87bb4a956dacacaa562ad8766d0f4cb",
+            "name": "Residence Inn by Marriott Long Beach",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 2080,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/102552926071694547144/photos\">Residence Inn by Marriott Long Beach</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAAYmg5prp8cSoCIkvWn0WTkKpACnGp7b3y1nG_57N8GrYAsUw0AaNbkTBapKAR2A6NE15BRUDTUsZ6AvKHWfEdL3K8TKCo8gGe96OLZIXcX6uv_kRdQaa5FZwmrS5237KEhD9DJV0i1TeKMBVa0KlCP6YGhSk9T-CszymdouHglQCODQxrLEbfQ",
+                    "width": 3000
+                }
+            ],
+            "place_id": "ChIJV01VNogx3YARqMq1oDJEAxM",
+            "plus_code": {
+                "compound_code": "RV34+H3 Long Beach, California, United States",
+                "global_code": "8553RV34+H3"
+            },
+            "rating": 4.3,
+            "reference": "CmRRAAAA3U5kL-UVDFQneJjwE_dvR0zuEOH8_yN9njoj_X2owsc4WumIWXPbeQY2yViFSWws0drCaNPZsfnGaqy975IStOMsHwm45OqNUSaBXJePs6Vyc7UKv0kq_EW0b-WuqiWjEhDZz5hIbaWfSzzuuFuKTOmEGhQei4ZSoO2E3HC0cxaObggKzRMLuQ",
+            "scope": "GOOGLE",
+            "types": [
+                "lodging",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "4111 East Willow Street, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.804063,
+                    "lng": -118.14654
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.8053515802915,
+                        "lng": -118.1452157197085
+                    },
+                    "southwest": {
+                        "lat": 33.8026536197085,
+                        "lng": -118.1479136802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+            "id": "62891a5c515806d70a96977789d4d0a2623e2b81",
+            "name": "Extended Stay America Hotel Los Angeles - Long Beach Airport",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 949,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/110911585265341441931/photos\">Yassii Sia</a>"
+                    ],
+                    "photo_reference": "CmRaAAAABd3bMtOZ9_RdeCKVrfkmetIdqen-0u4A9bdfNerNnCFRIOdt-OkOuoH4nWRT58qHzIDpwHSKeu-yQEf8vZZuPPQtX-WX7BiMRp9gUOrvJ14qlSu1EPXe6t6xu0blIGc6EhBMBkVSSybZtilvf9hfkfvtGhR9q98J1ACuWUYn4aCS5_aycpo4kA",
+                    "width": 1265
+                }
+            ],
+            "place_id": "ChIJnyw1TYgx3YARWU25vbcqlF4",
+            "plus_code": {
+                "compound_code": "RV33+J9 Long Beach, California, United States",
+                "global_code": "8553RV33+J9"
+            },
+            "rating": 3.3,
+            "reference": "CmRRAAAAbExzKZKQZHOADhzSFQVUc6gNWsGA87IeKOcTwsWxHPVpjoRi8MJHbVJ13BYRc-UB97DG22mV54dhMi4JUzwF2FJYbm4aQweyWRHnXegs4oBjZJqpj_9-pqPOVXZi3aufEhAizILj-bFoClnU17nyBoxbGhSe6l5KX-Ipy0amo9_wWefKFYKjCA",
+            "scope": "GOOGLE",
+            "types": [
+                "lodging",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "4105 East Willow Street, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.8114365,
+                    "lng": -118.1384082
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.8125705802915,
+                        "lng": -118.1364775697085
+                    },
+                    "southwest": {
+                        "lat": 33.8098726197085,
+                        "lng": -118.1391755302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+            "id": "15471fa27671a68fde84326411c77bc9af5d8060",
+            "name": "Long Beach Marriott",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 2080,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/100812037202274560230/photos\">Long Beach Marriott</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAnK-qX-dq_YfZxeuTYT8ZJiDVZ-O422u-nXoHyy50if2etq3Des5hXCexN09YHK6R39iEqmPd2DwrnmCeZf6vqpie8isTU-lDfA-8V64kyf-nAZeh_490FBSD2QCZqxroEhAe_hr-nJQFx3WkZ5K9Ss5xGhTmWXpM21Nx8PX2hUQEF-HBUjRLFw",
+                    "width": 3000
+                }
+            ],
+            "place_id": "ChIJaxXXgyEy3YARo3UO0Y5o8ao",
+            "plus_code": {
+                "compound_code": "RV66+HJ Long Beach, California, United States",
+                "global_code": "8553RV66+HJ"
+            },
+            "rating": 4.3,
+            "reference": "CmRSAAAAdeYRAVz96x9c4Z7djNMhWedysaO6K_rcAdXe1E4akls7lMqie_3_H3xChwJ8rm5NqQgReFbu8pHpMrEEE5oPDcRE_VzdFc7tbRlXNpb0IK_VGCtE8xoUGyEbAOfLgyVKEhBaNSwsAOM0imKAsWldvx82GhTm7yKbrMGj7jlfRpADnvH0BxN5CQ",
+            "scope": "GOOGLE",
+            "types": [
+                "lodging",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "4700 Airport Plaza Drive, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.7589799,
+                    "lng": -118.081331
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.7602152302915,
+                        "lng": -118.0800194697085
+                    },
+                    "southwest": {
+                        "lat": 33.7575172697085,
+                        "lng": -118.0827174302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+            "id": "e3fa1f54e3e67c159fae3f0a7a81a8449ea2b927",
+            "name": "Hampton Inn & Suites Seal Beach",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 853,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/101694131801625291490/photos\">Hampton Inn &amp; Suites Seal Beach</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA7Sezd7_A_4fImM_JOBpowKVaN_zM1fDtNcJKfIBi0VJjhAG05kJSAu8SnDJSY5m1N70F4HqZAAnP13m8A1WgCOYzt9gD9rFfgDTOzuiaDktZ3RPAh4-M11ARKVFxSlPhEhCw5glxmm_6Rs2VEmJADO7kGhScx5eccjlPNYEFlTznNRgTsP-dGQ",
+                    "width": 1280
+                }
+            ],
+            "place_id": "ChIJjVG2IZYv3YARAG1QfGXEmPc",
+            "plus_code": {
+                "compound_code": "QW59+HF Seal Beach, California, United States",
+                "global_code": "8553QW59+HF"
+            },
+            "rating": 4.3,
+            "reference": "CmRSAAAALI7Xx4zdRDLa9WQGvzPc2jL_jDsz95xU4dPdLnlliit3YQ5UpD9O6s8DqJ0WmrLvnQ93w4YWNS6fHRIfkompUbJTljePuaXl5hghTgKGLoZrtX1rr6VoGI6xbIJCtOADEhCuYa_Z5zRNrpSmbGPH8LEhGhRFhE1XY6B3FibUaH4GJyIDMeAj8Q",
+            "scope": "GOOGLE",
+            "types": [
+                "lodging",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "2401 Seal Beach Boulevard, Seal Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.7449406,
+                    "lng": -118.1057041
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.7463486802915,
+                        "lng": -118.1043559197085
+                    },
+                    "southwest": {
+                        "lat": 33.7436507197085,
+                        "lng": -118.1070538802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+            "id": "f77b8857077a42c182a557f8f2590ccb959c88d6",
+            "name": "The Pacific Inn",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 2988,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/109844613273022608345/photos\">Joris Hendrickx</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAEmwanyOUz6lMssxEF94a9izWqPIeSTFwNBLrqaYGHuXoHcIHutYlrRXvSZ6ABHs0talNiEJB97X1CINI3TwmobM4aY5paV7aJe2vpz87cv1G9o4T11DXUxxPvLs9yLEbEhClXRrgIfaBLtxB3YrYS1O9GhSx_F6t0HsjOCpD0VeRngf6w_AKPg",
+                    "width": 5312
+                }
+            ],
+            "place_id": "ChIJ207PheQv3YAR8XSjn_EeccY",
+            "plus_code": {
+                "compound_code": "PVVV+XP Seal Beach, California, United States",
+                "global_code": "8553PVVV+XP"
+            },
+            "rating": 4.4,
+            "reference": "CmRSAAAA8C_ak4cs-3f6sRRNSCijxcatri9cBmAJX_-z4NBLtdkSGC2I44wFxJOxFgYgxRhP5ccYx4FEaFJatwzzTyulUAmOcIJLXTLhCMVkDIJ0lVSen7U9uNeIa3clUmtyOANLEhA129NdRChdrz3v3Zb_YHGpGhQqu71_au-C2zXwXGQc1qGnUA_Nyw",
+            "scope": "GOOGLE",
+            "types": [
+                "lodging",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "600 Marina Drive, Seal Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.790493,
+                    "lng": -118.154321
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.7917126802915,
+                        "lng": -118.1529799697085
+                    },
+                    "southwest": {
+                        "lat": 33.7890147197085,
+                        "lng": -118.1556779302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+            "id": "97590d0f98acbb513b38a9a534789af1ce6a7c59",
+            "name": "Quality Inn Long Beach Airport",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1638,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/113032090135228415264/photos\">Quality Inn Long Beach Airport</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAzXxRO2L6wTr0-KbOiutjXWAQCEC_TKQV1h2r1Hktxc8FPieSes-AzFlY7w2hZDJbpn-_CwTCLuAWiGycLGCmXiazYuzDvt9x7SwS4-y4MVy26Hc9N6KKKErr8ujrZK9IEhD41NoMDWjiL-f63R_0LOEGGhSilxYOcqqZU91o2u2FS2bVXjxz9g",
+                    "width": 2048
+                }
+            ],
+            "place_id": "ChIJ2UtHiJwx3YARzIDurDqE9mI",
+            "plus_code": {
+                "compound_code": "QRRW+57 Signal Hill, California, United States",
+                "global_code": "8553QRRW+57"
+            },
+            "rating": 3.4,
+            "reference": "CmRRAAAAGSz4XnEz13llGLaiNVIFGPRkhNKfUDLci3iQj-pT4NwR8bkM02nn-4y7iqzmYg8zc7uIli0ftUXFoGuYoznfrbtkE9Ucl5_-DOpOSbkX2DG2l2DPpTsYI-aa636MVue9EhDXOMBlTaH_z6MNHahiRuNWGhQFXeXiOps8zU4b7kfrx71nYBByZw",
+            "scope": "GOOGLE",
+            "types": [
+                "lodging",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "3201 East Pacific Coast Highway, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.775831,
+                    "lng": -118.122115
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.7769554802915,
+                        "lng": -118.1207716197085
+                    },
+                    "southwest": {
+                        "lat": 33.7742575197085,
+                        "lng": -118.1234695802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+            "id": "41d301181fe34fbd00a368828ebb088316d84c40",
+            "name": "Motel 6 Los Angeles - Long Beach",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1921,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/110515283834252109866/photos\">Motel 6 Los Angeles - Long Beach</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA7VaQf6JLE_GxXFNaG6oDQdZPGaW2uMzbosI01Y7bCfvqfEJgDCejetDTNiTvedbEBDl4Wv1B5sOLH1TntMrPPobcDuWCarLhT-Sz5WkGkgiiae5OmGt80qBRWG_rqWzcEhCQr0uvz6KoUAyjWFi7qWEBGhSlh79berDhSyxJNNPw3br2-mCWxQ",
+                    "width": 2880
+                }
+            ],
+            "place_id": "ChIJR5QVktEx3YAR1yc10qn5fgg",
+            "plus_code": {
+                "compound_code": "QVGH+85 Long Beach, California, United States",
+                "global_code": "8553QVGH+85"
+            },
+            "rating": 3.7,
+            "reference": "CmRRAAAAEiZ4AXV0DBoiCNXO5eXdFcBAlUMC00Nsr6BOqSsguirvpV3FgzYQeNlfywlZUUqhTgU5u-85_ddgHQCffAgc6H8hUtzGxLoTYZJcW-1kevTpt1HIom9_c80yCTE2C4KREhBK3djB7OwYWcL9OGLBN3EKGhSqvCl64mmNF2td_BE7KKCVHeglFw",
+            "scope": "GOOGLE",
+            "types": [
+                "lodging",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "5665 East 7th Street, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.80899400000001,
+                    "lng": -118.072647
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.8103467302915,
+                        "lng": -118.0709089197085
+                    },
+                    "southwest": {
+                        "lat": 33.8076487697085,
+                        "lng": -118.0736068802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+            "id": "e6251a3fecdebedb052415c295e6c6e93ccfbc46",
+            "name": "Best Western Los Alamitos Inn & Suites",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 2160,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/100308598628005316527/photos\">Best Western Los Alamitos Inn &amp; Suites</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA66O9tK_xhb6XdLHgl9yBoZVm4hjH9w1lxiEt-llfov5Vf2zsYjnEBtGP7DSAjgI6DAlsudBYnKEaJCYCIM3n8L7Ue442yTnQC7yg34UBC9MIa8Rm1R39b9GSSObGQn5LEhAWgl7naLXVXE4pAo2NhUzpGhQx5DHXgtX24TXJJg0wcNL411shlg",
+                    "width": 3840
+                }
+            ],
+            "place_id": "ChIJz0kKa2Qu3YARf4uiPnOAZQA",
+            "plus_code": {
+                "compound_code": "RW5G+HW Los Alamitos, California, United States",
+                "global_code": "8553RW5G+HW"
+            },
+            "rating": 4.2,
+            "reference": "ClRQAAAApx_3jnE4HlOuztLKCACvXoPnmN3t-BHGtKWvyOXvK2s8KOcenibVj3h-KqgLbGE-49OIqVVqdfnr4DGmo2uJiXnS8gKPYzMg7luckO6Y5K0SEMWpphftjONll9RyTv7fOF8aFL3rW_Nrm41W3BfY_3rGjYn9PFjD",
+            "scope": "GOOGLE",
+            "types": [
+                "lodging",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "10591 Los Alamitos Boulevard, Los Alamitos"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.7838235,
+                    "lng": -118.1140904
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.79525395,
+                        "lng": -118.10112695
+                    },
+                    "southwest": {
+                        "lat": 33.76837855,
+                        "lng": -118.12937635
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/school-71.png",
+            "id": "aeeafb0019ecc85acef4b9387352a60128b3848e",
+            "name": "California State University Long Beach",
+            "photos": [
+                {
+                    "height": 1952,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/102526375303506069863/photos\">Ruotang</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAQBXWlZtMdUsjZTxoM4P-5lCxiAF6l9VMqosEI3z0AoCq6NtHO5beXq1HWlZ4krA0YlBUNIiVFgH1dOg93beRnhz7_7iPlSxj0ZeGSdcl2nIGPyvDiVRMNUaiYvLwMM4mEhAwQEMEmuf5JWXqp6irpthhGhTgH-4RwKMK2TIAo21hpQ9RP_wYTQ",
+                    "width": 2592
+                }
+            ],
+            "place_id": "ChIJQ_aCKdgx3YARqy3HziZ_3B8",
+            "plus_code": {
+                "compound_code": "QVMP+G9 Long Beach, California, United States",
+                "global_code": "8553QVMP+G9"
+            },
+            "rating": 4.5,
+            "reference": "CmRRAAAAYNDT_53_nBiQN7Kl9NwVHNsMH7gsHQmCTrJNUELvYSZdxVVKJJDL06guNoBy3NrhcKSgWR942F61D_MWFlebUFiNig545N9_mjfV9gwQlfbF4HLy8j8rV2WmiXdgQ2-BEhCiizJp5hRewyT7YSi3k7R9GhRjKC25o_VgyZyZd0ePybvPUfqPYg",
+            "scope": "GOOGLE",
+            "types": [
+                "university",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "1250 Bellflower Blvd, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.8113175,
+                    "lng": -118.1248353
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.8126664802915,
+                        "lng": -118.1234863197085
+                    },
+                    "southwest": {
+                        "lat": 33.80996851970851,
+                        "lng": -118.1261842802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+            "id": "d01412e01e8917ba4ff7a90298a8df001021e270",
+            "name": "24 Hour Fitness",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3168,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/112241267323403035293/photos\">24 Hour Fitness</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAI8X-LuTIgy47SEHYrg12XkuUxgLZha0jrKVrWRfhGgesLN6NlGSSG8Aqg0PNMDGO9SijtpS0E-Bdz39XjfTw9dRO1gFyr3aSQcMgR6mrLW-xpUfIC3kgG38uaSXHwGgiEhA9TbW-3k_CCVCBDXtHZ_cbGhSgSVO19m9xAdhLkJMkpS4bHu5kog",
+                    "width": 4752
+                }
+            ],
+            "place_id": "ChIJIWtWOx0y3YAR_-q5BzNa8BU",
+            "plus_code": {
+                "compound_code": "RV6G+G3 Long Beach, California, United States",
+                "global_code": "8553RV6G+G3"
+            },
+            "rating": 4,
+            "reference": "CmRRAAAAeACAvVbXNbb_EtfwwW4c2swF2h0TzYSUiZAbPei89yuUfoECCd-G6AEkfUto22E0oCprghbsZ2I2lnV1dMoKK1suOMMUK5BYpvG5gSVeJq_uqxVdFI__P2-tRdLha1ehEhDFj3NKjly1FMyT-5jqZFWOGhRUWmHj2qPsyR0JsK6YMwr28cT6QQ",
+            "scope": "GOOGLE",
+            "types": [
+                "gym",
+                "health",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "3030 North Bellflower Boulevard, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.7547939,
+                    "lng": -118.1093925
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.7560235802915,
+                        "lng": -118.1078731197085
+                    },
+                    "southwest": {
+                        "lat": 33.75332561970851,
+                        "lng": -118.1105710802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+            "id": "f83e877831190b5d0a2e47ba903b27b37c3786ef",
+            "name": "Whole Foods Market",
+            "opening_hours": {
+                "open_now": false
+            },
+            "photos": [
+                {
+                    "height": 2160,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/115176561477727359334/photos\">Seen Enkidu</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAY3ggeu_wwmrV7eU7IsnSqZ2cZ0AUXP2NgTojncZQYMAuwCgkyKqRsTFtPe2Yb_Jc1SaLiKe_jo7-bDOPJ7VsN_luvHkpQg1x_pEBPZPRYAhqQ63286YCxBGi_a7m7-OmEhA9RLBnrU3rteK0tf3-TKdXGhTZ4HKMvIxRcvl20RlkswHA_Z2jag",
+                    "width": 3840
+                }
+            ],
+            "place_id": "ChIJo3tCMt8v3YARMftWrefJXFg",
+            "plus_code": {
+                "compound_code": "QV3R+W6 Long Beach, California, United States",
+                "global_code": "8553QV3R+W6"
+            },
+            "price_level": 3,
+            "rating": 4.4,
+            "reference": "CmRRAAAAC6fbHoep3h4z1DmY72gtWkAVUFVStwdWC5wQuChK7L4yW3TJdA8mxrssi7B3-sS34b7UJrHuUkXXfI0RubfNQLLcu_0iXr463VFrkmRtBRMDHrFVUqDHnltr-1dVnNMfEhB7SApyP9eVpIEYbarohroOGhT1b_PMXVt45eMyvCYpaRUMnsXHbw",
+            "scope": "GOOGLE",
+            "types": [
+                "grocery_or_supermarket",
+                "supermarket",
+                "store",
+                "health",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "6550 Pacific Coast Highway, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.7592918,
+                    "lng": -118.1142356
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.7608643802915,
+                        "lng": -118.1129517197085
+                    },
+                    "southwest": {
+                        "lat": 33.7581664197085,
+                        "lng": -118.1156496802915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+            "id": "67d32023aa504476d426ffa881d23a9f70f403d3",
+            "name": "AMC Marina Pacifica 12",
+            "photos": [
+                {
+                    "height": 2988,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/116434732078102927281/photos\">xris taylor</a>"
+                    ],
+                    "photo_reference": "CmRaAAAASM2y6gJAlM6h0p5WO7lGweUP3dTiKRiiFPIYfJo5n_KKjQxQ0whRq-CssnCHjb91423zY0KCQcIYhooIxoNvtPw0Eay06U5KkIJUOJf01BYALrpsku_hKio0mcbytkK7EhDHD5iXUuRU7EBNfoxzoIQBGhR-W8hIcGCZc2aBZd6F9J_tdDXXcA",
+                    "width": 5312
+                }
+            ],
+            "place_id": "ChIJWZXS_ygw3YARH5BC9TG5saM",
+            "plus_code": {
+                "compound_code": "QV5P+P8 Long Beach, California, United States",
+                "global_code": "8553QV5P+P8"
+            },
+            "rating": 4.3,
+            "reference": "CmRSAAAAAZcmzJhs_b9tw22aOfCl7NCesHJxeb7t4sYlGj_cieJ5mZl9M3qfSI6qyQQCsebcHirMYchHyS6EisLGtgYqFHE6zUFZXWW3RhaKkiOJ5_yoByH37GIrG7N15PFDpqf7EhD7aJq2VyKIIRXwk7Ke6U6mGhRwwgnB99uhb8kSyHb07Ief3Khm6Q",
+            "scope": "GOOGLE",
+            "types": [
+                "movie_theater",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "6346 East Pacific Coast Highway, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.81679089999999,
+                    "lng": -118.1513588
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.8198821,
+                        "lng": -118.1335313
+                    },
+                    "southwest": {
+                        "lat": 33.81576049999999,
+                        "lng": -118.1573013
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/airport-71.png",
+            "id": "442a1ec5af8174bba26a58ea09c646fb0c6bc1f2",
+            "name": "Long Beach Airport",
+            "photos": [
+                {
+                    "height": 3340,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/115058434799659415960/photos\">Bill B</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA_0w0rC_enXvPO8ApsVA96re1UBDR5q1ZcwlfGZnKkrL_Y1cETlSL_JzABSiGU4pCIHZNnUmikJosBaXZqDwwlieAp3Z0QZ33H2x75V3JgjVX3BsP5uj-gfNA9rcv-SIAEhCk4s9boDsueoDBvrZ9Z6CUGhTfTL71Yu1PWhZ17ckmUs19mVBr2g",
+                    "width": 4417
+                }
+            ],
+            "place_id": "ChIJhQxDwTYy3YAR_ydWCFAr1wM",
+            "plus_code": {
+                "compound_code": "RR8X+PF Long Beach, California, United States",
+                "global_code": "8553RR8X+PF"
+            },
+            "rating": 4.4,
+            "reference": "CmRRAAAAZSTCN05wRV4RomRDQ2A15H3ztZJHolQ67WxHEq5u1eHboailmJVpUoIes38NnTS8bErgAy1c11iiw64BjFoaSLjJQwr51y-6vGZSJJTRZ2jkhJ9gTUSVJ-EL95kTZS8-EhDDvnrEqp89g8JgdncRvbYEGhSHaxXDsuI2BMzeTAX4jF4JuHX-dQ",
+            "scope": "GOOGLE",
+            "types": [
+                "airport",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "4100 Donald Douglas Drive, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.79790610000001,
+                    "lng": -118.1226332
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.7995294302915,
+                        "lng": -118.1216052697085
+                    },
+                    "southwest": {
+                        "lat": 33.7968314697085,
+                        "lng": -118.1243032302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+            "id": "bda23269a613bdb4fa22c94f0bcba143ca750ce7",
+            "name": "Target",
+            "opening_hours": {
+                "open_now": false
+            },
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/109812039289131163641/photos\">Zayra Victoria</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA_nxAPFMuIKdVwg1dfyMwAc5XSVrGGR9HSiZgpq3K0kDm9Tcyn0WFXENYIQ3zuqlqpG9A3pD-dJt3lJ3xAoigAq4LGYbqKizVHj8Mw10qdAvr9lYiNNSxGrJiOaeKPh-JEhBHxFxW5sIqUn_5W4XaAESKGhR-2no9L7s-6FvIAu-F_2bxc4_h5w",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJ3-aYlO8x3YARjZV0HpFoFn8",
+            "plus_code": {
+                "compound_code": "QVXG+5W Long Beach, California, United States",
+                "global_code": "8553QVXG+5W"
+            },
+            "price_level": 2,
+            "rating": 4.3,
+            "reference": "CmRRAAAANSlqFRysrBim-rjHjObDKXLH6O_ayBvB1K914NCy0YQqFrB12oqdrJQWXNHJ_qrIkGxOGX5uieBTBAOvXQdqEklpwcsl9TrIj9Zbz3WjWP7M90eihZ6oHWV5yn7rAwFQEhDw1GqMeMM_deAgGPG2c6JTGhQGPX8oX5vBuAm8wwnGoTQJITmNkQ",
+            "scope": "GOOGLE",
+            "types": [
+                "department_store",
+                "furniture_store",
+                "grocery_or_supermarket",
+                "clothing_store",
+                "electronics_store",
+                "home_goods_store",
+                "store",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "2270 North Bellflower Boulevard, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.7881664,
+                    "lng": -118.1116977
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.7894949802915,
+                        "lng": -118.1100962697085
+                    },
+                    "southwest": {
+                        "lat": 33.7867970197085,
+                        "lng": -118.1127942302915
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+            "id": "74a0571900c738b90a45184a9eaa5d8c1e1037ed",
+            "name": "Carpenter Performing Arts Center",
+            "opening_hours": {
+                "open_now": false
+            },
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/108606146385735285051/photos\">Jerry Vogt</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAjY4YQkpFHtrJVQ0z3NKmRamyXZDjeiylw8gy1z8zHXk2gPq0BkBUmtWinJM7L3Kkxi3m-ukcGzsuTiSlXLUZ3c0FRPKcKTJUC-6faSrLz4422hg96X5dBLaO-KEF3cnCEhCwm7okJFiM3gVPUiy7ZtKQGhREmWToHKsUWeCKnB9Kwt8aKUxBMQ",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJJ-0WriAu3YARv9DP_fsdAp0",
+            "plus_code": {
+                "compound_code": "QVQQ+78 Long Beach, California, United States",
+                "global_code": "8553QVQQ+78"
+            },
+            "rating": 4.7,
+            "reference": "CmRSAAAAgrBa0-d2HV1Pqor7GGbzTxS369bfqFElEYW96kb7URLQ69bWk8A1VEPjnK_G6JZNy3P6v9r6DPOgfBXunk1tjNm5TLex0wlNlAhM0pK-14bBuDa9ZAatG-kMIw3s5vB5EhD4Ie-ED8P98vq4M5zl29-oGhTb8mLxsTSFYP6NEm7eUstYyCwsqg",
+            "scope": "GOOGLE",
+            "types": [
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "6200 East Atherton Street, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.8536269,
+                    "lng": -118.1339563
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.869237,
+                        "lng": -118.0583571
+                    },
+                    "southwest": {
+                        "lat": 33.820149,
+                        "lng": -118.1677449
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+            "id": "2973d6fb3567a96549ebd4536f18ef30a5528675",
+            "name": "Lakewood",
+            "photos": [
+                {
+                    "height": 720,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/117896941092431226525/photos\">Suzy Valentin</a>"
+                    ],
+                    "photo_reference": "CmRZAAAAIpmeJwz_VzQVVBJ3rvhw71rHLMXdCQbp0WrGWTev5naRxK8g9w0NHq6dDW7f110YOSZvPP4_OPjTPnQLzrLHivBrijrlpqQ8w92x-oikbDtEblid9tZp7ZdsLlCdffQxEhCCG_gnzg9peKp7F-ZB6s6_GhQ1MK0dAeZOTGydWzIUrOmM7DiJIQ",
+                    "width": 1080
+                }
+            ],
+            "place_id": "ChIJHYGo5F8y3YARxXjJKWCoW8c",
+            "reference": "CmRbAAAA-1NZAwWydxxlKiKvHq0wzHyHd2QHbAeJwM_ljaawgtYC37MzEoP5_-JbBBmLqyTC0KumY9twbcD4QURHDbNAfaorBGQ5grKqzx7WNeJi-9sLBt1Ch9Hq8FuFZWzZyLIqEhDSLVAZldaLO0vbKI-FrWwzGhT-4WfJrE6wzYWUHBDeBEFvGzp_WQ",
+            "scope": "GOOGLE",
+            "types": [
+                "locality",
+                "political"
+            ],
+            "vicinity": "Lakewood"
+        }
+    ],
+    "status": "OK"
+}
