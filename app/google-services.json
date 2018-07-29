@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "439370863079-4kbu6tj9gfs5ktp0vevvssi5edehjgmh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gogogatchi.gogogatchi",
+            "certificate_hash": "c28004dafbfbc0ea6dcf492394b76594c6b5fa04"
+          }
+        },
+        {
           "client_id": "439370863079-5ef131neok8chcr6n1nqpq733g131fiq.apps.googleusercontent.com",
           "client_type": 3
         }

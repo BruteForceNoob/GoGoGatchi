@@ -31,7 +31,7 @@
     </android.support.v7.widget.CardView>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/updateProfile"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
@@ -66,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/textView5"
+        android:id="@+id/userName"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="42dp"
@@ -92,10 +92,10 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">
+        app:layout_constraintTop_toBottomOf="@+id/userName">
 
         <CheckBox
-            android:id="@+id/checkBox3"
+            android:id="@+id/athletics"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/athletics"
@@ -103,7 +103,7 @@
             android:textSize="18sp" />
 
         <CheckBox
-            android:id="@+id/checkBox4"
+            android:id="@+id/cultural"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cultural"
@@ -111,7 +111,7 @@
             android:textSize="18sp" />
 
         <CheckBox
-            android:id="@+id/checkBox5"
+            android:id="@+id/monuments"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/monuments"

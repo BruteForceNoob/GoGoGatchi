@@ -14,7 +14,7 @@ public class FirebaseDB {
     public static FirebaseAuth getAuthConnection() {
         return FirebaseAuth.getInstance();
     }
-    public static DatabaseReference getConnection(){
+    public static DatabaseReference getConnection() {
         return FirebaseDatabase.getInstance().getReference();
     }
 }
