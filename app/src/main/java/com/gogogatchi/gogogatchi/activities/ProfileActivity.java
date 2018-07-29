@@ -2,25 +2,10 @@ package com.gogogatchi.gogogatchi.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
 
-import com.gogogatchi.gogogatchi.FirebaseDB;
 import com.gogogatchi.gogogatchi.R;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class ProfileActivity extends AppCompatActivity {
-
-    private Button mSendData;
-    private DatabaseReference mRef;
-    private String user;
-    private CheckBox isCheckAth;
-    private CheckBox isCheckCul;
-    private CheckBox isCheckMonu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
