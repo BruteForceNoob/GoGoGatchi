@@ -12,6 +12,7 @@ import android.content.Context;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.gogogatchi.gogogatchi.core.LocationCard;
 import com.gogogatchi.gogogatchi.R;
@@ -79,6 +80,19 @@ public class HomeSwipeActivity extends AppCompatActivity {
             e1.printStackTrace();
         }
         */
+        
+        findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mSwipeView.doSwipe(false);
+            }
+        });
+        findViewById(R.id.acceptBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mSwipeView.doSwipe(true);
+            }
+        });
 
         /*** BEGIN MENU CODE ***/
         NavigationView navigationView = findViewById(R.id.navMenu);
