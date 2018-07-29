@@ -2,10 +2,12 @@ package com.gogogatchi.gogogatchi.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 
 import com.gogogatchi.gogogatchi.FirebaseDB;
 import com.gogogatchi.gogogatchi.R;
@@ -17,10 +19,11 @@ public class ProfileActivity extends AppCompatActivity {
 
     private Button mSendData;
     private DatabaseReference mRef;
-    private String user;
+    //private String user;
     private CheckBox isCheckAth;
     private CheckBox isCheckCul;
     private CheckBox isCheckMonu;
+    private EditText user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +32,16 @@ public class ProfileActivity extends AppCompatActivity {
 
         mRef = FirebaseDB.mDatabase;
         mSendData= findViewById(R.id.updateProfile);
-        user = getString(R.string.username);
+        user = (EditText)findViewById(R.id.userId);
         isCheckAth = findViewById(R.id.athletics);
         isCheckCul = findViewById(R.id.cultural);
         isCheckMonu = findViewById(R.id.monuments);
         mSendData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mRef.child("Username").setValue(user);
-                DatabaseReference mChildRef= mRef.child(user);
+                DatabaseReference mChildRef= mRef.child("User");
+                //user = (EditText)findViewById(R.id.userId);
+                mChildRef.child("Username").setValue(user.getText().toString());
                 mChildRef.child("Athletics").setValue(isCheckAth.isChecked());
                 mChildRef.child("Cultural").setValue(isCheckCul.isChecked());
                 mChildRef.child("Monuments").setValue(isCheckMonu.isChecked());
