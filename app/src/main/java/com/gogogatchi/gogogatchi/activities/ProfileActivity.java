@@ -16,6 +16,8 @@ import com.gogogatchi.gogogatchi.FirebaseDB;
 import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.core.User;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -45,7 +47,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         mRef = FirebaseDB.mDatabase;
         final DatabaseReference mChildRef= mRef.child("users");
-        DatabaseReference mGrandChildRef = mChildRef.child("Interests");
         mSendData= findViewById(R.id.updateProfile);
         editText = (EditText)findViewById(R.id.userId);
         isCheckAth = findViewById(R.id.athletics);
@@ -58,15 +59,13 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-               // String user = dataSnapshot.getVal
-                //String userName = user.getAsJsonObject("username")
-                //Gson gson = new Gson();
-                //String json=gson.toJson(user);
+                FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                String uuid = currentFirebaseUser.getUid();
+                String profileName=(dataSnapshot.child(uuid).child("username").getValue().toString());
+                editText.setText(profileName);
+                Log.v("E_VALUE ","DATA - " + currentFirebaseUser.getDisplayName());
 
-               // HashMap value = dataSnapshot.getValue(HashMap.class);
-               // Map<String, String> map = dataSnapshot.getValue(Map.class);
-
-                Log.v("E_VALUE","DATA" + dataSnapshot.child("Ankush").child("username"));
+                Log.v("E_VALUE","DATA" + dataSnapshot.child(uuid).child("username"));
 
             }
 
@@ -80,7 +79,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 User user= new User();
-
+/*
 
                 /*user.setUsername("Ankush");
                 user.setPassword("test123");*/
@@ -89,7 +88,7 @@ public class ProfileActivity extends AppCompatActivity {
                 interests.put("Cultural",isCheckCul.isChecked());
                 interests.put("Monuments",isCheckMonu.isChecked());
                 //mChildRef= mRef.child("User").child(user.getUsername());
-                //mChildRef.setValue(user);
+                //mChildRef.setValue(user);*/
             }
         });
 
