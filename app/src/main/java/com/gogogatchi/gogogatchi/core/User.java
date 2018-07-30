@@ -1,5 +1,7 @@
 package com.gogogatchi.gogogatchi.core;
 
+import android.util.Log;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,6 +11,10 @@ public class User {
     private double lat;
     private double longitude;
     private String email;
+
+    public User() {
+
+    }
     private Map<String,Boolean> interests= new HashMap<>();
 
     public String getEmail() {
