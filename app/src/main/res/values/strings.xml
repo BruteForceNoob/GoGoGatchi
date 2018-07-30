@@ -21,6 +21,14 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
+    <string name="register2">Register</string>
+    <string name="optional">Optional</string>
+    <string name="display_name">Display Name</string>
+    <string name="age">Age</string>
+    <string name="passwordHint">Password (min. 6 char)</string>
+    <string name="gender">Gender</string>
+
+
     <!--- gender drop list-->
     <string-array name="gender">
         <item>Select Option..</item>
@@ -30,16 +38,11 @@
     </string-array>
 
     <!--- ethnicity drop list-->
-    <string-array name="ethnicity">
+    <string-array name="interest">
         <item>Select Option..</item>
-        <item>American Indian or Alaska Native</item>
-        <item>Asian</item>
-        <item>Black or African American</item>
-        <item>Decline to State</item>
-        <item>Hispanic or Latino</item>
-        <item>Other</item>
-        <item>Native Hawaiian or Other Pacific Islander</item>
-        <item>White</item>
+        <item>Athletics</item>
+        <item>Cultural</item>
+        <item>Monuments</item>
     </string-array>
 
     <!--- age drop list-->

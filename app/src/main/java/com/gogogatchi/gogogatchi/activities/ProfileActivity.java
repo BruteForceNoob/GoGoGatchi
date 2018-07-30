@@ -40,7 +40,7 @@ public class ProfileActivity extends AppCompatActivity {
         isCheckAth = findViewById(R.id.athletics);
         isCheckCul = findViewById(R.id.cultural);
         isCheckMonu = findViewById(R.id.monuments);
-        mSendData.setOnClickListener(new View.OnClickListener() {
+      /*  mSendData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 User user= new User();
@@ -66,9 +66,9 @@ public class ProfileActivity extends AppCompatActivity {
                 mGrandChildRef2.setValue(isCheckCul.isChecked());
                 DatabaseReference mGrandChildRef3= mChildRef.child("Monuments");
                 mGrandChildRef3.setValue(isCheckMonu.isChecked());
-                mChildRef.setValue("Ankush Bhandare");*/
+                mChildRef.setValue("Ankush Bhandare");
             }
-        });
+        });*/
         }
 
 }
