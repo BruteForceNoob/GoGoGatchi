@@ -35,14 +35,13 @@ public class LocationCard {
     @View(R.id.locationNameTxt)
     private TextView cityNameTxt;
 
-    //private Profile mProfile;
     private LocationData mLocationProfile;
     private Profile mProfile;
     private Context mContext;
     private SwipePlaceHolderView mSwipeView;
 
     /*** For use with CSULB Location Profiles ***/
-
+    /*
     public LocationCard(Context context, Profile profile, SwipePlaceHolderView swipeView) {
         mContext = context;
         mProfile = profile;
@@ -64,9 +63,9 @@ public class LocationCard {
         intent.putExtras(bundle);
         mContext.startActivity(intent);
     }
+    */
 
     /*** For use with Google Places API Locations ***/
-    /*
     public LocationCard(Context context, LocationData profile, SwipePlaceHolderView swipeView) {
         mContext = context;
         mLocationProfile = profile;
@@ -77,14 +76,13 @@ public class LocationCard {
     private void onResolved() throws MalformedURLException {
         Glide.with(mContext).load(mLocationProfile.getImageUrl()).into(profileImageView);
         destNameTxt.setText(mLocationProfile.getLocationName());
-        cityNameTxt.setText(mLocationProfile.getPlaceID());
+        cityNameTxt.setText(mLocationProfile.getVicinity());
     }
 
     @Click(R.id.profileImageView)
     private void onClick(){
 
     }
-    */
 
     // Swipe Left
     @SwipeOut

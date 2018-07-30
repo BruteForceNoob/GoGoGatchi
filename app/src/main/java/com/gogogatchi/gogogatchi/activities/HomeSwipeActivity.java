@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.gogogatchi.gogogatchi.BuildConfig;
 import com.gogogatchi.gogogatchi.core.LocationCard;
 import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.core.LocationData;
@@ -26,6 +27,8 @@ import com.mindorks.placeholderview.SwipePlaceHolderView;
 import org.json.JSONException;
 
 import java.io.FileNotFoundException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import static com.gogogatchi.gogogatchi.util.Utils.loadLocationProfiles;
 
@@ -65,22 +68,25 @@ public class HomeSwipeActivity extends AppCompatActivity {
 
         //Load all Profiles from JSON query
         /*** For use with CSULB Profiles ***/
-
+        /*
         for(Profile profile : Utils.loadProfiles(this.getApplicationContext())) {
             mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
         }
+        */
 
         /*** For use with Google Places API ***/
-        /*
         try {
-            for(LocationData profile : loadLocationProfiles(mContext)) {
+            String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.783022,-118.112858&radius=6000&type=museum,library,aquarium&keyword=long&key=";
+            url += BuildConfig.ApiKey;
+            for(LocationData profile : loadLocationProfiles(mContext, new URL(url))) {
                 mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
             }
         } catch (JSONException e1) {
             e1.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
-        */
-        
+
         findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

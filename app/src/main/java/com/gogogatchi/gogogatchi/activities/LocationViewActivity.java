@@ -26,12 +26,14 @@ public class LocationViewActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView4);
 
         /*** For Use with CSULB Location Profiles ***/
+        /*
         Bundle bundle = this.getIntent().getExtras();
         if (bundle != null)
             mProfile = bundle.getParcelable("mProfile");
 
         Glide.with(getApplicationContext()).load(mProfile.getImageUrl()).into(imageView);
         textView.setText(mProfile.getDestinationName());
+        */
 
         /*** For use with Google Places API ***/
         /*

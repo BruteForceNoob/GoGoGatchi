@@ -15,10 +15,12 @@ import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,8 +47,9 @@ public class Utils {
     }
 
     /*** Modified for use with Places API ***/
-    public static List<LocationData> loadLocationProfiles(Context context) throws JSONException {
+    public static List<LocationData> loadLocationProfiles(Context context, URL url) throws JSONException {
         Gson g = new Gson();
+        // use url to load json query
         final String strWithData = loadJSONFromAsset(context, "locations.json");
 
         return g.fromJson(strWithData, GoogleQuery.class).getData();

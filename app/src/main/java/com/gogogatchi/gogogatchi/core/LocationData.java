@@ -159,7 +159,7 @@ public class LocationData{
     @SerializedName("types")
     ArrayList<String> types;
 
-    @SerializedName("vicintity")
+    @SerializedName("vicinity")
     private String vicinity;
 
     public Geometry getGeometry() {
@@ -214,18 +214,21 @@ public class LocationData{
         return vicinity;
     }
 
+    // Query by placeid
+    // https://maps.googleapis.com/maps/api/place/details/json?key=[YOUR API KEY]&placeid=ChIJTydCFXdnHTERB3oVT1UZDRI
+
     public URL getImageUrl() throws MalformedURLException {
         String maxWidth = "400";
 
-        String imgURL = "https://maps.googleapis.com/maps/api/place/photo?";
-        imgURL += "maxwidth=" + maxWidth;
-        imgURL += "&photoreference=" + reference;
-        imgURL += "&key=";
-        imgURL += BuildConfig.ApiKey;
+        if (photos.isEmpty() != true) {
+            String imgURL = "https://maps.googleapis.com/maps/api/place/photo?";
+            imgURL += "&photo_reference=" + photos.get(0).photo_reference;
+            imgURL += "&sensor=false&maxwidth=" + maxWidth;
+            imgURL += "&key=" + BuildConfig.ApiKey;
 
-        Log.d("IMGURL", imgURL);
-
-        return new URL(imgURL);
+            return new URL(imgURL);
+        }
+        else return null;
     }
 
     public LocationData()
