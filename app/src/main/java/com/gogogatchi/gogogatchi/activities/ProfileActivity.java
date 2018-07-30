@@ -45,7 +45,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 User user= new User();
 
-                user.setUsername(editText.getText().toString());
+                user.setUsername("Ankush");
                 user.setPassword("test123");
                 Map<String,Boolean> interests=user.getInterests();
                 interests.put("Athletics",isCheckAth.isChecked());

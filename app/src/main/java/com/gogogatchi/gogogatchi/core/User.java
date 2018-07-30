@@ -10,6 +10,16 @@ public class User {
     private double longitude;
     private Map<String,Boolean> interests= new HashMap<>();
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    private String email;
+
     public Map<String, Boolean> getInterests() {
         return interests;
     }
@@ -50,4 +60,5 @@ public class User {
     public void setLat(double lat) {
         this.lat = lat;
     }
+
 }
