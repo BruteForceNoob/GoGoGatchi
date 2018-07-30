@@ -8,6 +8,7 @@ public class User {
     private String password;
     private double lat;
     private double longitude;
+    private String email;
     private Map<String,Boolean> interests= new HashMap<>();
 
     public String getEmail() {
@@ -17,8 +18,6 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    private String email;
 
     public Map<String, Boolean> getInterests() {
         return interests;
