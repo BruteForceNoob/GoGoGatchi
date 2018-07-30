@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Intent intent = new Intent(MainActivity.this, MonsterHatchActivity.class);
+                    Intent intent = new Intent(MainActivity.this, HomeSwipeActivity.class);
                     startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -90,7 +90,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnRegister:
-                userLogin();
+                Intent openRegister = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(openRegister);
                 break;
             case R.id.btnLogin:
                 userLogin();
