@@ -138,6 +138,8 @@ public class LocationData extends LocationAssets implements Parcelable{
     // Query by placeid
     // https://maps.googleapis.com/maps/api/place/details/json?key=[YOUR API KEY]&placeid=ChIJTydCFXdnHTERB3oVT1UZDRI
 
+    // Google Events
+    // https://developers.google.com/search/docs/data-types/event
     public URL getImageUrl() throws MalformedURLException {
         String maxWidth = "400";
 

@@ -79,7 +79,9 @@ public class HomeSwipeActivity extends AppCompatActivity {
             url += BuildConfig.ApiKey;
 
             for(LocationData profile : Utils.loadLocationProfiles(mContext, new URL(url))) {
-                mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
+                // If no photo, don't make a card
+                if (profile.getPhoto().isEmpty() == false)
+                    mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
             }
         } catch (JSONException e1) {
             e1.printStackTrace();
