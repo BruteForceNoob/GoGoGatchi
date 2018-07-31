@@ -10,6 +10,8 @@ import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.core.LocationData;
 import com.gogogatchi.gogogatchi.core.Profile;
 
+import java.net.MalformedURLException;
+
 public class LocationViewActivity extends AppCompatActivity {
 
     private static Profile mProfile;
@@ -36,13 +38,16 @@ public class LocationViewActivity extends AppCompatActivity {
         */
 
         /*** For use with Google Places API ***/
-        /*
+
         Bundle bundle = this.getIntent().getExtras();
         if (bundle != null)
             mLocationProfile = bundle.getParcelable("mLocationProfile");
 
-        Glide.with(getApplicationContext()).load(mLocationProfile.getData()).into(imageView);
-        textView.setText(mLocationProfile.getData().getLocationName());
-        */
+        try {
+            Glide.with(getApplicationContext()).load(mLocationProfile.getImageUrl()).into(imageView);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        textView.setText(mLocationProfile.getLocationName());
     }
 }

@@ -2,10 +2,11 @@ package com.gogogatchi.gogogatchi.core;
 
 
 import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.Log;
 
 import com.gogogatchi.gogogatchi.BuildConfig;
-import com.gogogatchi.gogogatchi.BuildConfig.*;
+import com.gogogatchi.gogogatchi.core.LocationAssets;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -13,115 +14,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class LocationData{
-    private class GPSCoordinates{
-        @SerializedName("lat")
-        private double lattitude;
-
-        @SerializedName("lon")
-        private double longitutde;
-
-        public double getLattitude() { return lattitude; }
-        public double getLongitutde() { return longitutde; }
-
-        GPSCoordinates() {
-            lattitude = 0.0;
-            longitutde = 0.0;
-        }
-    }
-
-    private class ViewPort{
-        @SerializedName("northeast")
-        private GPSCoordinates northeast;
-
-        @SerializedName("southwest")
-        private GPSCoordinates southwest;
-
-        public GPSCoordinates getNortheast() { return northeast; }
-        public GPSCoordinates getSouthwest() { return southwest; }
-
-        ViewPort() {
-            northeast = new GPSCoordinates();
-            southwest = new GPSCoordinates();
-        }
-    }
-
-    private class Geometry{
-        @SerializedName("location")
-        private GPSCoordinates location;
-
-        @SerializedName("viewport")
-        private ViewPort viewport;
-
-        protected Geometry(Parcel in) {
-
-            location = in.readParcelable(GPSCoordinates.class.getClassLoader());
-            viewport = in.readParcelable(ViewPort.class.getClassLoader());
-        }
-
-        public GPSCoordinates getLocation() { return location; }
-        public ViewPort getViewport() { return viewport; }
-
-        Geometry() {
-            location = new GPSCoordinates();
-            viewport = new ViewPort();
-        }
-    }
-
-    private class OpenState{
-
-        @SerializedName("open_now")
-        private boolean open_now;
-
-        public boolean getOpenNow() { return open_now; }
-        OpenState() {
-            open_now = false;
-        }
-    }
-
-    private class Photos{
-
-        @SerializedName("height")
-        private int height;
-
-        @SerializedName("html_attributions")
-        private ArrayList<String> html_attributions;
-
-        @SerializedName("width")
-        private int width;
-
-        @SerializedName("photo_reference")
-        private String photo_reference;
-
-        public int getHeight() { return height; }
-        public int getWidth() { return width; }
-        public String getPhotoReference() { return photo_reference; }
-        public ArrayList<String> getHtmlAttributions() { return html_attributions; }
-
-        Photos() {
-            height = 100;
-            width = 100;
-            photo_reference = "DEFAULT";
-            html_attributions = new ArrayList<>();
-        }
-    }
-
-    private class PlusCode{
-
-        @SerializedName("compound_code")
-        private String compound_code;
-
-        @SerializedName("global_code")
-        private String global_code;
-
-        public String getCompound_code() { return compound_code; }
-        public String getGlobal_code() { return global_code; }
-
-        PlusCode() {
-            compound_code = "DEFAULT";
-            global_code = "DEFAULT";
-        }
-    }
+public class LocationData extends LocationAssets implements Parcelable{
 
     @SerializedName("geometry")
     private Geometry geometry;
@@ -161,6 +54,34 @@ public class LocationData{
 
     @SerializedName("vicinity")
     private String vicinity;
+
+    protected LocationData(Parcel in) {
+        geometry = in.readParcelable(Geometry.class.getClassLoader());
+        icon = in.readString();
+        id = in.readString();
+        name = in.readString();
+        opening_hours = in.readParcelable(OpenState.class.getClassLoader());
+        photos = in.createTypedArrayList(Photos.CREATOR);
+        place_id = in.readString();
+        plus_code = in.readParcelable(PlusCode.class.getClassLoader());
+        rating = in.readDouble();
+        reference = in.readString();
+        scope = in.readString();
+        types = in.createStringArrayList();
+        vicinity = in.readString();
+    }
+
+    public static final Creator<LocationData> CREATOR = new Creator<LocationData>() {
+        @Override
+        public LocationData createFromParcel(Parcel in) {
+            return new LocationData(in);
+        }
+
+        @Override
+        public LocationData[] newArray(int size) {
+            return new LocationData[size];
+        }
+    };
 
     public Geometry getGeometry() {
         return geometry;
@@ -246,5 +167,27 @@ public class LocationData{
         scope = "DEFAULT";
         types = new ArrayList<>();
         vicinity = "DEFAULT";
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeParcelable(geometry, i);
+        parcel.writeString(icon);
+        parcel.writeString(id);
+        parcel.writeString(name);
+        parcel.writeParcelable(opening_hours, i);
+        parcel.writeTypedList(photos);
+        parcel.writeString(place_id);
+        parcel.writeParcelable(plus_code, i);
+        parcel.writeDouble(rating);
+        parcel.writeString(reference);
+        parcel.writeString(scope);
+        parcel.writeStringList(types);
+        parcel.writeString(vicinity);
     }
 }

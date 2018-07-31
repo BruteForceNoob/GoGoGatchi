@@ -27,10 +27,9 @@ import com.mindorks.placeholderview.SwipePlaceHolderView;
 import org.json.JSONException;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import static com.gogogatchi.gogogatchi.util.Utils.loadLocationProfiles;
 
 public class HomeSwipeActivity extends AppCompatActivity {
 
@@ -76,14 +75,17 @@ public class HomeSwipeActivity extends AppCompatActivity {
 
         /*** For use with Google Places API ***/
         try {
-            String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.783022,-118.112858&radius=6000&type=museum,library,aquarium&keyword=long&key=";
+            String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.783022,-118.112858&radius=6000&type=museum,library,aquarium&key=";
             url += BuildConfig.ApiKey;
-            for(LocationData profile : loadLocationProfiles(mContext, new URL(url))) {
+
+            for(LocationData profile : Utils.loadLocationProfiles(mContext, new URL(url))) {
                 mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
             }
         } catch (JSONException e1) {
             e1.printStackTrace();
         } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
