@@ -15,21 +15,27 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.gogogatchi.gogogatchi.BuildConfig;
+import com.gogogatchi.gogogatchi.core.GoogleQuery;
 import com.gogogatchi.gogogatchi.core.LocationCard;
 import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.core.LocationData;
 import com.gogogatchi.gogogatchi.core.Profile;
 import com.gogogatchi.gogogatchi.util.*;
 
+import com.google.gson.Gson;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
+
+import static com.gogogatchi.gogogatchi.util.Utils.loadJSONFromAsset;
 
 public class HomeSwipeActivity extends AppCompatActivity {
 
@@ -43,6 +49,9 @@ public class HomeSwipeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_swipe);
+
+        Utils.Network task = new Utils.Network();
+        task.execute();
 
         /*** Begin Menu Code ***/
         appBar = (Toolbar) findViewById(R.id.app_bar);
@@ -73,7 +82,9 @@ public class HomeSwipeActivity extends AppCompatActivity {
         }
         */
 
-        /*** For use with Google Places API ***/
+
+        /*
+        // For use with Google Places API
         try {
             String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.783022,-118.112858&radius=6000&type=museum,library,aquarium&key=";
             url += BuildConfig.ApiKey;
@@ -90,6 +101,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
 
         findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,6 +155,19 @@ public class HomeSwipeActivity extends AppCompatActivity {
                     }
                 });
         /***END MENU CODE ***/
+
+
+
+        Gson gson = new Gson();
+
+        while (Utils.Network.getResponse() == null) {}
+
+        List<LocationData> places = gson.fromJson(Utils.Network.getResponse(), GoogleQuery.class).getData();
+        for(LocationData profile : places) {
+            // If no photo, don't make a card
+            if (profile.getPhoto().isEmpty() == false)
+                mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
+        }
     }
 
     @Override

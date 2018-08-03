@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.ViewPagerAdapter;
 import com.gogogatchi.gogogatchi.FirebaseDB;
+import com.gogogatchi.gogogatchi.util.Utils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
