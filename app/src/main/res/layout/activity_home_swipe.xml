@@ -77,12 +77,12 @@
         android:layout_marginTop="70dp"
         android:background="@color/light_grey"></LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="105dp"
+    <ImageButton
+        android:id="@+id/imageButtonA"
+        android:layout_width="410dp"
+        android:layout_height="410dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="40dp"
         app:srcCompat="@mipmap/icon_legendary"
         android:alpha="0.2" />
 

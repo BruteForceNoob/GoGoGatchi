@@ -1,6 +1,8 @@
 package com.gogogatchi.gogogatchi.activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -8,34 +10,29 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.content.Context;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.gogogatchi.gogogatchi.BuildConfig;
+import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.core.GoogleQuery;
 import com.gogogatchi.gogogatchi.core.LocationCard;
-import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.core.LocationData;
-import com.gogogatchi.gogogatchi.core.Profile;
-import com.gogogatchi.gogogatchi.util.*;
-
 import com.google.gson.Gson;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.net.MalformedURLException;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.List;
 
-import static com.gogogatchi.gogogatchi.util.Utils.loadJSONFromAsset;
+import javax.net.ssl.HttpsURLConnection;
 
 public class HomeSwipeActivity extends AppCompatActivity {
 
@@ -44,13 +41,34 @@ public class HomeSwipeActivity extends AppCompatActivity {
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private Context mContext;
     private Toolbar appBar;
+    private List<LocationData> places;
+    //ADD Listener Here
+
+    private String myResponse = null;
+
+    public String getResponse() {
+        return myResponse;
+    }
+
+    public Context getmContext() {
+        return mContext;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_swipe);
 
-        Utils.Network task = new Utils.Network();
+        /*
+        OnTaskCompletion query = new OnTaskCompletion() {
+            @Override
+            public void onTaskCompleteion() {
+                populateCards();
+            }
+        };
+        */
+
+        Network task = new Network();
         task.execute();
 
         /*** Begin Menu Code ***/
@@ -116,6 +134,15 @@ public class HomeSwipeActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.imageButtonA).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Network taskB = new Network();
+                taskB.execute();
+            }
+        });
+
+
         /*** BEGIN MENU CODE ***/
         NavigationView navigationView = findViewById(R.id.navMenu);
         navigationView.setNavigationItemSelectedListener(
@@ -155,18 +182,17 @@ public class HomeSwipeActivity extends AppCompatActivity {
                     }
                 });
         /***END MENU CODE ***/
+    }
 
-
-
+    public void populateCards() {
         Gson gson = new Gson();
 
-        while (Utils.Network.getResponse() == null) {}
-
-        List<LocationData> places = gson.fromJson(Utils.Network.getResponse(), GoogleQuery.class).getData();
-        for(LocationData profile : places) {
-            // If no photo, don't make a card
-            if (profile.getPhoto().isEmpty() == false)
+        Log.d("DONE",myResponse);
+        for(LocationData profile : gson.fromJson(myResponse, GoogleQuery.class).getData()) {
+            if (profile.getPhoto().isEmpty() == false)// If no photo, don't make a card
                 mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
+
+
         }
     }
 
@@ -181,12 +207,6 @@ public class HomeSwipeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.action_bar_menu, menu);
-        return true;
-    }*/
     @Override
     public void onBackPressed()
     {
@@ -194,6 +214,61 @@ public class HomeSwipeActivity extends AppCompatActivity {
         System.exit(0);
     }
 
+    public class Network extends AsyncTask<Void, Void, Integer> {
+        public String queryGooglePlaces() throws IOException, JSONException {
+
+            String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
+                    + "location=33.783022,-118.112858"
+                    + "&radius=12000"
+                    + "&type=museum"
+                    + "&keyword=art&key="
+                    + BuildConfig.ApiKey;
+
+            int response_code;
+            HttpsURLConnection con;
+            con = (HttpsURLConnection) new URL(url).openConnection();
+            con.connect();
+            con.setRequestMethod("GET");
+            response_code = con.getResponseCode();
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String inputLine = null;
+            StringBuffer response = new StringBuffer();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+
+            in.close();
+            myResponse = response.toString();
+            looper();
+
+            return null;
+        }
+
+        public void looper() {
+            while(myResponse == null) {}
+            Log.d("DONE","DONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONE");
+        }
+
+        @Override
+        protected Integer doInBackground(Void... voids) {
+            try {
+                queryGooglePlaces();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            return 0;
+        }
+
+        @Override
+        protected void onPostExecute(Integer useless) {
+            populateCards();
+        }
+    }
 }
 
 
