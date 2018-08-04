@@ -75,7 +75,11 @@ public class LocationViewActivity extends AppCompatActivity {
                 PlacePhotoMetadataBuffer photoMetadataBuffer = photos.getPhotoMetadata();
 
                 // Get the first photo in the list.
-                PlacePhotoMetadata photoMetadata = photoMetadataBuffer.get(0);
+
+                PlacePhotoMetadata photoMetadata = null;
+                for (PlacePhotoMetadata instance: photoMetadataBuffer) {
+                     photoMetadata = instance;
+                }
 
                 // Get the attribution text.
                 CharSequence attribution = photoMetadata.getAttributions();
@@ -93,16 +97,6 @@ public class LocationViewActivity extends AppCompatActivity {
                 });
             }
         });
-
-        /*
-        try {
-            Glide.with(getApplicationContext()).load(mLocationProfile.getImageUrl()).into(imageView);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        */
-
-
 
         textView.setText(mLocationProfile.getLocationName());
     }
