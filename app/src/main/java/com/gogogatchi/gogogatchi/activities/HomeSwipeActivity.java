@@ -11,7 +11,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -20,6 +19,8 @@ import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.core.GoogleQuery;
 import com.gogogatchi.gogogatchi.core.LocationCard;
 import com.gogogatchi.gogogatchi.core.LocationData;
+import com.gogogatchi.gogogatchi.core.Profile;
+import com.gogogatchi.gogogatchi.util.Utils;
 import com.google.gson.Gson;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
@@ -29,20 +30,19 @@ import org.json.JSONException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
 public class HomeSwipeActivity extends AppCompatActivity {
-
     private SwipePlaceHolderView mSwipeView;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private Context mContext;
     private Toolbar appBar;
     private List<LocationData> places;
-    //ADD Listener Here
 
     private String myResponse = null;
 
@@ -59,15 +59,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_swipe);
 
-        /*
-        OnTaskCompletion query = new OnTaskCompletion() {
-            @Override
-            public void onTaskCompleteion() {
-                populateCards();
-            }
-        };
-        */
-
+        /*** HTTP QUERY PLACES API***/
         Network task = new Network();
         task.execute();
 
@@ -92,35 +84,6 @@ public class HomeSwipeActivity extends AppCompatActivity {
                         .setSwipeInMsgLayoutId(R.layout.location_swipe_right)
                         .setSwipeOutMsgLayoutId(R.layout.location_swipe_left));
 
-        //Load all Profiles from JSON query
-        /*** For use with CSULB Profiles ***/
-        /*
-        for(Profile profile : Utils.loadProfiles(this.getApplicationContext())) {
-            mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
-        }
-        */
-
-
-        /*
-        // For use with Google Places API
-        try {
-            String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.783022,-118.112858&radius=6000&type=museum,library,aquarium&key=";
-            url += BuildConfig.ApiKey;
-
-            for(LocationData profile : Utils.loadLocationProfiles(mContext, new URL(url))) {
-                // If no photo, don't make a card
-                if (profile.getPhoto().isEmpty() == false)
-                    mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
-            }
-        } catch (JSONException e1) {
-            e1.printStackTrace();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        */
-
         findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,7 +104,6 @@ public class HomeSwipeActivity extends AppCompatActivity {
                 taskB.execute();
             }
         });
-
 
         /*** BEGIN MENU CODE ***/
         NavigationView navigationView = findViewById(R.id.navMenu);
@@ -184,15 +146,39 @@ public class HomeSwipeActivity extends AppCompatActivity {
         /***END MENU CODE ***/
     }
 
-    public void populateCards() {
+    public void populateHTTPCards() {
         Gson gson = new Gson();
 
-        Log.d("DONE",myResponse);
         for(LocationData profile : gson.fromJson(myResponse, GoogleQuery.class).getData()) {
             if (profile.getPhoto().isEmpty() == false)// If no photo, don't make a card
                 mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
+        }
+    }
+    private void populateCSULBCards() {
+        /*** For use with CSULB Profiles ***/
+        for(Profile profile : Utils.loadProfiles(this.getApplicationContext())) {
+            //mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
+        }
+    }
 
+    private void populateLocalPlacesAPICards() {
 
+        // For use with Google Places API
+        try {
+            String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.783022,-118.112858&radius=6000&type=museum,library,aquarium&key=";
+            url += BuildConfig.ApiKey;
+
+            for(LocationData profile : Utils.loadLocationProfiles(mContext, new URL(url))) {
+                // If no photo, don't make a card
+                if (profile.getPhoto().isEmpty() == false)
+                    mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
+            }
+        } catch (JSONException e1) {
+            e1.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -248,7 +234,6 @@ public class HomeSwipeActivity extends AppCompatActivity {
 
         public void looper() {
             while(myResponse == null) {}
-            Log.d("DONE","DONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONEDONE");
         }
 
         @Override
@@ -266,7 +251,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Integer useless) {
-            populateCards();
+            populateHTTPCards();
         }
     }
 }
