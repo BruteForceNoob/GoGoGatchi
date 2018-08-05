@@ -2,6 +2,7 @@ package com.gogogatchi.gogogatchi.core;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -9,7 +10,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.activities.LocationViewActivity;
-
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 import com.mindorks.placeholderview.annotations.Click;
 import com.mindorks.placeholderview.annotations.Layout;
@@ -21,7 +21,8 @@ import com.mindorks.placeholderview.annotations.swipe.SwipeInState;
 import com.mindorks.placeholderview.annotations.swipe.SwipeOut;
 import com.mindorks.placeholderview.annotations.swipe.SwipeOutState;
 
-import java.net.MalformedURLException;
+import java.io.IOException;
+import java.net.URL;
 
 @Layout(R.layout.location_card)
 public class LocationCard {
@@ -35,38 +36,12 @@ public class LocationCard {
     @View(R.id.locationNameTxt)
     private TextView cityNameTxt;
 
-    //private Profile mProfile;
     private LocationData mLocationProfile;
     private Profile mProfile;
     private Context mContext;
     private SwipePlaceHolderView mSwipeView;
 
-    /*** For use with CSULB Location Profiles ***/
-
-    public LocationCard(Context context, Profile profile, SwipePlaceHolderView swipeView) {
-        mContext = context;
-        mProfile = profile;
-        mSwipeView = swipeView;
-    }
-
-    @Resolve
-    private void onResolved(){
-        Glide.with(mContext).load(mProfile.getImageUrl()).into(profileImageView);
-        destNameTxt.setText(mProfile.getDestinationName());
-        cityNameTxt.setText(mProfile.getCity());
-    }
-
-    @Click(R.id.profileImageView)
-    private void onClick(){
-        Intent intent = new Intent(mContext.getApplicationContext(), LocationViewActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putParcelable("mProfile", mProfile);
-        intent.putExtras(bundle);
-        mContext.startActivity(intent);
-    }
-
     /*** For use with Google Places API Locations ***/
-    /*
     public LocationCard(Context context, LocationData profile, SwipePlaceHolderView swipeView) {
         mContext = context;
         mLocationProfile = profile;
@@ -74,21 +49,31 @@ public class LocationCard {
     }
 
     @Resolve
-    private void onResolved() throws MalformedURLException {
+    private void onResolved() throws IOException {
+        Bitmap image;
+        URL url = mLocationProfile.getImageUrl();
+
+        //Glide.with(mContext).load(BitmapFactory.decodeStream(url.openConnection().getInputStream()))
+         //       .into(profileImageView);
+
         Glide.with(mContext).load(mLocationProfile.getImageUrl()).into(profileImageView);
         destNameTxt.setText(mLocationProfile.getLocationName());
-        cityNameTxt.setText(mLocationProfile.getPlaceID());
+        cityNameTxt.setText(mLocationProfile.getVicinity());
     }
 
     @Click(R.id.profileImageView)
     private void onClick(){
-
+        Intent intent = new Intent(mContext.getApplicationContext(), LocationViewActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("mLocationProfile", mLocationProfile);
+        intent.putExtras(bundle);
+        mContext.startActivity(intent);
     }
-    */
 
     // Swipe Left
     @SwipeOut
     private void onSwipedOut(){
+        //mProfile = null;
         //mSwipeView.addView(this);
     }
 
@@ -102,10 +87,12 @@ public class LocationCard {
     private void onSwipeIn(){
     }
 
+    // calls method while moving toward right
     @SwipeInState
     private void onSwipeInState(){
     }
 
+    // calls method while moving toward left
     @SwipeOutState
     private void onSwipeOutState(){
     }

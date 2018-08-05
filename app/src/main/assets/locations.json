@@ -1,955 +1,876 @@
 {
     "html_attributions": [],
-    "next_page_token": "CsQCMgEAAEvuduNXL7UEtesDlwbwsNcZXy4RQsoj-3S4QKE-Ug4MSgdKWEajpFW_l8N22MOqNgYCq0QDarTRujcPfBlbbVfNrXybzGyvUvtjuSw6a8yZDnwNawrhvZBk3ScmlD-QXnYT-CiDrswR7bpkykzSIr4i6bcsMGBei3nxdmzHe0VdBFjxsj6pH3Eb4rcHv1xZSEZCVawLglY_JY9GrhFhSLr831MKqUbu4nc9-VIjE_SrvGn2GHpCbbUAE74gFC853D7h5IhlMrcMo0_bYXL1hKgfYSDh8JAyK6-gi02UUvaXM_R_cRPUgCLDXEJN1TY6XIPJzqunIAl5KBScK4ZqfOec11TrDaycdQv1QsoOnaOMNhjJ6mb6Y8swix_4NUkf3nvneWft84JA2yoM-KH3ZpQnpoiFYrXOrk5v9FV5CBHKEhBJMGjhux4HS_rT97z4cMATGhRIddYnmkur_XcTPpc2YMJrJ8gr1g",
+    "next_page_token": "CrQCKQEAAEWr1aErd_9VRdpS_yyTFbyGD5ur-gjdTj50kRW8NDiSw2l1Vgqx4oGNHUXCql_JUVX7HqBLstE4dxUx30WtUTI1v1aUf4sf5fDx0IJBNk98trvZVNNLjXbf3J2J7qOIzV5iKxiUr5pFwmASD0y2kt_EHfVv_zZiN0R5-DHaRK4VymmnjDrzRPpji0ubiOcH5mFIYRYW3vk234DjIjQ1WMd-Va0q7Li5guWqMCcBQfP6DwxzFRAnnRvxkjF9gVkZcucwx86aohuFuhfEWhICLvyp192oYSc13bkl24SH7T6WKtdN92SWcnGk_jB9jUpJt8Up75vIykoOOVhbSH9E97X8UANnp5pkJ3z-fDld8B53Y8e4fyZghob7CynaRVfvCaO_-IP4-xtIwEgQTyVa8usSECNhT5fNKnF9H6uAvedZ5aUaFOGWe5sqg7LI8dICbtAlmVqLC3dI",
     "results": [
         {
             "geometry": {
                 "location": {
-                    "lat": 33.7700504,
-                    "lng": -118.1937395
+                    "lat": 33.7634653,
+                    "lng": -118.164792
                 },
                 "viewport": {
                     "northeast": {
-                        "lat": 33.8854591,
-                        "lng": -118.063253
+                        "lat": 33.76491777989271,
+                        "lng": -118.1632310201073
                     },
                     "southwest": {
-                        "lat": 33.714957,
-                        "lng": -118.248966
+                        "lat": 33.76221812010727,
+                        "lng": -118.1659306798927
                     }
                 }
             },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
-            "id": "71b374acb987b8be875a091969db9d11158f8712",
-            "name": "Long Beach",
-            "photos": [
-                {
-                    "height": 2220,
-                    "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/113399694841584946398/photos\">Maria Nunez</a>"
-                    ],
-                    "photo_reference": "CmRaAAAAwVyrHd9DsMlKd2yAPmKzZXmR5woEgIU3eWqYgaJtKxwHlJ1cIPlrNPD6j5DQWbTtgd1vm6WwiPJhuEmm37KsYmcm6hOcGk5iTdiVE5wfO2Iu-fi_ZwScy1KtczCumKEyEhCxM_F10AVyG0_iObXkgMjPGhT-JmiPLu0yIVChthW9EfaPx074rg",
-                    "width": 1080
-                }
-            ],
-            "place_id": "ChIJWdeZQOjKwoARqo8qxPo6AKE",
-            "reference": "CmRbAAAAxwtDt-4BKCyoJxkQJ2stIF3d4-wQw4phNpUdH7ujZI9DLTfvSMWmTkkvwtLqZZq0BfOI06K8zmtH7n40GXryfKkHv6FDHSd3O6Fi2-EvSF9jOeSq4pQ8uque5jlzwpAHEhDcH5-x_xQqzNQa3h6sWeoHGhRHkwvZ53NWYt1yw0RVfokwNGv3nQ",
-            "scope": "GOOGLE",
-            "types": [
-                "locality",
-                "political"
-            ],
-            "vicinity": "Long Beach"
-        },
-        {
-            "geometry": {
-                "location": {
-                    "lat": 33.7817344,
-                    "lng": -118.1303228
-                },
-                "viewport": {
-                    "northeast": {
-                        "lat": 33.78297338029149,
-                        "lng": -118.1294947197085
-                    },
-                    "southwest": {
-                        "lat": 33.7802754197085,
-                        "lng": -118.1321926802915
-                    }
-                }
-            },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-            "id": "ad3111f823e88206cb31e478a0f73a6eb6b6da08",
-            "name": "Hotel Current Long Beach",
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "f3b1fd9597b9a294f0a73dbb9dca6ff38392eb27",
+            "name": "Long Beach Museum of Art",
             "opening_hours": {
                 "open_now": false
             },
             "photos": [
                 {
-                    "height": 353,
+                    "height": 2513,
                     "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/118303911271054409562/photos\">Hotel Current Long Beach</a>"
+                        "<a href=\"https://maps.google.com/maps/contrib/103977761514480488970/photos\">Chris Valle</a>"
                     ],
-                    "photo_reference": "CmRaAAAAdVSlipNVt4oyXLtOP4TMkeyRyzXsTiyymvgHxFHLBd7DH58CB4TPbJcl5EAdvZNusha8yhBkiqVfqC1rpKPxK_1K1SDh64tJxg8GZvgy9L97oDHBiscyX6TrKpjJsmHoEhCE2YR3kBt6xEYLLQrzN7S4GhR_C8xtzRtnaoKxjFHdoQp9nO2Czg",
-                    "width": 610
+                    "photo_reference": "CmRaAAAAElob4fditXxkco5B4D8AK6F7w4aHEmSx0Yhl_5LRleH1dwHn99IQsIkIoZ0z3xz_fhOMav59O7iAUh3FHjbumAMWYS2nEk3MLoprH-QtShoa2k1JNjfMchPwR-9NnB-5EhBD7p6iGrkEGjcxbzTFmzrbGhRjwWF5E4INGew_qXpYod7uTxntwg",
+                    "width": 3769
                 }
             ],
-            "place_id": "ChIJodLCmsYx3YAROPzWsXMDjbk",
+            "place_id": "ChIJlc5VVgEx3YAR8hAJj-nOZys",
             "plus_code": {
-                "compound_code": "QVJ9+MV Long Beach, California, United States",
-                "global_code": "8553QVJ9+MV"
+                "compound_code": "QR7P+93 Long Beach, California",
+                "global_code": "8553QR7P+93"
             },
-            "rating": 4.3,
-            "reference": "CmRSAAAAC2lmxJDtGPQd-H8Xu_i4UeU_oo6JgUKoodcW1asKe2NGiCmagKHRxZfpNv22h5TBjZF8agragCEtmt7AYXuPLOj0qvICU8ubKvj5k6FEVmL85xDru9Dmy0k0nZXYGIuXEhB5PeW69XV_pZczBPF2ewH4GhS8tvvb7exFP0sNTwUUH-C3nP5zGA",
+            "rating": 4.4,
+            "reference": "CmRbAAAAqdW_NKkCZ_vKDwMlHc9MkuRCEKi8TzKfT-Rn7LT3tAOmgGu17W6bb_8DJta66JTUwOgKsW6dn3GM3OUUcoI-M62yNvrWEY90HCMef5ZA3ZP4TXld2HchWkAf_qvaUNYGEhCyG0GpOfe3dROcwr_PLD8PGhRcbtwn4hjfcGAJd8pEA0EZs1X-gQ",
             "scope": "GOOGLE",
             "types": [
-                "lodging",
+                "museum",
                 "point_of_interest",
                 "establishment"
             ],
-            "vicinity": "5325 Pacific Coast Highway, Long Beach"
+            "vicinity": "2300 E Ocean Blvd, Long Beach"
         },
         {
             "geometry": {
                 "location": {
-                    "lat": 33.76528799999999,
-                    "lng": -118.115514
+                    "lat": 33.774467,
+                    "lng": -118.17985
                 },
                 "viewport": {
                     "northeast": {
-                        "lat": 33.7665578302915,
-                        "lng": -118.1144423697085
+                        "lat": 33.77578502989272,
+                        "lng": -118.1788136701073
                     },
                     "southwest": {
-                        "lat": 33.7638598697085,
-                        "lng": -118.1171403302915
+                        "lat": 33.77308537010727,
+                        "lng": -118.1815133298927
                     }
                 }
             },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-            "id": "9286d9d8d057180ee3e4ec064581df7d19fd2263",
-            "name": "Best Western Golden Sails Hotel",
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "f63587300f1a006561d9d8577a987fab9ad05945",
+            "name": "MOLAA",
             "opening_hours": {
-                "open_now": true
+                "open_now": false
             },
             "photos": [
                 {
-                    "height": 426,
+                    "height": 3024,
                     "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/102471191853622597798/photos\">Best Western Golden Sails Hotel</a>"
+                        "<a href=\"https://maps.google.com/maps/contrib/100783887371287371631/photos\">Alexandra Gallo</a>"
                     ],
-                    "photo_reference": "CmRaAAAAfU7nvNsLk-ebbPnP7X0WAs0v2IkF-HGTZ7BVZfTAePo2Xm9nmynHKkGBLU-zCegf9Ii1bA5uKf7MyHQHHHC4gZjrkJc1Xjf0G7JZHcvkyjvgfmnn4qDi3843E-kNAnt6EhC13B1iC-wCEVCBzQG2Ilk0GhSe89MwoP9tQVR8WKZ9aip6jl9sfA",
-                    "width": 640
+                    "photo_reference": "CmRaAAAAoItVIq7zdr9wePXKL5vEdxd9p7ZiJUuXcCbwWj31nyFSlMg977k6u5IYSBT0fStIv39NUMaW0LPnZZKYDzTCaBJXklsWO5DD9HZzWXSRs2GxRxyNZ5xGhcIy6huNIuluEhA8EhQ7TkAOaAg2shOOOqBQGhTjiE9ogTqrSA5KRtsDzhzHl2baDQ",
+                    "width": 4032
                 }
             ],
-            "place_id": "ChIJh-Hqeykw3YARw3N-8vTCBGM",
+            "place_id": "ChIJt1e0FxUx3YARuD1jX5F2MOw",
             "plus_code": {
-                "compound_code": "QV8M+4Q Long Beach, California, United States",
-                "global_code": "8553QV8M+4Q"
+                "compound_code": "QRFC+Q3 Long Beach, California",
+                "global_code": "8553QRFC+Q3"
             },
-            "rating": 3.9,
-            "reference": "CmRRAAAA3QVgGzkwp4qAygxe8HTeLtPd5lux7D9J0s_QnJh_JGmBlVQ46PH0-RyRA5YM5fKwA1uHU16k69-GwOxSVIPNerXyFoQm5CAYhSzz_NSe6_qGSSD8iemaodsrJtu6-Qr2EhDIUhq-EFjoMILINcb36P2oGhQJObOgmEgZwNux3BgysM920o5gcg",
+            "rating": 4.5,
+            "reference": "CmRbAAAAmHDtPhiTVy2Jv5xux9qajpJKzKeJ1CbdF8pmxddx3IpOKFdIFil9gcS2eFoxap_iVV6i_ozrk-bEt70eh-KumTfTgY39eDcq9grZMIJexVBmtzmiZ0Gbdw_03MsEIltKEhCXkxsAte3fDmVhUPL1IGsQGhRx49VZu6hlF4KQKiuaSKy4pu_xGg",
             "scope": "GOOGLE",
             "types": [
-                "lodging",
+                "museum",
                 "point_of_interest",
                 "establishment"
             ],
-            "vicinity": "6285 East Pacific Coast Highway, Long Beach"
+            "vicinity": "Museum of Latin American Art (MOLAA),, 628 Alamitos Ave, Long Beach"
         },
         {
             "geometry": {
                 "location": {
-                    "lat": 33.8040691,
-                    "lng": -118.1417885
+                    "lat": 33.783516,
+                    "lng": -118.114711
                 },
                 "viewport": {
                     "northeast": {
-                        "lat": 33.8053438302915,
-                        "lng": -118.1406401697085
+                        "lat": 33.78465557989273,
+                        "lng": -118.1133915701073
                     },
                     "southwest": {
-                        "lat": 33.8026458697085,
-                        "lng": -118.1433381302915
+                        "lat": 33.78195592010728,
+                        "lng": -118.1160912298927
                     }
                 }
             },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-            "id": "588ce3f0481504486ba5e2eee9b398bf6ab2abb2",
-            "name": "Holiday Inn Long Beach Airport",
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "06bcd4e15fb7946d754261bb7d4442862edb6eae",
+            "name": "University Art Museum",
             "opening_hours": {
-                "open_now": true
-            },
-            "photos": [
-                {
-                    "height": 3744,
-                    "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/107658101035034597888/photos\">Holiday Inn Long Beach Airport</a>"
-                    ],
-                    "photo_reference": "CmRaAAAApkiZdqVsuI-Zcd4HGu9f_ZB2YCL0ZZtVi-uU7_eLYQ4UK9-CUY0dkwTBDwLFjsVoBaFfi-2ItKR6_MX083LbJYkR_pvk7lxfvrVlVbVZ9rDRaurAEnqc8okacXVd_9ZLEhBkxghZaoMO5dDfl4tYtD-FGhTGR-Bc4f-ELxIfpLetc7IDQAgJCw",
-                    "width": 5616
-                }
-            ],
-            "place_id": "ChIJGdQGnIkx3YARHcjYXaRh0NE",
-            "plus_code": {
-                "compound_code": "RV35+J7 Long Beach, California, United States",
-                "global_code": "8553RV35+J7"
-            },
-            "rating": 4.1,
-            "reference": "CmRSAAAAY1bmaQyCDHi4fbQluB-NhFOxSZqugva_jUNfAugT0vgkBAd5CBDUvOnYGTu1VZMHfgUvG3qdbxWeQs33LhXlGY7mCFhK5i2oPzLMPQrblqtf7W_jhdT4OzzjxpAvGqgNEhD1_auZ2_7ohtV3U2-LAbyjGhT0swgideYmZ0who9K5Lf5b8pdzhg",
-            "scope": "GOOGLE",
-            "types": [
-                "bar",
-                "lodging",
-                "restaurant",
-                "food",
-                "point_of_interest",
-                "establishment"
-            ],
-            "vicinity": "2640 North Lakewood Boulevard, Long Beach"
-        },
-        {
-            "geometry": {
-                "location": {
-                    "lat": 33.803945,
-                    "lng": -118.1448683
-                },
-                "viewport": {
-                    "northeast": {
-                        "lat": 33.8051936302915,
-                        "lng": -118.1432588697085
-                    },
-                    "southwest": {
-                        "lat": 33.8024956697085,
-                        "lng": -118.1459568302915
-                    }
-                }
-            },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-            "id": "76106271c87bb4a956dacacaa562ad8766d0f4cb",
-            "name": "Residence Inn by Marriott Long Beach",
-            "opening_hours": {
-                "open_now": true
-            },
-            "photos": [
-                {
-                    "height": 2080,
-                    "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/102552926071694547144/photos\">Residence Inn by Marriott Long Beach</a>"
-                    ],
-                    "photo_reference": "CmRaAAAAAYmg5prp8cSoCIkvWn0WTkKpACnGp7b3y1nG_57N8GrYAsUw0AaNbkTBapKAR2A6NE15BRUDTUsZ6AvKHWfEdL3K8TKCo8gGe96OLZIXcX6uv_kRdQaa5FZwmrS5237KEhD9DJV0i1TeKMBVa0KlCP6YGhSk9T-CszymdouHglQCODQxrLEbfQ",
-                    "width": 3000
-                }
-            ],
-            "place_id": "ChIJV01VNogx3YARqMq1oDJEAxM",
-            "plus_code": {
-                "compound_code": "RV34+H3 Long Beach, California, United States",
-                "global_code": "8553RV34+H3"
-            },
-            "rating": 4.3,
-            "reference": "CmRRAAAA3U5kL-UVDFQneJjwE_dvR0zuEOH8_yN9njoj_X2owsc4WumIWXPbeQY2yViFSWws0drCaNPZsfnGaqy975IStOMsHwm45OqNUSaBXJePs6Vyc7UKv0kq_EW0b-WuqiWjEhDZz5hIbaWfSzzuuFuKTOmEGhQei4ZSoO2E3HC0cxaObggKzRMLuQ",
-            "scope": "GOOGLE",
-            "types": [
-                "lodging",
-                "point_of_interest",
-                "establishment"
-            ],
-            "vicinity": "4111 East Willow Street, Long Beach"
-        },
-        {
-            "geometry": {
-                "location": {
-                    "lat": 33.804063,
-                    "lng": -118.14654
-                },
-                "viewport": {
-                    "northeast": {
-                        "lat": 33.8053515802915,
-                        "lng": -118.1452157197085
-                    },
-                    "southwest": {
-                        "lat": 33.8026536197085,
-                        "lng": -118.1479136802915
-                    }
-                }
-            },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-            "id": "62891a5c515806d70a96977789d4d0a2623e2b81",
-            "name": "Extended Stay America Hotel Los Angeles - Long Beach Airport",
-            "opening_hours": {
-                "open_now": true
-            },
-            "photos": [
-                {
-                    "height": 949,
-                    "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/110911585265341441931/photos\">Yassii Sia</a>"
-                    ],
-                    "photo_reference": "CmRaAAAABd3bMtOZ9_RdeCKVrfkmetIdqen-0u4A9bdfNerNnCFRIOdt-OkOuoH4nWRT58qHzIDpwHSKeu-yQEf8vZZuPPQtX-WX7BiMRp9gUOrvJ14qlSu1EPXe6t6xu0blIGc6EhBMBkVSSybZtilvf9hfkfvtGhR9q98J1ACuWUYn4aCS5_aycpo4kA",
-                    "width": 1265
-                }
-            ],
-            "place_id": "ChIJnyw1TYgx3YARWU25vbcqlF4",
-            "plus_code": {
-                "compound_code": "RV33+J9 Long Beach, California, United States",
-                "global_code": "8553RV33+J9"
-            },
-            "rating": 3.3,
-            "reference": "CmRRAAAAbExzKZKQZHOADhzSFQVUc6gNWsGA87IeKOcTwsWxHPVpjoRi8MJHbVJ13BYRc-UB97DG22mV54dhMi4JUzwF2FJYbm4aQweyWRHnXegs4oBjZJqpj_9-pqPOVXZi3aufEhAizILj-bFoClnU17nyBoxbGhSe6l5KX-Ipy0amo9_wWefKFYKjCA",
-            "scope": "GOOGLE",
-            "types": [
-                "lodging",
-                "point_of_interest",
-                "establishment"
-            ],
-            "vicinity": "4105 East Willow Street, Long Beach"
-        },
-        {
-            "geometry": {
-                "location": {
-                    "lat": 33.8114365,
-                    "lng": -118.1384082
-                },
-                "viewport": {
-                    "northeast": {
-                        "lat": 33.8125705802915,
-                        "lng": -118.1364775697085
-                    },
-                    "southwest": {
-                        "lat": 33.8098726197085,
-                        "lng": -118.1391755302915
-                    }
-                }
-            },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-            "id": "15471fa27671a68fde84326411c77bc9af5d8060",
-            "name": "Long Beach Marriott",
-            "opening_hours": {
-                "open_now": true
-            },
-            "photos": [
-                {
-                    "height": 2080,
-                    "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/100812037202274560230/photos\">Long Beach Marriott</a>"
-                    ],
-                    "photo_reference": "CmRaAAAAnK-qX-dq_YfZxeuTYT8ZJiDVZ-O422u-nXoHyy50if2etq3Des5hXCexN09YHK6R39iEqmPd2DwrnmCeZf6vqpie8isTU-lDfA-8V64kyf-nAZeh_490FBSD2QCZqxroEhAe_hr-nJQFx3WkZ5K9Ss5xGhTmWXpM21Nx8PX2hUQEF-HBUjRLFw",
-                    "width": 3000
-                }
-            ],
-            "place_id": "ChIJaxXXgyEy3YARo3UO0Y5o8ao",
-            "plus_code": {
-                "compound_code": "RV66+HJ Long Beach, California, United States",
-                "global_code": "8553RV66+HJ"
-            },
-            "rating": 4.3,
-            "reference": "CmRSAAAAdeYRAVz96x9c4Z7djNMhWedysaO6K_rcAdXe1E4akls7lMqie_3_H3xChwJ8rm5NqQgReFbu8pHpMrEEE5oPDcRE_VzdFc7tbRlXNpb0IK_VGCtE8xoUGyEbAOfLgyVKEhBaNSwsAOM0imKAsWldvx82GhTm7yKbrMGj7jlfRpADnvH0BxN5CQ",
-            "scope": "GOOGLE",
-            "types": [
-                "lodging",
-                "point_of_interest",
-                "establishment"
-            ],
-            "vicinity": "4700 Airport Plaza Drive, Long Beach"
-        },
-        {
-            "geometry": {
-                "location": {
-                    "lat": 33.7589799,
-                    "lng": -118.081331
-                },
-                "viewport": {
-                    "northeast": {
-                        "lat": 33.7602152302915,
-                        "lng": -118.0800194697085
-                    },
-                    "southwest": {
-                        "lat": 33.7575172697085,
-                        "lng": -118.0827174302915
-                    }
-                }
-            },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-            "id": "e3fa1f54e3e67c159fae3f0a7a81a8449ea2b927",
-            "name": "Hampton Inn & Suites Seal Beach",
-            "opening_hours": {
-                "open_now": true
-            },
-            "photos": [
-                {
-                    "height": 853,
-                    "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/101694131801625291490/photos\">Hampton Inn &amp; Suites Seal Beach</a>"
-                    ],
-                    "photo_reference": "CmRaAAAA7Sezd7_A_4fImM_JOBpowKVaN_zM1fDtNcJKfIBi0VJjhAG05kJSAu8SnDJSY5m1N70F4HqZAAnP13m8A1WgCOYzt9gD9rFfgDTOzuiaDktZ3RPAh4-M11ARKVFxSlPhEhCw5glxmm_6Rs2VEmJADO7kGhScx5eccjlPNYEFlTznNRgTsP-dGQ",
-                    "width": 1280
-                }
-            ],
-            "place_id": "ChIJjVG2IZYv3YARAG1QfGXEmPc",
-            "plus_code": {
-                "compound_code": "QW59+HF Seal Beach, California, United States",
-                "global_code": "8553QW59+HF"
-            },
-            "rating": 4.3,
-            "reference": "CmRSAAAALI7Xx4zdRDLa9WQGvzPc2jL_jDsz95xU4dPdLnlliit3YQ5UpD9O6s8DqJ0WmrLvnQ93w4YWNS6fHRIfkompUbJTljePuaXl5hghTgKGLoZrtX1rr6VoGI6xbIJCtOADEhCuYa_Z5zRNrpSmbGPH8LEhGhRFhE1XY6B3FibUaH4GJyIDMeAj8Q",
-            "scope": "GOOGLE",
-            "types": [
-                "lodging",
-                "point_of_interest",
-                "establishment"
-            ],
-            "vicinity": "2401 Seal Beach Boulevard, Seal Beach"
-        },
-        {
-            "geometry": {
-                "location": {
-                    "lat": 33.7449406,
-                    "lng": -118.1057041
-                },
-                "viewport": {
-                    "northeast": {
-                        "lat": 33.7463486802915,
-                        "lng": -118.1043559197085
-                    },
-                    "southwest": {
-                        "lat": 33.7436507197085,
-                        "lng": -118.1070538802915
-                    }
-                }
-            },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-            "id": "f77b8857077a42c182a557f8f2590ccb959c88d6",
-            "name": "The Pacific Inn",
-            "opening_hours": {
-                "open_now": true
+                "open_now": false
             },
             "photos": [
                 {
                     "height": 2988,
                     "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/109844613273022608345/photos\">Joris Hendrickx</a>"
+                        "<a href=\"https://maps.google.com/maps/contrib/101286207362895012478/photos\">Ek Ear</a>"
                     ],
-                    "photo_reference": "CmRaAAAAEmwanyOUz6lMssxEF94a9izWqPIeSTFwNBLrqaYGHuXoHcIHutYlrRXvSZ6ABHs0talNiEJB97X1CINI3TwmobM4aY5paV7aJe2vpz87cv1G9o4T11DXUxxPvLs9yLEbEhClXRrgIfaBLtxB3YrYS1O9GhSx_F6t0HsjOCpD0VeRngf6w_AKPg",
+                    "photo_reference": "CmRaAAAAvj-flC5KdFCaihJ8hHt-kdRumhXkZrUuNcdwLZMOY2eXsHcIg9WD99c3w1Sgs_AmBJTgl6uxQ92qW8ngAJPlBTPiHNpneYbo93xZWEq9N8SVNkgu9-PZ3u45JR_M3ZkkEhDpvSByhBxRmxLC49cES3CUGhTLeSjhucgACjCB9_s6_d7aV7Oqmg",
                     "width": 5312
                 }
             ],
-            "place_id": "ChIJ207PheQv3YAR8XSjn_EeccY",
+            "place_id": "ChIJv8dvodsx3YARAV2HLKHhqe8",
             "plus_code": {
-                "compound_code": "PVVV+XP Seal Beach, California, United States",
-                "global_code": "8553PVVV+XP"
+                "compound_code": "QVMP+C4 Long Beach, California",
+                "global_code": "8553QVMP+C4"
             },
-            "rating": 4.4,
-            "reference": "CmRSAAAA8C_ak4cs-3f6sRRNSCijxcatri9cBmAJX_-z4NBLtdkSGC2I44wFxJOxFgYgxRhP5ccYx4FEaFJatwzzTyulUAmOcIJLXTLhCMVkDIJ0lVSen7U9uNeIa3clUmtyOANLEhA129NdRChdrz3v3Zb_YHGpGhQqu71_au-C2zXwXGQc1qGnUA_Nyw",
+            "rating": 4.6,
+            "reference": "CmRbAAAA8uV4rlZptAbMWgcd2JF32YxOg2ZEot9Ovu-KtIUmBm9i089ssRoG77iWuMk4GkS5aV6qB7ty1hUJFLtxgzTdTY3FKUUUhbbGm7MSM_Q6QR-vxKpjVQbK9JisJ8rqkkioEhBeijFYTopW1CUjOgGGnP38GhQavoxNYar0GSZuN9LiHJlGGUVJLA",
             "scope": "GOOGLE",
             "types": [
-                "lodging",
+                "museum",
                 "point_of_interest",
                 "establishment"
             ],
-            "vicinity": "600 Marina Drive, Seal Beach"
+            "vicinity": "1250 N Bellflower Blvd, Long Beach"
         },
         {
             "geometry": {
                 "location": {
-                    "lat": 33.790493,
-                    "lng": -118.154321
+                    "lat": 33.766741,
+                    "lng": -118.196183
                 },
                 "viewport": {
                     "northeast": {
-                        "lat": 33.7917126802915,
-                        "lng": -118.1529799697085
+                        "lat": 33.76809352989272,
+                        "lng": -118.1949413701073
                     },
                     "southwest": {
-                        "lat": 33.7890147197085,
-                        "lng": -118.1556779302915
+                        "lat": 33.76539387010727,
+                        "lng": -118.1976410298928
                     }
                 }
             },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-            "id": "97590d0f98acbb513b38a9a534789af1ce6a7c59",
-            "name": "Quality Inn Long Beach Airport",
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+            "id": "d3148cb144f9db4352932d5090fde20fcf832dd9",
+            "name": "Outer Limits Tattoo & Museum",
             "opening_hours": {
-                "open_now": true
+                "open_now": false
             },
             "photos": [
                 {
-                    "height": 1638,
+                    "height": 1530,
                     "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/113032090135228415264/photos\">Quality Inn Long Beach Airport</a>"
+                        "<a href=\"https://maps.google.com/maps/contrib/115720991770461613271/photos\">Outer Limits Tattoo &amp; Museum</a>"
                     ],
-                    "photo_reference": "CmRaAAAAzXxRO2L6wTr0-KbOiutjXWAQCEC_TKQV1h2r1Hktxc8FPieSes-AzFlY7w2hZDJbpn-_CwTCLuAWiGycLGCmXiazYuzDvt9x7SwS4-y4MVy26Hc9N6KKKErr8ujrZK9IEhD41NoMDWjiL-f63R_0LOEGGhSilxYOcqqZU91o2u2FS2bVXjxz9g",
+                    "photo_reference": "CmRZAAAAMYNq14zV5_LTBz4Bf3IgScPZvMNTy7EGTfvJ1eQB4F9kxjSCuad6D3AAA6fwc9-iKt8fgqpUqRfUmA2BZJ8je-rXbXRdQUmW_Vge2ZpxWBDRP98J6BB3njQILAZQyyg0EhBPggPiVN7DchFDOSppAyAHGhT3f_thkKNC7Zz_4eKBj-iW75N1kw",
                     "width": 2048
                 }
             ],
-            "place_id": "ChIJ2UtHiJwx3YARzIDurDqE9mI",
+            "place_id": "ChIJmcEKMjcx3YARG64cO2bswgg",
             "plus_code": {
-                "compound_code": "QRRW+57 Signal Hill, California, United States",
-                "global_code": "8553QRRW+57"
+                "compound_code": "QR83+MG Long Beach, California",
+                "global_code": "8553QR83+MG"
             },
-            "rating": 3.4,
-            "reference": "CmRRAAAAGSz4XnEz13llGLaiNVIFGPRkhNKfUDLci3iQj-pT4NwR8bkM02nn-4y7iqzmYg8zc7uIli0ftUXFoGuYoznfrbtkE9Ucl5_-DOpOSbkX2DG2l2DPpTsYI-aa636MVue9EhDXOMBlTaH_z6MNHahiRuNWGhQFXeXiOps8zU4b7kfrx71nYBByZw",
+            "rating": 4.9,
+            "reference": "CmRbAAAAj-5zTZL4TMNhq9WPmM_O8gXeSuzhVXcVjUedOe0581vm62wTyxs7N5PXfkXKXUeL65OSh6CcSD1rVjOzEDdJivvPU-hywpg45xe2yjpuN0Jz_fbY_K13_kRlV1zcxNa9EhBBeW_fOdAssppW5nL1cDTIGhQlmed23kD4ZpqZkV4UZXrAAGvFdA",
             "scope": "GOOGLE",
             "types": [
-                "lodging",
+                "museum",
+                "store",
                 "point_of_interest",
                 "establishment"
             ],
-            "vicinity": "3201 East Pacific Coast Highway, Long Beach"
+            "vicinity": "22 S Chestnut Pl, Long Beach"
         },
         {
             "geometry": {
                 "location": {
-                    "lat": 33.775831,
-                    "lng": -118.122115
+                    "lat": 33.7751861,
+                    "lng": -118.180427
                 },
                 "viewport": {
                     "northeast": {
-                        "lat": 33.7769554802915,
-                        "lng": -118.1207716197085
+                        "lat": 33.77651477989272,
+                        "lng": -118.1789853201073
                     },
                     "southwest": {
-                        "lat": 33.7742575197085,
-                        "lng": -118.1234695802915
+                        "lat": 33.77381512010728,
+                        "lng": -118.1816849798927
                     }
                 }
             },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-            "id": "41d301181fe34fbd00a368828ebb088316d84c40",
-            "name": "Motel 6 Los Angeles - Long Beach",
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "a29c373b934b9ca5da6312e423f3af847d832ec4",
+            "name": "Pacific Island Ethnic Art Museum",
             "opening_hours": {
-                "open_now": true
+                "open_now": false
             },
             "photos": [
                 {
-                    "height": 1921,
+                    "height": 3096,
                     "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/110515283834252109866/photos\">Motel 6 Los Angeles - Long Beach</a>"
+                        "<a href=\"https://maps.google.com/maps/contrib/112189286265053515429/photos\">Jaume Vila</a>"
                     ],
-                    "photo_reference": "CmRaAAAA7VaQf6JLE_GxXFNaG6oDQdZPGaW2uMzbosI01Y7bCfvqfEJgDCejetDTNiTvedbEBDl4Wv1B5sOLH1TntMrPPobcDuWCarLhT-Sz5WkGkgiiae5OmGt80qBRWG_rqWzcEhCQr0uvz6KoUAyjWFi7qWEBGhSlh79berDhSyxJNNPw3br2-mCWxQ",
-                    "width": 2880
+                    "photo_reference": "CmRaAAAA5dce_EFcJia7jZo3A2nqPFrfsKAyqOPtHcn5PgAg3LDkf74NU76D7ypveEYIrC1c3kcryXnFJsoEj_4GjVDCanjO6y-KKJIW4FGHyBl0huOOEBXWbVxI5gzSlejlMZftEhBoIc5cjfXt9M2j5HoPHPg1GhQJGjcLI6zBVfoZFyhlw4_i981wew",
+                    "width": 4128
                 }
             ],
-            "place_id": "ChIJR5QVktEx3YAR1yc10qn5fgg",
+            "place_id": "ChIJ2XyMOhUx3YARvBiNfi6inNQ",
             "plus_code": {
-                "compound_code": "QVGH+85 Long Beach, California, United States",
-                "global_code": "8553QVGH+85"
-            },
-            "rating": 3.7,
-            "reference": "CmRRAAAAEiZ4AXV0DBoiCNXO5eXdFcBAlUMC00Nsr6BOqSsguirvpV3FgzYQeNlfywlZUUqhTgU5u-85_ddgHQCffAgc6H8hUtzGxLoTYZJcW-1kevTpt1HIom9_c80yCTE2C4KREhBK3djB7OwYWcL9OGLBN3EKGhSqvCl64mmNF2td_BE7KKCVHeglFw",
-            "scope": "GOOGLE",
-            "types": [
-                "lodging",
-                "point_of_interest",
-                "establishment"
-            ],
-            "vicinity": "5665 East 7th Street, Long Beach"
-        },
-        {
-            "geometry": {
-                "location": {
-                    "lat": 33.80899400000001,
-                    "lng": -118.072647
-                },
-                "viewport": {
-                    "northeast": {
-                        "lat": 33.8103467302915,
-                        "lng": -118.0709089197085
-                    },
-                    "southwest": {
-                        "lat": 33.8076487697085,
-                        "lng": -118.0736068802915
-                    }
-                }
-            },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-            "id": "e6251a3fecdebedb052415c295e6c6e93ccfbc46",
-            "name": "Best Western Los Alamitos Inn & Suites",
-            "opening_hours": {
-                "open_now": true
-            },
-            "photos": [
-                {
-                    "height": 2160,
-                    "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/100308598628005316527/photos\">Best Western Los Alamitos Inn &amp; Suites</a>"
-                    ],
-                    "photo_reference": "CmRaAAAA66O9tK_xhb6XdLHgl9yBoZVm4hjH9w1lxiEt-llfov5Vf2zsYjnEBtGP7DSAjgI6DAlsudBYnKEaJCYCIM3n8L7Ue442yTnQC7yg34UBC9MIa8Rm1R39b9GSSObGQn5LEhAWgl7naLXVXE4pAo2NhUzpGhQx5DHXgtX24TXJJg0wcNL411shlg",
-                    "width": 3840
-                }
-            ],
-            "place_id": "ChIJz0kKa2Qu3YARf4uiPnOAZQA",
-            "plus_code": {
-                "compound_code": "RW5G+HW Los Alamitos, California, United States",
-                "global_code": "8553RW5G+HW"
+                "compound_code": "QRG9+3R Long Beach, California",
+                "global_code": "8553QRG9+3R"
             },
             "rating": 4.2,
-            "reference": "ClRQAAAApx_3jnE4HlOuztLKCACvXoPnmN3t-BHGtKWvyOXvK2s8KOcenibVj3h-KqgLbGE-49OIqVVqdfnr4DGmo2uJiXnS8gKPYzMg7luckO6Y5K0SEMWpphftjONll9RyTv7fOF8aFL3rW_Nrm41W3BfY_3rGjYn9PFjD",
+            "reference": "CmRbAAAAa7M0ijWRf5oRGgqCjdNqWTgwh8qTj8r33NPS07Wg7fslwsS_1xoDQFvX5fsmBhyZGdvF3xnE_rr9Sbve3GJNp_kE9YTwIhnK9lrShZROI4VMPCFJz-h2-9IWjZ0CBhwoEhArNOk9NoPGdLSeLGgtOzZoGhRMwcn5RLr34VUcR9jT-EW6cB_BHA",
             "scope": "GOOGLE",
             "types": [
-                "lodging",
+                "museum",
+                "store",
                 "point_of_interest",
                 "establishment"
             ],
-            "vicinity": "10591 Los Alamitos Boulevard, Los Alamitos"
+            "vicinity": "695 Alamitos Ave, Long Beach"
         },
         {
             "geometry": {
                 "location": {
-                    "lat": 33.7838235,
-                    "lng": -118.1140904
+                    "lat": 33.8021357,
+                    "lng": -118.0716511
                 },
                 "viewport": {
                     "northeast": {
-                        "lat": 33.79525395,
-                        "lng": -118.10112695
+                        "lat": 33.80348727989272,
+                        "lng": -118.0704217701073
                     },
                     "southwest": {
-                        "lat": 33.76837855,
-                        "lng": -118.12937635
+                        "lat": 33.80078762010728,
+                        "lng": -118.0731214298927
                     }
                 }
             },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/school-71.png",
-            "id": "aeeafb0019ecc85acef4b9387352a60128b3848e",
-            "name": "California State University Long Beach",
-            "photos": [
-                {
-                    "height": 1952,
-                    "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/102526375303506069863/photos\">Ruotang</a>"
-                    ],
-                    "photo_reference": "CmRaAAAAQBXWlZtMdUsjZTxoM4P-5lCxiAF6l9VMqosEI3z0AoCq6NtHO5beXq1HWlZ4krA0YlBUNIiVFgH1dOg93beRnhz7_7iPlSxj0ZeGSdcl2nIGPyvDiVRMNUaiYvLwMM4mEhAwQEMEmuf5JWXqp6irpthhGhTgH-4RwKMK2TIAo21hpQ9RP_wYTQ",
-                    "width": 2592
-                }
-            ],
-            "place_id": "ChIJQ_aCKdgx3YARqy3HziZ_3B8",
-            "plus_code": {
-                "compound_code": "QVMP+G9 Long Beach, California, United States",
-                "global_code": "8553QVMP+G9"
-            },
-            "rating": 4.5,
-            "reference": "CmRRAAAAYNDT_53_nBiQN7Kl9NwVHNsMH7gsHQmCTrJNUELvYSZdxVVKJJDL06guNoBy3NrhcKSgWR942F61D_MWFlebUFiNig545N9_mjfV9gwQlfbF4HLy8j8rV2WmiXdgQ2-BEhCiizJp5hRewyT7YSi3k7R9GhRjKC25o_VgyZyZd0ePybvPUfqPYg",
-            "scope": "GOOGLE",
-            "types": [
-                "university",
-                "point_of_interest",
-                "establishment"
-            ],
-            "vicinity": "1250 Bellflower Blvd, Long Beach"
-        },
-        {
-            "geometry": {
-                "location": {
-                    "lat": 33.8113175,
-                    "lng": -118.1248353
-                },
-                "viewport": {
-                    "northeast": {
-                        "lat": 33.8126664802915,
-                        "lng": -118.1234863197085
-                    },
-                    "southwest": {
-                        "lat": 33.80996851970851,
-                        "lng": -118.1261842802915
-                    }
-                }
-            },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
-            "id": "d01412e01e8917ba4ff7a90298a8df001021e270",
-            "name": "24 Hour Fitness",
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "f745d8007a176526527dc4e4b8d314f18222023a",
+            "name": "Los Alamitos Museum Association",
             "opening_hours": {
-                "open_now": true
+                "open_now": false
             },
             "photos": [
                 {
-                    "height": 3168,
+                    "height": 4160,
                     "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/112241267323403035293/photos\">24 Hour Fitness</a>"
+                        "<a href=\"https://maps.google.com/maps/contrib/107464882975635274378/photos\">A Google User</a>"
                     ],
-                    "photo_reference": "CmRaAAAAI8X-LuTIgy47SEHYrg12XkuUxgLZha0jrKVrWRfhGgesLN6NlGSSG8Aqg0PNMDGO9SijtpS0E-Bdz39XjfTw9dRO1gFyr3aSQcMgR6mrLW-xpUfIC3kgG38uaSXHwGgiEhA9TbW-3k_CCVCBDXtHZ_cbGhSgSVO19m9xAdhLkJMkpS4bHu5kog",
-                    "width": 4752
+                    "photo_reference": "CmRaAAAAsHzrAzu4cjYcpzA5gmSacA7Sn-VrTNETPn92W2Pb7otRezBGskSxCgcZ1A9zwDnG6auHIP4yDchvGAeE38HMBJffhIwHi4JkkGPI1z1uu1Pca11oR_Rb2nWGhETCLD6CEhD_bOexXUMxuzRjDR6hK3-IGhS764mpz8wAlqTr7EQL722rIZBEeA",
+                    "width": 3120
                 }
             ],
-            "place_id": "ChIJIWtWOx0y3YAR_-q5BzNa8BU",
+            "place_id": "ChIJVVR8-10u3YARUjH9k9-ybLw",
             "plus_code": {
-                "compound_code": "RV6G+G3 Long Beach, California, United States",
-                "global_code": "8553RV6G+G3"
+                "compound_code": "RW2H+V8 Los Alamitos, California",
+                "global_code": "8553RW2H+V8"
             },
             "rating": 4,
-            "reference": "CmRRAAAAeACAvVbXNbb_EtfwwW4c2swF2h0TzYSUiZAbPei89yuUfoECCd-G6AEkfUto22E0oCprghbsZ2I2lnV1dMoKK1suOMMUK5BYpvG5gSVeJq_uqxVdFI__P2-tRdLha1ehEhDFj3NKjly1FMyT-5jqZFWOGhRUWmHj2qPsyR0JsK6YMwr28cT6QQ",
+            "reference": "CmRbAAAAAa3J-JawoYm73pporvzslw6oHSE-rV8wgJEExOTVeU4IQHeUp0xSDxd5WOgjxw-Y2t8v6gHAXYtbVa9_gEyQC78I2bWWlEuPKAK8R-z1HVgIQ7N0H3r7tSWXeQ0xKrkCEhBDMmo-j478jlfxgJky0AviGhT96Nx4RCECcdzP_Jxq9udagqttVA",
             "scope": "GOOGLE",
             "types": [
-                "gym",
-                "health",
+                "museum",
                 "point_of_interest",
                 "establishment"
             ],
-            "vicinity": "3030 North Bellflower Boulevard, Long Beach"
+            "vicinity": "11062 Los Alamitos Blvd, Los Alamitos"
         },
         {
             "geometry": {
                 "location": {
-                    "lat": 33.7547939,
-                    "lng": -118.1093925
+                    "lat": 33.7855518,
+                    "lng": -118.1733562
                 },
                 "viewport": {
                     "northeast": {
-                        "lat": 33.7560235802915,
-                        "lng": -118.1078731197085
+                        "lat": 33.78690107989272,
+                        "lng": -118.1718611201073
                     },
                     "southwest": {
-                        "lat": 33.75332561970851,
-                        "lng": -118.1105710802915
+                        "lat": 33.78420142010728,
+                        "lng": -118.1745607798927
                     }
                 }
             },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
-            "id": "f83e877831190b5d0a2e47ba903b27b37c3786ef",
-            "name": "Whole Foods Market",
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "1266ed9588c6df9ae5983ecd4fcca18f6419ca8e",
+            "name": "Long Beach Firefighter's Museum",
             "opening_hours": {
                 "open_now": false
             },
             "photos": [
                 {
-                    "height": 2160,
+                    "height": 1152,
                     "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/115176561477727359334/photos\">Seen Enkidu</a>"
+                        "<a href=\"https://maps.google.com/maps/contrib/116418254005302142023/photos\">Winnie S</a>"
                     ],
-                    "photo_reference": "CmRaAAAAY3ggeu_wwmrV7eU7IsnSqZ2cZ0AUXP2NgTojncZQYMAuwCgkyKqRsTFtPe2Yb_Jc1SaLiKe_jo7-bDOPJ7VsN_luvHkpQg1x_pEBPZPRYAhqQ63286YCxBGi_a7m7-OmEhA9RLBnrU3rteK0tf3-TKdXGhTZ4HKMvIxRcvl20RlkswHA_Z2jag",
-                    "width": 3840
+                    "photo_reference": "CmRaAAAA41cP1DXaHCBsBoG0dBIxUvJmCtg1glo3_m93yehgTspksPXFMPeewZaFdnTPvh1tAsXuedEEw-yjtndM9K4750BVpMfhobHXd4EYz2ZtcqOe7o-aUW94-iIOvdW-9wl0EhACoEmLP9PegE9mkTBZoTg0GhT4amRjx0o2F6pGycvORD4lKDA0Gw",
+                    "width": 2048
                 }
             ],
-            "place_id": "ChIJo3tCMt8v3YARMftWrefJXFg",
+            "place_id": "ChIJ3aTcrW8x3YARvwGCxdEbYac",
             "plus_code": {
-                "compound_code": "QV3R+W6 Long Beach, California, United States",
-                "global_code": "8553QV3R+W6"
+                "compound_code": "QRPG+6M Long Beach, California",
+                "global_code": "8553QRPG+6M"
             },
-            "price_level": 3,
-            "rating": 4.4,
-            "reference": "CmRRAAAAC6fbHoep3h4z1DmY72gtWkAVUFVStwdWC5wQuChK7L4yW3TJdA8mxrssi7B3-sS34b7UJrHuUkXXfI0RubfNQLLcu_0iXr463VFrkmRtBRMDHrFVUqDHnltr-1dVnNMfEhB7SApyP9eVpIEYbarohroOGhT1b_PMXVt45eMyvCYpaRUMnsXHbw",
+            "rating": 4.6,
+            "reference": "CmRbAAAAu2hbtcGQlcxDLX1DrHuB7uPS4KtnRyUq2vzbh2WMts_ouu_SDc18aFUBT1aLy8yXg6e7mN_1pyms9asDJYuQAu9rRyy5if5i0ty1P4btCYPYl5dYh52WK3Xj9siIeyOkEhCovrlxUSrSVANVIfSIa48qGhRP2hzy-RLSUVmSDZr4ofQc_egP3w",
             "scope": "GOOGLE",
             "types": [
-                "grocery_or_supermarket",
-                "supermarket",
-                "store",
-                "health",
-                "food",
+                "museum",
                 "point_of_interest",
                 "establishment"
             ],
-            "vicinity": "6550 Pacific Coast Highway, Long Beach"
+            "vicinity": "1445 N Peterson Ave, Long Beach"
         },
         {
             "geometry": {
                 "location": {
-                    "lat": 33.7592918,
-                    "lng": -118.1142356
+                    "lat": 33.7650324,
+                    "lng": -118.1273445
                 },
                 "viewport": {
                     "northeast": {
-                        "lat": 33.7608643802915,
-                        "lng": -118.1129517197085
+                        "lat": 33.76638222989273,
+                        "lng": -118.1259946701073
                     },
                     "southwest": {
-                        "lat": 33.7581664197085,
-                        "lng": -118.1156496802915
+                        "lat": 33.76368257010728,
+                        "lng": -118.1286943298927
                     }
                 }
             },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
-            "id": "67d32023aa504476d426ffa881d23a9f70f403d3",
-            "name": "AMC Marina Pacifica 12",
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "1f41dc6d9d57eac9ad9f841e18298f11579bc1cf",
+            "name": "Long Beach Lifeguard Museum",
             "photos": [
                 {
-                    "height": 2988,
+                    "height": 3648,
                     "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/116434732078102927281/photos\">xris taylor</a>"
+                        "<a href=\"https://maps.google.com/maps/contrib/114137234816671588776/photos\">Kwang Kim</a>"
                     ],
-                    "photo_reference": "CmRaAAAASM2y6gJAlM6h0p5WO7lGweUP3dTiKRiiFPIYfJo5n_KKjQxQ0whRq-CssnCHjb91423zY0KCQcIYhooIxoNvtPw0Eay06U5KkIJUOJf01BYALrpsku_hKio0mcbytkK7EhDHD5iXUuRU7EBNfoxzoIQBGhR-W8hIcGCZc2aBZd6F9J_tdDXXcA",
-                    "width": 5312
+                    "photo_reference": "CmRaAAAANbBnXiKjbM5jxSzeH6MsQjIImoIQ6k8KxAS199V_Oh-kmu3c6KAJj6-aenXW0Hzw2j0p0WVMyBNRXztUz18NRRF3v_9m9ijtfUNC0acNKSftJXuWxbccsaygTUk0SBl-EhA0-Zud9WXoEkLhOmjuK5evGhRS3iRqbcP4msgkC7gFC1bHJbDsQA",
+                    "width": 5472
                 }
             ],
-            "place_id": "ChIJWZXS_ygw3YARH5BC9TG5saM",
+            "place_id": "ChIJO8yVsTMw3YARQfyhbLD4fA0",
             "plus_code": {
-                "compound_code": "QV5P+P8 Long Beach, California, United States",
-                "global_code": "8553QV5P+P8"
+                "compound_code": "QV8F+23 Long Beach, California",
+                "global_code": "8553QV8F+23"
             },
-            "rating": 4.3,
-            "reference": "CmRSAAAAAZcmzJhs_b9tw22aOfCl7NCesHJxeb7t4sYlGj_cieJ5mZl9M3qfSI6qyQQCsebcHirMYchHyS6EisLGtgYqFHE6zUFZXWW3RhaKkiOJ5_yoByH37GIrG7N15PFDpqf7EhD7aJq2VyKIIRXwk7Ke6U6mGhRwwgnB99uhb8kSyHb07Ief3Khm6Q",
+            "rating": 5,
+            "reference": "CmRbAAAA86js8hr9gjJqdTWS51RMvwP0nQOzDDupT-pgtu-47PzJvXy893mNEXjo93HlWq3sxmoiK8D3GIppOx_RZ48-fTIUU35CkDvB_jJ2a38x-0vABk_IamtI9btCIrW8jS7REhDw2I1gzDCCfCZkrBWdPgdKGhQBaUav3n3crQK-GVN9zZwikVEFoA",
             "scope": "GOOGLE",
             "types": [
-                "movie_theater",
+                "museum",
                 "point_of_interest",
                 "establishment"
             ],
-            "vicinity": "6346 East Pacific Coast Highway, Long Beach"
+            "vicinity": "5291 E Paoli Way, Long Beach"
         },
         {
             "geometry": {
                 "location": {
-                    "lat": 33.81679089999999,
-                    "lng": -118.1513588
+                    "lat": 33.7388612,
+                    "lng": -118.0323257
                 },
                 "viewport": {
                     "northeast": {
-                        "lat": 33.8198821,
-                        "lng": -118.1335313
+                        "lat": 33.74021172989272,
+                        "lng": -118.0312123201073
                     },
                     "southwest": {
-                        "lat": 33.81576049999999,
-                        "lng": -118.1573013
+                        "lat": 33.73751207010728,
+                        "lng": -118.0339119798927
                     }
                 }
             },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/airport-71.png",
-            "id": "442a1ec5af8174bba26a58ea09c646fb0c6bc1f2",
-            "name": "Long Beach Airport",
-            "photos": [
-                {
-                    "height": 3340,
-                    "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/115058434799659415960/photos\">Bill B</a>"
-                    ],
-                    "photo_reference": "CmRaAAAA_0w0rC_enXvPO8ApsVA96re1UBDR5q1ZcwlfGZnKkrL_Y1cETlSL_JzABSiGU4pCIHZNnUmikJosBaXZqDwwlieAp3Z0QZ33H2x75V3JgjVX3BsP5uj-gfNA9rcv-SIAEhCk4s9boDsueoDBvrZ9Z6CUGhTfTL71Yu1PWhZ17ckmUs19mVBr2g",
-                    "width": 4417
-                }
-            ],
-            "place_id": "ChIJhQxDwTYy3YAR_ydWCFAr1wM",
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "b68fea9c6638a28867c73c588422048a48619aae",
+            "name": "Boeing Co. C13",
+            "place_id": "ChIJKV4Aue8l3YARxRlqCeynYew",
             "plus_code": {
-                "compound_code": "RR8X+PF Long Beach, California, United States",
-                "global_code": "8553RR8X+PF"
+                "compound_code": "PXQ9+G3 Huntington Beach, California",
+                "global_code": "8553PXQ9+G3"
             },
-            "rating": 4.4,
-            "reference": "CmRRAAAAZSTCN05wRV4RomRDQ2A15H3ztZJHolQ67WxHEq5u1eHboailmJVpUoIes38NnTS8bErgAy1c11iiw64BjFoaSLjJQwr51y-6vGZSJJTRZ2jkhJ9gTUSVJ-EL95kTZS8-EhDDvnrEqp89g8JgdncRvbYEGhSHaxXDsuI2BMzeTAX4jF4JuHX-dQ",
+            "rating": 5,
+            "reference": "CmRbAAAAgOE4peDC2J-ELTZd6ua0W3EBi6q-b-h-tT9jgJ--YreShpf01baClx8GdnilkR5LpELMFqy5g4n5NxFOZFa91_ApCHyEjZquTvEz5cjwDbvChT7rgZlxP0i_cCBeM2qrEhDT0S8B_O6Za-GkJObPif1lGhTJHaSUuK9YqFRnaeG6_XSL072MIw",
             "scope": "GOOGLE",
             "types": [
-                "airport",
+                "museum",
                 "point_of_interest",
                 "establishment"
             ],
-            "vicinity": "4100 Donald Douglas Drive, Long Beach"
+            "vicinity": "15400 Graham St, Huntington Beach"
         },
         {
             "geometry": {
                 "location": {
-                    "lat": 33.79790610000001,
-                    "lng": -118.1226332
+                    "lat": 33.7768442,
+                    "lng": -118.1070102
                 },
                 "viewport": {
                     "northeast": {
-                        "lat": 33.7995294302915,
-                        "lng": -118.1216052697085
+                        "lat": 33.77846797989272,
+                        "lng": -118.1058978201073
                     },
                     "southwest": {
-                        "lat": 33.7968314697085,
-                        "lng": -118.1243032302915
+                        "lat": 33.77576832010728,
+                        "lng": -118.1085974798927
                     }
                 }
             },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
-            "id": "bda23269a613bdb4fa22c94f0bcba143ca750ce7",
-            "name": "Target",
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "da894847b9e154012abd58564a4461c9b1c2148b",
+            "name": "Rancho Los Alamitos",
             "opening_hours": {
                 "open_now": false
             },
             "photos": [
                 {
-                    "height": 3024,
+                    "height": 2268,
                     "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/109812039289131163641/photos\">Zayra Victoria</a>"
+                        "<a href=\"https://maps.google.com/maps/contrib/117202832077348381292/photos\">Stuart Shim</a>"
                     ],
-                    "photo_reference": "CmRaAAAA_nxAPFMuIKdVwg1dfyMwAc5XSVrGGR9HSiZgpq3K0kDm9Tcyn0WFXENYIQ3zuqlqpG9A3pD-dJt3lJ3xAoigAq4LGYbqKizVHj8Mw10qdAvr9lYiNNSxGrJiOaeKPh-JEhBHxFxW5sIqUn_5W4XaAESKGhR-2no9L7s-6FvIAu-F_2bxc4_h5w",
+                    "photo_reference": "CmRaAAAAVg5upDI58EdvQmVbujnzxkVOgy972OwiwLUslZ5jHQNf0fuT_3uOfHVaC9sCXr12ieJw4WhjR50XLmfTc2UZpu4srYs6qeiWBFr3G1YFKQzBGLUE5bIt05iMu_-0Fgu7EhDpbNl8eZsc-D5SnnlgXDNmGhQIgAGsK0zoQaT3I1gPzDfAf4exYg",
                     "width": 4032
                 }
             ],
-            "place_id": "ChIJ3-aYlO8x3YARjZV0HpFoFn8",
+            "place_id": "ChIJt8_1jSsu3YARu0kgphh_pW8",
             "plus_code": {
-                "compound_code": "QVXG+5W Long Beach, California, United States",
-                "global_code": "8553QVXG+5W"
-            },
-            "price_level": 2,
-            "rating": 4.3,
-            "reference": "CmRRAAAANSlqFRysrBim-rjHjObDKXLH6O_ayBvB1K914NCy0YQqFrB12oqdrJQWXNHJ_qrIkGxOGX5uieBTBAOvXQdqEklpwcsl9TrIj9Zbz3WjWP7M90eihZ6oHWV5yn7rAwFQEhDw1GqMeMM_deAgGPG2c6JTGhQGPX8oX5vBuAm8wwnGoTQJITmNkQ",
-            "scope": "GOOGLE",
-            "types": [
-                "department_store",
-                "furniture_store",
-                "grocery_or_supermarket",
-                "clothing_store",
-                "electronics_store",
-                "home_goods_store",
-                "store",
-                "food",
-                "point_of_interest",
-                "establishment"
-            ],
-            "vicinity": "2270 North Bellflower Boulevard, Long Beach"
-        },
-        {
-            "geometry": {
-                "location": {
-                    "lat": 33.7881664,
-                    "lng": -118.1116977
-                },
-                "viewport": {
-                    "northeast": {
-                        "lat": 33.7894949802915,
-                        "lng": -118.1100962697085
-                    },
-                    "southwest": {
-                        "lat": 33.7867970197085,
-                        "lng": -118.1127942302915
-                    }
-                }
-            },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
-            "id": "74a0571900c738b90a45184a9eaa5d8c1e1037ed",
-            "name": "Carpenter Performing Arts Center",
-            "opening_hours": {
-                "open_now": false
-            },
-            "photos": [
-                {
-                    "height": 3024,
-                    "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/108606146385735285051/photos\">Jerry Vogt</a>"
-                    ],
-                    "photo_reference": "CmRaAAAAjY4YQkpFHtrJVQ0z3NKmRamyXZDjeiylw8gy1z8zHXk2gPq0BkBUmtWinJM7L3Kkxi3m-ukcGzsuTiSlXLUZ3c0FRPKcKTJUC-6faSrLz4422hg96X5dBLaO-KEF3cnCEhCwm7okJFiM3gVPUiy7ZtKQGhREmWToHKsUWeCKnB9Kwt8aKUxBMQ",
-                    "width": 4032
-                }
-            ],
-            "place_id": "ChIJJ-0WriAu3YARv9DP_fsdAp0",
-            "plus_code": {
-                "compound_code": "QVQQ+78 Long Beach, California, United States",
-                "global_code": "8553QVQQ+78"
+                "compound_code": "QVGV+P5 Long Beach, California",
+                "global_code": "8553QVGV+P5"
             },
             "rating": 4.7,
-            "reference": "CmRSAAAAgrBa0-d2HV1Pqor7GGbzTxS369bfqFElEYW96kb7URLQ69bWk8A1VEPjnK_G6JZNy3P6v9r6DPOgfBXunk1tjNm5TLex0wlNlAhM0pK-14bBuDa9ZAatG-kMIw3s5vB5EhD4Ie-ED8P98vq4M5zl29-oGhTb8mLxsTSFYP6NEm7eUstYyCwsqg",
+            "reference": "CmRbAAAAf_kPWcas3kaCMc8mvfXiFbp7yEQ-5GVfSvDrjdf9TERX1Iyi1QlGMCE3Q6hw9zABQ4N2TQFtyHDXxdimZimWcuw-0U5oxMJacHZerx1CM9sHl7XmecN-2jY487jMxY24EhBHSIOe_x-tcqSy00eZPL5qGhQn-5yW-5k1v3Z6BX_opZjA4ugsEg",
             "scope": "GOOGLE",
             "types": [
+                "museum",
                 "point_of_interest",
                 "establishment"
             ],
-            "vicinity": "6200 East Atherton Street, Long Beach"
+            "vicinity": "6400 E Bixby Hill Rd, Long Beach"
         },
         {
             "geometry": {
                 "location": {
-                    "lat": 33.8536269,
-                    "lng": -118.1339563
+                    "lat": 33.7432325,
+                    "lng": -118.104456
                 },
                 "viewport": {
                     "northeast": {
-                        "lat": 33.869237,
-                        "lng": -118.0583571
+                        "lat": 33.74453757989272,
+                        "lng": -118.1031658201073
                     },
                     "southwest": {
-                        "lat": 33.820149,
-                        "lng": -118.1677449
+                        "lat": 33.74183792010727,
+                        "lng": -118.1058654798927
                     }
                 }
             },
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
-            "id": "2973d6fb3567a96549ebd4536f18ef30a5528675",
-            "name": "Lakewood",
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "cf135331f130a785c0384a8d8d0c940730816c74",
+            "name": "Red Car Museum",
             "photos": [
                 {
-                    "height": 720,
+                    "height": 1836,
                     "html_attributions": [
-                        "<a href=\"https://maps.google.com/maps/contrib/117896941092431226525/photos\">Suzy Valentin</a>"
+                        "<a href=\"https://maps.google.com/maps/contrib/106614893605496598753/photos\">A Google User</a>"
                     ],
-                    "photo_reference": "CmRZAAAAIpmeJwz_VzQVVBJ3rvhw71rHLMXdCQbp0WrGWTev5naRxK8g9w0NHq6dDW7f110YOSZvPP4_OPjTPnQLzrLHivBrijrlpqQ8w92x-oikbDtEblid9tZp7ZdsLlCdffQxEhCCG_gnzg9peKp7F-ZB6s6_GhQ1MK0dAeZOTGydWzIUrOmM7DiJIQ",
+                    "photo_reference": "CmRaAAAAApFbe2Qo20AdjAAdP9Iyq7_I6f7Q1oZtcORPbtsHAqlpsauMqd2xWwgznh32fA84DRZlerpwnb-zU-saW-xEKq-rfUBCJa2CTgn-ys4HiwVCZYXPso7uhns1eMVPossaEhB2xm2GJZicINRqzuXhukSOGhQiNVrTU090HNyNjOJ2gMYf60TGfQ",
+                    "width": 3264
+                }
+            ],
+            "place_id": "ChIJWcjozOQv3YARKOMzpRd1rNI",
+            "plus_code": {
+                "compound_code": "PVVW+76 Seal Beach, California",
+                "global_code": "8553PVVW+76"
+            },
+            "rating": 4.2,
+            "reference": "CmRbAAAAT6N68grgv_Tfsu6GWOwwywWIk_9nS15imeqoRFZiWWGbNfma0TWBA5H8rbeJ4g7OOJjpFEJd-pZ3b5Fd57jfKExznfjHNX02rBRVQgNGF76wxAtLpnadfdCfmsVD5W1KEhCVRNw8FHB-PBN52AGpBWqHGhSB2yPBwpoPWeOrAmY6RL-JYu_t2Q",
+            "scope": "GOOGLE",
+            "types": [
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "800-840 Electric Ave, Seal Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.8030731,
+                    "lng": -118.0412426
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.80439142989272,
+                        "lng": -118.0398930201073
+                    },
+                    "southwest": {
+                        "lat": 33.80169177010728,
+                        "lng": -118.0425926798927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "e96445cf39ebd73469086c4bcaebcc1be54b629c",
+            "name": "Jewelry GomldtraderMira",
+            "place_id": "ChIJLW9YZcIu3YARW3VC-mV4cWU",
+            "plus_code": {
+                "compound_code": "RX35+6G Los Alamitos, California",
+                "global_code": "8553RX35+6G"
+            },
+            "rating": 0,
+            "reference": "CmRbAAAAPQQbUA4EXcQmaKVyJDe_w-4aR0eS9YBJ_OKUqASp8jDsyVrkL6j8YX_Ko6vXIAC4qQsakHwJCdnqZWIvuZVf7FLEYTiqjIMIpVZuO8hldQhY54tKKfcmIxsARO1aDgc-EhDnWuqTWB0m5eV_fxNKEqUZGhRSagjR9mwV4GlI-7wezltkvn-Mtg",
+            "scope": "GOOGLE",
+            "types": [
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "5277 Katella Ave, Cypress"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.8324414,
+                    "lng": -118.1422168
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.83378182989272,
+                        "lng": -118.1408669701073
+                    },
+                    "southwest": {
+                        "lat": 33.83108217010728,
+                        "lng": -118.1435666298927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "a5b7942890b6cee8df54ff9171d4237619ec8a42",
+            "name": "NE corner - LA Co Surveyor Brass Disk",
+            "place_id": "ChIJnTcGDkQy3YARmonWRH7vtgY",
+            "plus_code": {
+                "compound_code": "RVJ5+X4 Long Beach, California",
+                "global_code": "8553RVJ5+X4"
+            },
+            "rating": 0,
+            "reference": "CmRbAAAAjiIqnp4k5aRTSfGR1hKA6_wEXmiuC1da3GI_LE8VOKDChNWPqOpV8ooMWxzehyvEbjKitQ5KFjf15jXm1hDWWiLHJnSm0eib103OOBCHvMljMOINhWFA1ikz1mw72aKGEhDjKWX57gaIyvtpfJx3Ab2iGhQYcSweTnIZOgaYzaK01aS1qH7ZNw",
+            "scope": "GOOGLE",
+            "types": [
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "4311 E Carson St, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.852213,
+                    "lng": -118.11492
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.85350717989272,
+                        "lng": -118.1134547201073
+                    },
+                    "southwest": {
+                        "lat": 33.85080752010727,
+                        "lng": -118.1161543798927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "61a0a71149c77959a0cf8a80c52439b346060b5e",
+            "name": "Sunset Alley Studio",
+            "place_id": "ChIJ7Vi1tX8y3YARCSXsbeqA1qI",
+            "plus_code": {
+                "compound_code": "VV2P+V2 Lakewood, California",
+                "global_code": "8553VV2P+V2"
+            },
+            "rating": 5,
+            "reference": "CmRbAAAA5Y5eokh57HqWBdixwIXRfliwa2pf1jp26vOeKDvotafE1Z0EB7nYpm-Y_i8cITGXBTez0lJBsTBZ3eIJzN2NX158tdjk7lIIFE8mhxDlAnR-yo173jWy47oDttF3ekXJEhBnRJj4v257Kr7K6Qh6Y71ZGhRbuycT2U9fhCnyO_FtIJqvkEwelg",
+            "scope": "GOOGLE",
+            "types": [
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "5149 Faust Ave, Lakewood"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.7933119,
+                    "lng": -118.1082349
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.79466112989272,
+                        "lng": -118.1067351201073
+                    },
+                    "southwest": {
+                        "lat": 33.79196147010727,
+                        "lng": -118.1094347798927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "2d3128d9b0228bf7af4ce6a2ed40ceecfc2485cb",
+            "name": "GEREJA ISA ALAMASIH Jemaat ELSHADAI",
+            "place_id": "ChIJmY6q3iEu3YARx2wdmi3dkNY",
+            "plus_code": {
+                "compound_code": "QVVR+8P Long Beach, California",
+                "global_code": "8553QVVR+8P"
+            },
+            "rating": 5,
+            "reference": "CmRbAAAA9WwnDQOyKByHqC9WSJLye72KhQbtN24ZSW19GtrGokFbJ71Lh3gREAkr0NNWtgaNGB7UoyZei2ZXim2-9d-qpoE7xMmz_1QmmaU8fJBfG-fpVjOhFewuOIt2kT5GDjM5EhDnyKERCadBLg14GKwJNMDlGhRRhPcMrxh1TN6Y768_FgfbhITEOQ",
+            "scope": "GOOGLE",
+            "types": [
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "2041 Palo Verde Ave, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.7709926,
+                    "lng": -118.187499
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.77234232989272,
+                        "lng": -118.1862412201073
+                    },
+                    "southwest": {
+                        "lat": 33.76964267010728,
+                        "lng": -118.1889408798927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "d8c8c4b6d5f8db81c68dde6b8bed673aef5ce1fa",
+            "name": "Creative Arts Coalition to Transform Urban Space (CACtTUS)",
+            "opening_hours": {
+                "open_now": false
+            },
+            "photos": [
+                {
+                    "height": 682,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/108319241143950883839/photos\">A Google User</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAkhLBHkqyn4AiI0y7tkpvgLuqRBgG2JBVcw5M-iuf8ZltxcDPQ1UFvFsM_AhXs1SzB00o5t0xFAKo4JzWHhE6i8EE756R5F5zH5vqebybywXw48eNRENmXLn9P6AjPwtdEhC5czeMHYzroBPBHBhunjVYGhT-D8tsNrNVoVOL4PrzBUY3Mcykqg",
+                    "width": 1020
+                }
+            ],
+            "place_id": "ChIJMUJe2j4x3YARaP3br-to75s",
+            "plus_code": {
+                "compound_code": "QRC7+92 Long Beach, California",
+                "global_code": "8553QRC7+92"
+            },
+            "rating": 5,
+            "reference": "CmRbAAAAWcQ2l0jPitkQopps1pnt1FCEKIJE6EsdDGaWVlS8wVz51WE-LwbWTIJXUnFE6Vherxd44EhNLme_gu9snx-VcYIT8lTv5xV3al7a16i-bzLoAOh7wn1KxMMaLkEEVw9hEhAUBesF08CbyZXxD8Dog1aHGhTbnJKcTuwoiljQAKcv803Ius3-eg",
+            "scope": "GOOGLE",
+            "types": [
+                "museum",
+                "art_gallery",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "326 Elm Ave, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.7605021,
+                    "lng": -118.1351927
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.76185637989272,
+                        "lng": -118.1338526701073
+                    },
+                    "southwest": {
+                        "lat": 33.75915672010728,
+                        "lng": -118.1365523298928
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "c8ea25ba6a3626f4a9a824bad7eecb2b6ae4fe36",
+            "name": "Utility Box",
+            "photos": [
+                {
+                    "height": 1080,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/113333294777177514698/photos\">Xa Ping</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA1d1GOUSCDgD-Qq8QC4oS0biMh5fUV9u5plLGrS7nd9EKtDc06DwVqVzgMkvLQhJk3ZATZLylMEkjCJTjUJaYQtCWNoT3AfAhzMGqwpHbt3a7boVVSgyHQH4ttyU1HqudEhClzfJ55ArWPhJ3brwjztqBGhTfheJ9fPGZEpoxWkTTqUMMTELw4g",
                     "width": 1080
                 }
             ],
-            "place_id": "ChIJHYGo5F8y3YARxXjJKWCoW8c",
-            "reference": "CmRbAAAA-1NZAwWydxxlKiKvHq0wzHyHd2QHbAeJwM_ljaawgtYC37MzEoP5_-JbBBmLqyTC0KumY9twbcD4QURHDbNAfaorBGQ5grKqzx7WNeJi-9sLBt1Ch9Hq8FuFZWzZyLIqEhDSLVAZldaLO0vbKI-FrWwzGhT-4WfJrE6wzYWUHBDeBEFvGzp_WQ",
+            "place_id": "ChIJ9_ARGzYw3YARIYluXNbYLY0",
+            "plus_code": {
+                "compound_code": "QV67+6W Long Beach, California",
+                "global_code": "8553QV67+6W"
+            },
+            "rating": 0,
+            "reference": "CmRbAAAAtGueMe0mpcp53O1Twrt-86B9X4muP1L_958LZm6Yzjfkr1lA1XYbgsVcczRWjL98tSrFy4yyH0pUcnkOrBRDpTv3U2c-2XUxiCdl1ke08gs1pOS5Niu4FMt9V7ehYdD6EhCMrA7JJiUcJttsVd34BRVgGhRM1g2AjtnBet0JdiUHftadZR69oA",
             "scope": "GOOGLE",
             "types": [
-                "locality",
-                "political"
+                "museum",
+                "point_of_interest",
+                "establishment"
             ],
-            "vicinity": "Lakewood"
+            "vicinity": "201-203 Nieto Ave, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.8324275,
+                    "lng": -118.1992239
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.83374282989272,
+                        "lng": -118.1977257201073
+                    },
+                    "southwest": {
+                        "lat": 33.83104317010728,
+                        "lng": -118.2004253798927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "3ae75163bcec05bafcf4a0ef89a52d12106c1974",
+            "name": "Los Cerritos History",
+            "photos": [
+                {
+                    "height": 1536,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/117564263955934149376/photos\">Everett Prado</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAX8GElvCxG8gxAvEd0FPlZrhmvfwkpOpR-KQdlowUVniJ88dUQynEcpQj79rM8cyesnheCgSa9Ugn_OkTGwI5HnFIJxjFV4OGjxfzvATktzPrWx7nzaxBRHNLJ1qo8KAWEhBGrMOMvV48oPHBiTnK2YMDGhQ9ZfCEiyzNLnHt7GuY4KKoQ7D03g",
+                    "width": 2048
+                }
+            ],
+            "place_id": "ChIJKcdID4Iz3YARz334DViWOtY",
+            "plus_code": {
+                "compound_code": "RRJ2+X8 Long Beach, California",
+                "global_code": "8553RRJ2+X8"
+            },
+            "rating": 0,
+            "reference": "CmRbAAAA6-QqZ8euyK03RvyUePzrhOg3A7CdOWzWgkm83GsH7iJChL9gLw1NUN0Kh821Bu5ZAVx_Cp_ZsZzw3Wzmse47NjdSl7niyRW-KthWrhfwMZPLXDyiR7ViJhYdJACVMcq_EhDCyF00g0Ho5Oq1zgtupmRCGhSLu3GQbf47DilIvts_pKu3rWPzlg",
+            "scope": "GOOGLE",
+            "types": [
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "4181 Country Club Dr, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.7768442,
+                    "lng": -118.1070102
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.77819402989273,
+                        "lng": -118.1056603701073
+                    },
+                    "southwest": {
+                        "lat": 33.77549437010729,
+                        "lng": -118.1083600298928
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "83a4df43c56b0ee4423e27aa3943235308bb11fc",
+            "name": "rancho los cerritos",
+            "place_id": "ChIJVfUN_owv3YARqeEzdcNbi30",
+            "plus_code": {
+                "compound_code": "QVGV+P5 Long Beach, California",
+                "global_code": "8553QVGV+P5"
+            },
+            "rating": 0,
+            "reference": "CmRbAAAA2x0MY_1i79X0i6tELmhUY29IEnWbVwUZHQstyHXbkh_bjLbeaVdMKBXEUK2Y7wS5n06fIr1V6Dl721XmXZw3VpSUNQqoDKoYe8lA6AQaRLtaCs23gekzhRBrjiYO1YkwEhCeyDmsY-K3KjOSj5Oq3Bo8GhRYPijVDsGUUs9euSIeUvCR2fogOg",
+            "scope": "GOOGLE",
+            "types": [
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "4600 N Virginia Rd, Long Beach"
+        },
+        {
+            "geometry": {
+                "location": {
+                    "lat": 33.8402255,
+                    "lng": -118.1747231
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 33.84157532989273,
+                        "lng": -118.1733732701073
+                    },
+                    "southwest": {
+                        "lat": 33.83887567010728,
+                        "lng": -118.1760729298927
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+            "id": "3c242ac902ebdb5ad7b9e0ed7fa4624fcea3056e",
+            "name": "El Paso Civic Center",
+            "photos": [
+                {
+                    "height": 2560,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/114215635026287829050/photos\">Bruce Bonnette</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAhSgiGojgkJEDWbibQzNlsin9kcsYoCmA0NJ2N7kNpz4P6TFZkUsD52QHZijapohjLcFijUBqrUuEh6E1bVpf4K5H4j3dzxVfMBncqFRrzw_-9AzB98PsXguzXYrD3OuLEhBk1Wif2eQE4WWWJJZm5WcaGhQuXKGgHZ3XnuErCsBFxeLTReqkEg",
+                    "width": 1440
+                }
+            ],
+            "place_id": "ChIJSfPAuAkz3YARq5Ago8TqzCQ",
+            "plus_code": {
+                "compound_code": "RRRG+34 Long Beach, California",
+                "global_code": "8553RRRG+34"
+            },
+            "rating": 0,
+            "reference": "CmRbAAAAhkJ4N7mDrsRVSZe4lmWcbbA0orhatHXyVEvLYTg0XqEXpXB6ppJ3hPxPLoeY8udDyAQ506Tlm5KjskNZpWetYOxHuKPqd87gt0ydi1ArNA4yaFAH-FWcj0-rBy8vMofCEhC4Z0K5Y7lMBVw_ITecgEs5GhS5klAbKDj7MeD_UpPXaimztyWuNA",
+            "scope": "GOOGLE",
+            "types": [
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "vicinity": "Long Beach"
         }
     ],
     "status": "OK"

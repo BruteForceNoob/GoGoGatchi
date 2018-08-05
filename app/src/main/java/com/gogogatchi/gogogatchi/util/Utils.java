@@ -9,20 +9,18 @@ import com.gogogatchi.gogogatchi.core.LocationData;
 import com.gogogatchi.gogogatchi.core.Profile;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Type;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Utils {
+
     private static final String TAG = "Utils";
 
     /*** For use with CSULB Profiles ***/
@@ -45,11 +43,11 @@ public class Utils {
     }
 
     /*** Modified for use with Places API ***/
-    public static List<LocationData> loadLocationProfiles(Context context) throws JSONException {
+    public static List<LocationData> loadLocationProfiles(Context context, URL url) throws JSONException, IOException {
         Gson g = new Gson();
-        final String strWithData = loadJSONFromAsset(context, "locations.json");
 
-        return g.fromJson(strWithData, GoogleQuery.class).getData();
+        final String response = loadJSONFromAsset(context, "locations.json");
+        return g.fromJson(response, GoogleQuery.class).getData();
     }
 
     public static String loadJSONFromAsset(Context context, String jsonFileName) {

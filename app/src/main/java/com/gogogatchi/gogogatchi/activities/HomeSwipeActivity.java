@@ -1,6 +1,8 @@
 package com.gogogatchi.gogogatchi.activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -8,39 +10,62 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.content.Context;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.gogogatchi.gogogatchi.core.LocationCard;
+import com.gogogatchi.gogogatchi.BuildConfig;
 import com.gogogatchi.gogogatchi.R;
+import com.gogogatchi.gogogatchi.core.GoogleQuery;
+import com.gogogatchi.gogogatchi.core.LocationCard;
 import com.gogogatchi.gogogatchi.core.LocationData;
-import com.gogogatchi.gogogatchi.core.Profile;
-import com.gogogatchi.gogogatchi.util.*;
-
+import com.google.gson.Gson;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
 import org.json.JSONException;
 
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.List;
 
-import static com.gogogatchi.gogogatchi.util.Utils.loadLocationProfiles;
+import javax.net.ssl.HttpsURLConnection;
 
 public class HomeSwipeActivity extends AppCompatActivity {
-
     private SwipePlaceHolderView mSwipeView;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private Context mContext;
     private Toolbar appBar;
+    private List<LocationData> places;
+
+    private String myResponse = null;
+
+    public String getResponse() {
+        return myResponse;
+    }
+
+    public Context getmContext() {
+        return mContext;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_swipe);
+        setContentView(R.layout.activity_home_swipe2);
+
+        String userQuery = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
+                + "location=33.783022,-118.112858"
+                + "&radius=12000"
+                + "&type=museum"
+                + "&keyword=art&key="
+                + BuildConfig.ApiKey;
+
+        /*** HTTP QUERY PLACES API***/
+        Network task = new Network(userQuery);
+        task.execute();
 
         /*** Begin Menu Code ***/
         appBar = (Toolbar) findViewById(R.id.app_bar);
@@ -58,29 +83,12 @@ public class HomeSwipeActivity extends AppCompatActivity {
         mSwipeView.getBuilder()
                 .setDisplayViewCount(3)
                 .setSwipeDecor(new SwipeDecor()
-                        .setPaddingTop(20)
+                        .setPaddingLeft(20)
                         .setRelativeScale(0.01f)
                         .setSwipeInMsgLayoutId(R.layout.location_swipe_right)
                         .setSwipeOutMsgLayoutId(R.layout.location_swipe_left));
+        //mSwipeView.getBuilder().setIsUndoEnabled(true);
 
-        //Load all Profiles from JSON query
-        /*** For use with CSULB Profiles ***/
-
-        for(Profile profile : Utils.loadProfiles(this.getApplicationContext())) {
-            mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
-        }
-
-        /*** For use with Google Places API ***/
-        /*
-        try {
-            for(LocationData profile : loadLocationProfiles(mContext)) {
-                mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
-            }
-        } catch (JSONException e1) {
-            e1.printStackTrace();
-        }
-        */
-        
         findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,6 +99,27 @@ public class HomeSwipeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mSwipeView.doSwipe(true);
+            }
+        });
+        /*
+        findViewById(R.id.goBackButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mSwipeView.undoLastSwipe();
+            }
+        });
+        */
+        findViewById(R.id.outOfIdeas).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String userQuery = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
+                        + "location=33.783022,-118.112858"
+                        + "&radius=30000"
+                        + "&type=museum,restaurant"
+                        + "&keyword=history|maritime+museum|aeronautical|war+museum&key="
+                        + BuildConfig.ApiKey;
+                Network taskB = new Network(userQuery);
+                taskB.execute();
             }
         });
 
@@ -108,7 +137,6 @@ public class HomeSwipeActivity extends AppCompatActivity {
                                 //menuItem.setChecked(false);
                                 Intent intent= new Intent(getApplicationContext(),ProfileActivity.class);
                                 startActivity(intent);
-
                                 break;
                             }
                             case R.id.nav_settings: {
@@ -116,15 +144,9 @@ public class HomeSwipeActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 break;
                             }
-                            case R.id.nav_feed: {
-                                //menuItem.setChecked(false);
-                                Intent intent= new Intent(getApplicationContext(),FeedActivity.class);
-                                startActivity(intent);
-                                break;
-                            }
                             case R.id.nav_logout:{
                                 //finishAffinity();
-                                Intent intent = new Intent (getApplicationContext(), MainActivity.class);
+                                Intent intent = new Intent (getApplicationContext(), SplitHomeActivity.class);
                                 startActivity(intent);
                                 break;
                             }
@@ -133,6 +155,16 @@ public class HomeSwipeActivity extends AppCompatActivity {
                     }
                 });
         /***END MENU CODE ***/
+    }
+
+    public void populateCards() {
+        Gson gson = new Gson();
+
+        for(LocationData profile : gson.fromJson(myResponse, GoogleQuery.class).getData()) {
+            if (profile.getPhoto().isEmpty() == false) {// If no photo, don't make a card
+                mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
+            }
+        }
     }
 
     @Override
@@ -146,12 +178,6 @@ public class HomeSwipeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.action_bar_menu, menu);
-        return true;
-    }*/
     @Override
     public void onBackPressed()
     {
@@ -159,6 +185,58 @@ public class HomeSwipeActivity extends AppCompatActivity {
         System.exit(0);
     }
 
+    public class Network extends AsyncTask<Void, Void, Integer> {
+        String query;
+
+        public Network(String userQuery) {
+            query = userQuery;
+        }
+
+        public String queryGooglePlaces(String url) throws IOException, JSONException {
+            int response_code;
+            HttpsURLConnection con;
+            con = (HttpsURLConnection) new URL(url).openConnection();
+            con.connect();
+            con.setRequestMethod("GET");
+            response_code = con.getResponseCode();
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String inputLine = null;
+            StringBuffer response = new StringBuffer();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+
+            in.close();
+            myResponse = response.toString();
+            looper();
+
+            return null;
+        }
+
+        public void looper() {
+            while(myResponse == null) {}
+        }
+
+        @Override
+        protected Integer doInBackground(Void... Voids) {
+            try {
+                queryGooglePlaces(query);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Integer useless) {
+            populateCards();
+        }
+    }
 }
 
 

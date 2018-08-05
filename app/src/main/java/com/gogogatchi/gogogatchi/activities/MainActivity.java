@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.ViewPagerAdapter;
 import com.gogogatchi.gogogatchi.FirebaseDB;
+import com.gogogatchi.gogogatchi.util.Utils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -80,19 +81,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnLogin, btnReg;
         btnLogin = (Button) findViewById(R.id.btnLogin);
-        btnReg = (Button) findViewById(R.id.btnRegister);
+       // btnReg = (Button) findViewById(R.id.btnRegister);
         btnLogin.setOnClickListener(this);
-        btnReg.setOnClickListener(this);
+        //btnReg.setOnClickListener(this);
     }
 
     //OnClick creation implementation
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btnRegister:
-                Intent openRegister = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(openRegister);
-                break;
+            //case R.id.btnRegister:
+             //   Intent openRegister = new Intent(MainActivity.this, RegisterActivity.class);
+              //  startActivity(openRegister);
+             //   break;
             case R.id.btnLogin:
                 userLogin();
                 break;
