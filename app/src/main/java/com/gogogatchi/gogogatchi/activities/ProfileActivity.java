@@ -48,7 +48,7 @@ public class ProfileActivity extends AppCompatActivity {
         mRef = FirebaseDB.mDatabase;
         final DatabaseReference mChildRef= mRef.child("users");
         mSendData= findViewById(R.id.updateProfile);
-        editText = (EditText)findViewById(R.id.userId);
+        editText = findViewById(R.id.userId);
 
 
         mChildRef.addValueEventListener(new ValueEventListener() {
@@ -71,22 +71,6 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        /*mSendData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                User user= new User();
-
-
-                user.setUsername("Ankush");
-                user.setPassword("test123");
-                Map<String,Boolean> interests=user.getInterests();
-                interests.put("Athletics",isCheckAth.isChecked());
-                interests.put("Cultural",isCheckCul.isChecked());
-                interests.put("Monuments",isCheckMonu.isChecked());
-                //mChildRef= mRef.child("User").child(user.getUsername());
-                //mChildRef.setValue(user);
-            }
-        });*/
 
         }
 
