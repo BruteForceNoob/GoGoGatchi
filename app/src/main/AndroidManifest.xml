@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/icon_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.SplitHomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,10 +26,12 @@
         <activity android:name=".activities.ProfileActivity" />
         <activity android:name=".activities.SettingsActivity"></activity>
         <activity android:name=".activities.RegisterActivity"></activity>
+        <activity android:name=".activities.MainActivity"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/api_key"/>
+
     </application>
 
 </manifest>

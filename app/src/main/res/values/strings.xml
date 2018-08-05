@@ -28,6 +28,8 @@
     <string name="passwordHint">Password (min. 6 char)</string>
     <string name="gender">Gender</string>
 
+    <string name="termsConditions">Privacy</string>
+
 
     <!--- gender drop list-->
     <string-array name="gender">
