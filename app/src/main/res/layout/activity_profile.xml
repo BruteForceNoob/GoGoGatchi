@@ -82,40 +82,5 @@
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="96dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="75dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/userId">
-
-        <CheckBox
-            android:id="@+id/athletics"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/athletics"
-            android:textAppearance="@style/TextAppearance.AppCompat"
-            android:textSize="18sp" />
-
-        <CheckBox
-            android:id="@+id/cultural"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/cultural"
-            android:textAppearance="@style/TextAppearance.AppCompat"
-            android:textSize="18sp" />
-
-        <CheckBox
-            android:id="@+id/monuments"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/monuments"
-            android:textAppearance="@style/TextAppearance.AppCompat"
-            android:textSize="18sp" />
-    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

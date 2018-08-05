@@ -49,10 +49,6 @@ public class ProfileActivity extends AppCompatActivity {
         final DatabaseReference mChildRef= mRef.child("users");
         mSendData= findViewById(R.id.updateProfile);
         editText = (EditText)findViewById(R.id.userId);
-        isCheckAth = findViewById(R.id.athletics);
-        isCheckCul = findViewById(R.id.cultural);
-        isCheckMonu = findViewById(R.id.monuments);
-
 
 
         mChildRef.addValueEventListener(new ValueEventListener() {
