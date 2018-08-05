@@ -73,7 +73,7 @@ public class LocationCard {
     // Swipe Left
     @SwipeOut
     private void onSwipedOut(){
-        mProfile = null;
+        //mProfile = null;
         //mSwipeView.addView(this);
     }
 
