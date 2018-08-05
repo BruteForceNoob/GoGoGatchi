@@ -1,10 +1,13 @@
 package com.gogogatchi.gogogatchi.activities;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -19,6 +22,7 @@ import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.core.GoogleQuery;
 import com.gogogatchi.gogogatchi.core.LocationCard;
 import com.gogogatchi.gogogatchi.core.LocationData;
+import com.gogogatchi.gogogatchi.util.MapUtil;
 import com.google.gson.Gson;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
@@ -40,6 +44,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
     private Context mContext;
     private Toolbar appBar;
     private List<LocationData> places;
+    private MapUtil mapUtil;
 
     private String myResponse = null;
 
@@ -50,18 +55,25 @@ public class HomeSwipeActivity extends AppCompatActivity {
     public Context getmContext() {
         return mContext;
     }
+    private Location location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_swipe2);
+        ActivityCompat.requestPermissions(HomeSwipeActivity.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},10);
+        mapUtil=new MapUtil(getApplicationContext());
+         location=mapUtil.getLocation();
 
         String userQuery = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
-                + "location=33.783022,-118.112858"
+                + "location="+String.valueOf(
+                        location.getLatitude())+","+String.valueOf(location.getLongitude())
                 + "&radius=12000"
                 + "&type=museum"
                 + "&keyword=art&key="
                 + BuildConfig.ApiKey;
+
+
 
         /*** HTTP QUERY PLACES API***/
         Network task = new Network(userQuery);
@@ -113,7 +125,8 @@ public class HomeSwipeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String userQuery = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
-                        + "location=33.783022,-118.112858"
+                        + "location="+String.valueOf(
+                        location.getLatitude())+","+String.valueOf(location.getLongitude())
                         + "&radius=30000"
                         + "&type=museum,restaurant"
                         + "&keyword=history|maritime+museum|aeronautical|war+museum&key="
