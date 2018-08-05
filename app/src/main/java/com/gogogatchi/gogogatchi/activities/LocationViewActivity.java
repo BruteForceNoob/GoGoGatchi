@@ -20,10 +20,15 @@ import com.google.android.gms.location.places.Places;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+import java.util.ArrayList;
+
 public class LocationViewActivity extends AppCompatActivity {
 
     protected GeoDataClient mGeoDataClient;
     protected PlaceDetectionClient mPlaceDetectionClient;
+
+    private ArrayList pictures = new ArrayList<Bitmap>();
+    private ArrayList metadata = new ArrayList<PlacePhotoMetadata>();
 
     private Bitmap bitmap = null;
     private static Profile mProfile;
@@ -64,37 +69,34 @@ public class LocationViewActivity extends AppCompatActivity {
 
 
         //Will use this to retrieve list of pictures, working
-        photoMetadataResponse
-                .addOnCompleteListener(new OnCompleteListener<PlacePhotoMetadataResponse>() {
+        photoMetadataResponse.addOnCompleteListener(new OnCompleteListener<PlacePhotoMetadataResponse>() {
             @Override
             public void onComplete(@NonNull Task<PlacePhotoMetadataResponse> task) {
-                // Get the list of photos.
+                // Get the results: list of photos.
                 PlacePhotoMetadataResponse photos = task.getResult();
 
-                // Get the PlacePhotoMetadataBuffer (metadata for all of the photos).
-                PlacePhotoMetadataBuffer photoMetadataBuffer = photos.getPhotoMetadata();
+                // Get the PlacePhotoMetadataBuffer
+                final PlacePhotoMetadataBuffer photoMetadataBuffer = photos.getPhotoMetadata();
 
-                // Get the first photo in the list.
-
-                PlacePhotoMetadata photoMetadata = null;
+                // Traverse all photos
                 for (PlacePhotoMetadata instance: photoMetadataBuffer) {
-                     photoMetadata = instance;
+                    metadata.add(instance);
+
+                    // A link to photographer images
+                    CharSequence attribution = instance.getAttributions();
+
+                    // Get the full-sized photo
+                    Task<PlacePhotoResponse> photoResponse = mGeoDataClient.getPhoto(instance);
+
+                    photoResponse.addOnCompleteListener(new OnCompleteListener<PlacePhotoResponse>() {
+                        @Override
+                        public void onComplete(@NonNull Task<PlacePhotoResponse> task) {
+                            PlacePhotoResponse photo = task.getResult();
+                            imageView.setImageBitmap(photo.getBitmap());
+                            photoMetadataBuffer.release();
+                        }
+                    });
                 }
-
-                // Get the attribution text.
-                CharSequence attribution = photoMetadata.getAttributions();
-
-                // Get a full-size bitmap for the photo.
-                Task<PlacePhotoResponse> photoResponse = mGeoDataClient.getPhoto(photoMetadata);
-
-                photoResponse.addOnCompleteListener(new OnCompleteListener<PlacePhotoResponse>() {
-                    @Override
-                    public void onComplete(@NonNull Task<PlacePhotoResponse> task) {
-                        PlacePhotoResponse photo = task.getResult();
-                        bitmap = photo.getBitmap();
-                        imageView.setImageBitmap(bitmap);
-                    }
-                });
             }
         });
 

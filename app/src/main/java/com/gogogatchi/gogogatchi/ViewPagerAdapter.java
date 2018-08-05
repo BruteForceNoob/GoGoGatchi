@@ -12,7 +12,7 @@ public class ViewPagerAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private Integer [] images = {R.drawable.csulb1,R.drawable.clocktower1,R.drawable.fountain1};
+    private Integer [] images = {R.mipmap.csulb1,R.mipmap.clocktower1,R.mipmap.fountain1};
 
     public ViewPagerAdapter(Context context) {
         this.context = context;
