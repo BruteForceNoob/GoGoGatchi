@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:largeHeap="true">
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.SplitHomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,6 +27,7 @@
         <activity android:name=".activities.ProfileActivity" />
         <activity android:name=".activities.SettingsActivity"/>
         <activity android:name=".activities.RegisterActivity"/>
+        <activity android:name=".activities.MainActivity"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
