@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.UpdateProfileActivity">
+
+    <ImageButton
+        android:id="@+id/btnUpdateProfileImage"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/default_profile" />
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="338dp"
+        android:layout_marginTop="25dp"
+        android:columnCount="2"
+        android:rowCount="30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        tools:context=".activities.SettingsActivity">
+
+        <TextView
+            android:id="@+id/settingsInterests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="5"
+            android:fontFamily="sans-serif"
+            android:text="@string/interests"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/chkAmusement_park"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="7"
+            android:text="@string/amusement_park"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chkArt_Gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="7"
+            android:text="@string/art_gallery"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chkBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="9"
+            android:text="@string/bar"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chkCafe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="9"
+            android:text="@string/cafe"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chkCampground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="11"
+            android:text="@string/campground"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chkLodging"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="11"
+            android:text="@string/lodging"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chkMovie_Theatre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="13"
+            android:text="@string/movie_theatre"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chkMuseum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="13"
+            android:text="@string/museum"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chkNight_Club"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="15"
+            android:text="@string/night_club"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chk_Park"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="15"
+            android:text="@string/park"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chk_Restaurant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="17"
+            android:text="@string/restaurant"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chkShopping_Mall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="17"
+            android:text="@string/shopping_mall"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chk_Stadium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="19"
+            android:text="@string/stadium"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chk_Travel_Agency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="19"
+            android:text="@string/travel_agency"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chk_Zoo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="21"
+            android:text="@string/zoo"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/updateSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="23"
+            android:text="@string/update" />
+    </GridLayout>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdateProfileImage" />
+
+
+</android.support.constraint.ConstraintLayout>
