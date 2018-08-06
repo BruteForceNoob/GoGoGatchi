@@ -6,6 +6,7 @@
     <string name="login">Log-In</string>
     <string name="update">Update</string>
     <string name="username">Username</string>
+    <string name="upload_profile_pic"> Upload Picture</string>
     <string name="update_profile_settings"> Update Profile Settings</string>
     <string name="update_companion_settings"> Update Companion Settings</string>
     <string name="interests">Interests-</string>
