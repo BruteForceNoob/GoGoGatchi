@@ -48,12 +48,20 @@ public class UpdateProfileActivity extends AppCompatActivity {
 
         mChildRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
 
-                FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                String uuid = currentFirebaseUser.getUid();
+                final FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                final String uuid = currentFirebaseUser.getUid();
                 String profileName=(dataSnapshot.child(uuid).child("username").getValue().toString());
                 editText.setText(profileName);
+
+                mSendData.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String updatedUsername = editText.getText().toString();
+                        mChildRef.child(uuid).child("username").setValue(updatedUsername);
+                    }
+                });
             }
 
             @Override
@@ -61,6 +69,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
 
             }
         });
+
 
         Button buttonLoadImage = (Button) findViewById(R.id.btnUpdateProfileImage);
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +100,6 @@ public class UpdateProfileActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        }
     }
-}
 }
