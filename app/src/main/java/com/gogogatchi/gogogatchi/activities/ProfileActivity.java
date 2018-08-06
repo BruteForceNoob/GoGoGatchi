@@ -50,7 +50,6 @@ public class ProfileActivity extends AppCompatActivity {
         mSendData= findViewById(R.id.updateProfile);
         editText = findViewById(R.id.userId);
 
-
         mChildRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -70,7 +69,6 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
-
 
         }
 
