@@ -1,202 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:rowCount="30"
-    android:columnCount="2"
     tools:context=".activities.SettingsActivity">
 
-    <Switch
-        android:id="@+id/locationSwitch"
-        android:layout_height="wrap_content"
-        android:layout_column="1"
-        android:layout_row="1"
-        android:layout_marginLeft="125dp"
-        android:textAlignment="viewEnd" />
+    <TableLayout
+        android:id="@+id/tableLayout3"
+        android:layout_width="368dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Switch
-        android:id="@+id/notificationSwitch"
-        android:layout_height="wrap_content"
-        android:layout_column="1"
-        android:layout_row="3"
-        android:layout_marginLeft="125dp"
-        android:textAlignment="viewEnd" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="1"
-        android:text="@string/location"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="3"
-        android:text="@string/notifications"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+            <Space
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/settingsInterests"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="5"
-        android:fontFamily="sans-serif"
-        android:text="@string/interests"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="22dp"
-        android:textStyle="bold" />
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-    <CheckBox
-        android:id="@+id/chkAmusement_park"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="7"
-        android:text="@string/amusement_park"
-        android:textSize="18sp" />
+        </TableRow>
 
-    <CheckBox
-        android:id="@+id/chkArt_Gallery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="1"
-        android:layout_row="7"
-        android:text="@string/art_gallery"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="18sp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp" />
 
-    <CheckBox
-        android:id="@+id/chkBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="9"
-        android:text="@string/bar"
-        android:textSize="18sp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <CheckBox
-        android:id="@+id/chkCafe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="1"
-        android:layout_row="9"
-        android:text="@string/cafe"
-        android:textSize="18sp" />
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/notifications"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="18sp" />
 
-    <CheckBox
-        android:id="@+id/chkCampground"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="11"
-        android:text="@string/campground"
-        android:textSize="18sp" />
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-    <CheckBox
-        android:id="@+id/chkLodging"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="1"
-        android:layout_row="11"
-        android:text="@string/lodging"
-        android:textSize="18sp" />
+            <Switch
+                android:id="@+id/switch2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
 
-    <CheckBox
-        android:id="@+id/chkMovie_Theatre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="13"
-        android:text="@string/movie_theatre"
-        android:textSize="18sp" />
-
-    <CheckBox
-        android:id="@+id/chkMuseum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="1"
-        android:layout_row="13"
-        android:text="@string/museum"
-        android:textSize="18sp" />
-
-    <CheckBox
-        android:id="@+id/chkNight_Club"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="15"
-        android:text="@string/night_club"
-        android:textSize="18sp" />
-
-    <CheckBox
-        android:id="@+id/chk_Park"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="1"
-        android:layout_row="15"
-        android:text="@string/park"
-        android:textSize="18sp" />
-
-    <CheckBox
-        android:id="@+id/chk_Restaurant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="17"
-        android:text="@string/restaurant"
-        android:textSize="18sp" />
-
-    <CheckBox
-        android:id="@+id/chkShopping_Mall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="1"
-        android:layout_row="17"
-        android:text="@string/shopping_mall"
-        android:textSize="18sp" />
-    <CheckBox
-        android:id="@+id/chk_Stadium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="19"
-        android:text="@string/stadium"
-        android:textSize="18sp" />
-
-    <CheckBox
-        android:id="@+id/chk_Travel_Agency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="1"
-        android:layout_row="19"
-        android:text="@string/travel_agency"
-        android:textSize="18sp" />
-
-    <CheckBox
-        android:id="@+id/chk_Zoo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="21"
-        android:text="@string/zoo"
-        android:textSize="18sp" />
+    </TableLayout>
 
     <Button
-        android:id="@+id/updateSettings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="23"
-        android:text="@string/update" />
-</GridLayout>
+        android:id="@+id/btnUpdateProfileSettings"
+        android:layout_width="200dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/update_profile_settings"
+        android:onClick="updateUserProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout3" />
+
+    <Button
+        android:id="@+id/btnUpdateCompanionSettings"
+        android:layout_width="200dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/update_companion_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdateProfileSettings" />
+
+</android.support.constraint.ConstraintLayout>

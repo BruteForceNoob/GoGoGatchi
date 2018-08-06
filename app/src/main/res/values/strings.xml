@@ -6,7 +6,8 @@
     <string name="login">Log-In</string>
     <string name="update">Update</string>
     <string name="username">Username</string>
-    <string name="bio">Enter your interests here</string>
+    <string name="update_profile_settings"> Update Profile Settings</string>
+    <string name="update_companion_settings"> Update Companion Settings</string>
     <string name="interests">Interests-</string>
     <string name="amusement_park">Amusement Park</string>
     <string name="art_gallery">Art Gallery</string>

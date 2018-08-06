@@ -16,9 +16,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    buildTypes.each{
-        it.buildConfigField 'String', "ApiKey",  GoGoGatchi_api_key
-        it.resValue('string',"api_key", GoGoGatchi_api_key)
+    buildTypes.each {
+        it.buildConfigField 'String', "ApiKey", GoGoGatchi_api_key
+        it.resValue('string', "api_key", GoGoGatchi_api_key)
     }
     sourceSets {
         main {
