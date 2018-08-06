@@ -13,6 +13,16 @@ public class User implements Serializable {
     private double longitude;
     private String email;
 
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
+    }
+
+    private String profileImage;
+
     public User() {
 
     }
@@ -30,14 +40,16 @@ public class User implements Serializable {
         this.gender = rightUser.gender;
         this.age = rightUser.age;
         this.interest = rightUser.interest;
+        this.profileImage=rightUser.profileImage;
     }
 
-    public User(String userId, String username, String gender, String age, String interest) {
+    public User(String userId, String username, String gender, String age, String interest,String profileImage) {
         this.userId = userId;
         this.username = username;
         this.gender = gender;
         this.age = age;
         this.interest = interest;
+        this.profileImage=profileImage;
     }
 
 
