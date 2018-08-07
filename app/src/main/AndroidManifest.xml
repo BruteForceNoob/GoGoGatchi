@@ -28,6 +28,7 @@
         <activity android:name=".activities.SettingsActivity" />
         <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.PrivacyActivity"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

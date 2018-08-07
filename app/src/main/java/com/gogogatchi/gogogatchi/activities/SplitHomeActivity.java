@@ -27,12 +27,14 @@ import java.util.TimerTask;
 public class SplitHomeActivity extends AppCompatActivity implements View.OnClickListener{
 
     private void init() {
-        Button btnLogin, btnReg;
+        Button btnLogin, btnReg, btnPrivacy;
         btnLogin = (Button) findViewById(R.id.loginSplit);
         btnReg = (Button) findViewById(R.id.createAccountSplit);
+        btnPrivacy = (Button) findViewById(R.id.TermsAndConditions);
 
         btnLogin.setOnClickListener(this);
         btnReg.setOnClickListener(this);
+        btnPrivacy.setOnClickListener(this);
 
 
     }
@@ -51,6 +53,10 @@ public class SplitHomeActivity extends AppCompatActivity implements View.OnClick
                 startActivity(createAccount);
                 break;
                 //Implement xml view on privacy conditions later
+            case R.id.TermsAndConditions:
+                Intent privacyTroll = new Intent(SplitHomeActivity.this, PrivacyActivity.class);
+                startActivity(privacyTroll);
+                break;
         }
 
     }
