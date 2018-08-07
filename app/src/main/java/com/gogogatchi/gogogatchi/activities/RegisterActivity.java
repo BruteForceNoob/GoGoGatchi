@@ -33,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity{
     private ProgressBar progressBar;
     private Spinner spinnerGender, spinnerInterest, spinnerAge;
     private EditText editTextEmail, editTextPassword, editUsername;
+    private EditText editTextPasswordCheck;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
 
@@ -52,7 +53,36 @@ public class RegisterActivity extends AppCompatActivity{
         }
         @Override
         public void afterTextChanged(Editable editable) {
+            /*
+            String passwordOG = editTextPassword.getText().toString().trim();
+            String passwordCheck = editTextPasswordCheck.getText().toString().trim();
+            if (!passwordOG.equals(passwordCheck)){
+                editTextPasswordCheck.setError("Passwords do not match");
+                editTextPasswordCheck.requestFocus();
+            }
+            */
+
         }
+    };
+
+    private final TextWatcher mTextEditorWather2 = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        }
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            String passwordOG = editTextPassword.getText().toString().trim();
+            String passwordCheck = editTextPasswordCheck.getText().toString().trim();
+            if (!passwordOG.equals(passwordCheck)){
+                editTextPasswordCheck.setError("Passwords do not match");
+                editTextPasswordCheck.requestFocus();
+            }
+        }
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+
     };
 
 
@@ -116,6 +146,7 @@ public class RegisterActivity extends AppCompatActivity{
     public void registerUser(View v) {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
+        String passwordCheck = editTextPasswordCheck.getText().toString().trim();
         final String username = editUsername.getText().toString().trim();
 
         if (email.isEmpty()) {
@@ -135,6 +166,16 @@ public class RegisterActivity extends AppCompatActivity{
         }
         if (password.length() < 6) {
             editTextPassword.setError("Minimum length of password should be 6");
+            editTextPassword.requestFocus();
+            return;
+        }
+        if (passwordCheck.isEmpty()) {
+            editTextPasswordCheck.setError("Re-Enter Password");
+            editTextPasswordCheck.requestFocus();
+            return;
+        }
+        if (!passwordCheck.equals(password)) {
+            editTextPasswordCheck.setError("Incorrect password");
             editTextPassword.requestFocus();
             return;
         }
@@ -178,6 +219,11 @@ public class RegisterActivity extends AppCompatActivity{
 
         editTextPassword = findViewById(R.id.etCreatePW);
         editTextPassword.addTextChangedListener(mTextEditorWather);
+
+        //New check
+        editTextPasswordCheck = findViewById(R.id.etCheckPW);
+        editTextPasswordCheck.addTextChangedListener(mTextEditorWather2);
+
         editUsername = findViewById(R.id.etCreateUser);
 
         spinnerGender = findViewById(R.id.spnGender);
