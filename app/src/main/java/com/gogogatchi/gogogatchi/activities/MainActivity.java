@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Intent intent = new Intent(MainActivity.this, HomeSwipeActivity.class);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Log-In Error", Toast.LENGTH_SHORT).show();
                 }
             }
         });
