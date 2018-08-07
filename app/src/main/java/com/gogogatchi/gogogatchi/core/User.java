@@ -23,12 +23,14 @@ public class User implements Serializable {
 
     private String profileImage;
 
+    //Empty constructor
     public User() {
 
     }
+    //
     private Map<String,Boolean> interests= new HashMap<>();
 
-    //new
+    //new (old push)
     private String userId;
     private String gender;
     private String age;
@@ -39,10 +41,11 @@ public class User implements Serializable {
         this.username = rightUser.username;
         this.gender = rightUser.gender;
         this.age = rightUser.age;
-        this.interest = rightUser.interest;
+       // this.interest = rightUser.interest;
         this.profileImage=rightUser.profileImage;
     }
 
+    /* old
     public User(String userId, String username, String gender, String age, String interest,String profileImage) {
         this.userId = userId;
         this.username = username;
@@ -51,7 +54,17 @@ public class User implements Serializable {
         this.interest = interest;
         this.profileImage=profileImage;
     }
+    */
 
+    //new user 8-6-18
+    public User(String userId, String username, String gender, String age, String profileImage) {
+        this.userId = userId;
+        this.username = username;
+        this.gender = gender;
+        this.age = age;
+        //this.interest = interest;
+        this.profileImage=profileImage;
+    }
 
     public String getGender() {
         return gender;
@@ -69,6 +82,7 @@ public class User implements Serializable {
         this.age = age;
     }
 
+    /*old singular interest
     public String getInterest() {
         return interest;
     }
@@ -76,6 +90,7 @@ public class User implements Serializable {
     public void setInterest(String interest) {
         this.interest = interest;
     }
+    */
 
     public String getUserId() {
         return userId;

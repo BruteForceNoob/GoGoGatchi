@@ -40,6 +40,7 @@
     <string name="display_name">Display Name</string>
     <string name="age">Age</string>
     <string name="passwordHint">Password (min. 6 char)</string>
+    <string name="passwordHintCheck">Re-Enter Password</string>
     <string name="gender">Gender</string>
 
     <string name="termsConditions">Privacy</string>
