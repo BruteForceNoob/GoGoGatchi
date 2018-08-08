@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -16,8 +17,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.gogogatchi.gogogatchi.BuildConfig;
+import com.gogogatchi.gogogatchi.Exceptions.LocationException;
 import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.core.GoogleQuery;
 import com.gogogatchi.gogogatchi.core.LocationCard;
@@ -61,10 +64,9 @@ public class HomeSwipeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_swipe2);
-        ActivityCompat.requestPermissions(HomeSwipeActivity.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},10);
         mapUtil=new MapUtil(getApplicationContext());
+        try{
          location=mapUtil.getLocation();
-
         String userQuery = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
                 + "location="+String.valueOf(
                         location.getLatitude())+","+String.valueOf(location.getLongitude())
@@ -167,6 +169,13 @@ public class HomeSwipeActivity extends AppCompatActivity {
                         return true;
                     }
                 });
+        }
+        catch(LocationException e)
+        {
+            Toast.makeText(getApplicationContext(),e.getMessage()+" Please relaunch app.",Toast.LENGTH_LONG).show();
+
+
+        }
         /***END MENU CODE ***/
     }
 

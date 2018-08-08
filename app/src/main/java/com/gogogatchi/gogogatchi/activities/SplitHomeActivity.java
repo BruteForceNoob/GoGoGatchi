@@ -1,8 +1,10 @@
 package com.gogogatchi.gogogatchi.activities;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +29,8 @@ import java.util.TimerTask;
 public class SplitHomeActivity extends AppCompatActivity implements View.OnClickListener{
 
     private void init() {
+        ActivityCompat.requestPermissions(SplitHomeActivity.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},10);
+
         Button btnLogin, btnReg, btnPrivacy;
         btnLogin = (Button) findViewById(R.id.loginSplit);
         btnReg = (Button) findViewById(R.id.createAccountSplit);
