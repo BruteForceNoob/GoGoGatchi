@@ -1,83 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:maxHeight="600dp"
-    android:maxWidth="600dp"
-    android:minHeight="475dp"
-    android:minWidth="475dp"
-    android:layout_alignWithParentIfMissing="true">
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.0">
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+    <android.support.v7.widget.CardView
+        android:id="@+id/Card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:background="@color/white"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/Card"
+        <ImageView
+            android:id="@+id/profileImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="500dp"
+            android:layout_marginBottom="75dp"
+            android:scaleType="centerCrop" />
+
+        <ImageButton
+            android:id="@+id/ideaButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="85dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/places_ic_clear"
+            android:scaleType="centerCrop"
+            app:srcCompat="@mipmap/icon_idea" />
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:background="@color/white"
-            android:orientation="vertical"
-            app:cardCornerRadius="7dp"
-            app:cardElevation="4dp">
+            android:layout_height="75dp"
+            android:layout_gravity="bottom"
+            android:gravity="center|start"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/profileImageView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="75dp"
-                android:scaleType="centerCrop" />
+            <TextView
+                android:id="@+id/nameAgeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-            <ImageButton
-                android:id="@+id/ideaButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="bottom|right"
-                android:layout_marginBottom="85dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/places_ic_clear"
-                android:scaleType="centerCrop"
-                app:srcCompat="@mipmap/icon_idea" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
-                android:layout_gravity="bottom"
-                android:gravity="center|left"
-                android:orientation="vertical"
-                android:paddingLeft="20dp">
-
-                <TextView
-                    android:id="@+id/nameAgeTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/locationNameTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="14dp"
-                    android:textStyle="normal" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-    </FrameLayout>
-</android.support.constraint.ConstraintLayout>
-
+            <TextView
+                android:id="@+id/locationNameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</FrameLayout>

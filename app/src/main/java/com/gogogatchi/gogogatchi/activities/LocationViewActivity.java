@@ -3,11 +3,12 @@ package com.gogogatchi.gogogatchi.activities;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gogogatchi.gogogatchi.R;
+import com.gogogatchi.gogogatchi.ViewPagerAdapter;
 import com.gogogatchi.gogogatchi.core.LocationData;
 import com.gogogatchi.gogogatchi.core.Profile;
 import com.google.android.gms.location.places.GeoDataClient;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 
 public class LocationViewActivity extends AppCompatActivity {
 
+    private ViewPager viewPager;
     protected GeoDataClient mGeoDataClient;
     protected PlaceDetectionClient mPlaceDetectionClient;
 
@@ -33,7 +35,6 @@ public class LocationViewActivity extends AppCompatActivity {
     private Bitmap bitmap = null;
     private static Profile mProfile;
     private static LocationData mLocationProfile;
-    ImageView imageView;
     TextView textView;
 
     @Override
@@ -54,7 +55,6 @@ public class LocationViewActivity extends AppCompatActivity {
         mGeoDataClient = Places.getGeoDataClient(this);
         mPlaceDetectionClient = Places.getPlaceDetectionClient(this);
 
-        imageView = findViewById(R.id.imageView5);
         textView = findViewById(R.id.textView4);
 
         /*** For use with Google Places API ***/
@@ -92,7 +92,7 @@ public class LocationViewActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<PlacePhotoResponse> task) {
                             PlacePhotoResponse photo = task.getResult();
-                            imageView.setImageBitmap(photo.getBitmap());
+                            pictures.add(photo.getBitmap());
                             photoMetadataBuffer.release();
                         }
                     });
@@ -101,5 +101,9 @@ public class LocationViewActivity extends AppCompatActivity {
         });
 
         textView.setText(mLocationProfile.getLocationName());
+
+        viewPager = findViewById(R.id.viewPager);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
+        viewPager.setAdapter(viewPagerAdapter);
     }
 }

@@ -44,6 +44,8 @@
     <string name="gender">Gender</string>
 
     <string name="termsConditions">Privacy</string>
+    <string name="todo">TODO</string>
+    <string name="todo1">TODO1</string>
 
 
     <!--- gender drop list-->
