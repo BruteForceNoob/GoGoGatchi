@@ -48,6 +48,8 @@
     <string name="termsConditions">Privacy</string>
     <string name="todo">TODO</string>
     <string name="todo1">TODO1</string>
+    <string name="textview">TextView</string>
+    <string name="visit_website">Visit Website</string>
 
     <!--- gender drop list-->
     <string-array name="gender">

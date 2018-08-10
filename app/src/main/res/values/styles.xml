@@ -12,14 +12,18 @@
         <item name="android:actionBarStyle">@style/MyActionBar</item>
     </style>
 
+    <!-- Reating Bar Theme -->
+    <style name="RatingBar">
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/yellow</item>
+    </style>
+
     <!-- ActionBar styles -->
     <style name="MyActionBar"
         parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:displayOptions">homeAsUp</item>
         <item name="displayOptions">homeAsUp</item>
     </style>
-
-
 
     <style name="FullscreenTheme" parent="AppTheme">
         <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>

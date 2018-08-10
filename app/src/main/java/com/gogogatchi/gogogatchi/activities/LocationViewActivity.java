@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.gogogatchi.gogogatchi.R;
@@ -26,6 +27,7 @@ import java.util.ArrayList;
 
 public class LocationViewActivity extends AppCompatActivity {
 
+    private RatingBar ratingBar;
     private ViewPager viewPager;
     protected GeoDataClient mGeoDataClient;
     protected PlaceDetectionClient mPlaceDetectionClient;
@@ -57,11 +59,18 @@ public class LocationViewActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.textView4);
 
+
         /*** For use with Google Places API ***/
         Bundle bundle = this.getIntent().getExtras();
         if (bundle != null)
             mLocationProfile = bundle.getParcelable("mLocationProfile");
 
+        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        ratingBar.setMax(5);
+        //ratingBar.setNumStars(5);
+
+        ratingBar.setRating((float) mLocationProfile.getRating());
+        textView.setText(mLocationProfile.getLocationName());
 
         final String placeId = mLocationProfile.getPlaceID();
         final Task<PlacePhotoMetadataResponse> photoMetadataResponse = mGeoDataClient
@@ -95,14 +104,13 @@ public class LocationViewActivity extends AppCompatActivity {
                         }
                     });
                 }
+
                 viewPager = findViewById(R.id.viewPager2);
                 //ViewPagerAdapter2 viewPagerAdapter = new ViewPagerAdapter2(mContext, pictures);
-                Integer [] imgs = {R.mipmap.icon_legendary, R.mipmap.icon_compass_selected};
+                Integer [] imgs = {R.mipmap.fountain1, R.mipmap.tower, R.mipmap.clocktower1};
                 ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(mContext, imgs);
                 viewPager.setAdapter(viewPagerAdapter);
             }
         });
-
-        textView.setText(mLocationProfile.getLocationName());
     }
 }
