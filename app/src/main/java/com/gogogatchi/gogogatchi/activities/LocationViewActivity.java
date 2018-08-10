@@ -1,10 +1,12 @@
 package com.gogogatchi.gogogatchi.activities;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.gogogatchi.gogogatchi.R;
@@ -25,14 +27,14 @@ import java.util.ArrayList;
 
 public class LocationViewActivity extends AppCompatActivity {
 
+    private RatingBar ratingBar;
     private ViewPager viewPager;
     protected GeoDataClient mGeoDataClient;
     protected PlaceDetectionClient mPlaceDetectionClient;
+    private Context mContext = this;
 
     private ArrayList pictures = new ArrayList<Bitmap>();
-    private ArrayList metadata = new ArrayList<PlacePhotoMetadata>();
 
-    private Bitmap bitmap = null;
     private static Profile mProfile;
     private static LocationData mLocationProfile;
     TextView textView;
@@ -57,11 +59,18 @@ public class LocationViewActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.textView4);
 
+
         /*** For use with Google Places API ***/
         Bundle bundle = this.getIntent().getExtras();
         if (bundle != null)
             mLocationProfile = bundle.getParcelable("mLocationProfile");
 
+        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        ratingBar.setMax(5);
+        //ratingBar.setNumStars(5);
+
+        ratingBar.setRating((float) mLocationProfile.getRating());
+        textView.setText(mLocationProfile.getLocationName());
 
         final String placeId = mLocationProfile.getPlaceID();
         final Task<PlacePhotoMetadataResponse> photoMetadataResponse = mGeoDataClient
@@ -80,8 +89,6 @@ public class LocationViewActivity extends AppCompatActivity {
 
                 // Traverse all photos
                 for (PlacePhotoMetadata instance: photoMetadataBuffer) {
-                    metadata.add(instance);
-
                     // A link to photographer images
                     CharSequence attribution = instance.getAttributions();
 
@@ -97,13 +104,13 @@ public class LocationViewActivity extends AppCompatActivity {
                         }
                     });
                 }
+
+                viewPager = findViewById(R.id.viewPager2);
+                //ViewPagerAdapter2 viewPagerAdapter = new ViewPagerAdapter2(mContext, pictures);
+                Integer [] imgs = {R.mipmap.fountain1, R.mipmap.tower, R.mipmap.clocktower1};
+                ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(mContext, imgs);
+                viewPager.setAdapter(viewPagerAdapter);
             }
         });
-
-        textView.setText(mLocationProfile.getLocationName());
-
-        viewPager = findViewById(R.id.viewPager);
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
-        viewPager.setAdapter(viewPagerAdapter);
     }
 }

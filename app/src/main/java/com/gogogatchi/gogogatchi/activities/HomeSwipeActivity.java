@@ -3,7 +3,6 @@ package com.gogogatchi.gogogatchi.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,7 +11,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -29,16 +27,8 @@ import com.google.gson.Gson;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
-import org.json.JSONException;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.net.ssl.HttpsURLConnection;
 
 public class HomeSwipeActivity extends AppCompatActivity {
     private SwipePlaceHolderView mSwipeView;
@@ -73,7 +63,6 @@ public class HomeSwipeActivity extends AppCompatActivity {
             mContext = getApplicationContext();
             makeHttpCall(location,keywords);
 
-
             /*** Begin Menu Code ***/
             appBar = (Toolbar) findViewById(R.id.app_bar);
             setSupportActionBar(appBar);
@@ -84,12 +73,11 @@ public class HomeSwipeActivity extends AppCompatActivity {
             // actionBar.setIcon(R.drawable.ic_newspaper);
             /*** End Menu Code ***/
 
-
-
             mSwipeView.getBuilder()
                     .setDisplayViewCount(3)
                     .setSwipeDecor(new SwipeDecor()
-                            .setPaddingTop(-20)
+                            .setPaddingTop(-40)
+                            .setPaddingLeft(30)
                             .setRelativeScale(0.01f)
                             .setSwipeInMsgLayoutId(R.layout.location_swipe_right)
                             .setSwipeOutMsgLayoutId(R.layout.location_swipe_left));
@@ -169,8 +157,6 @@ public class HomeSwipeActivity extends AppCompatActivity {
         /***END MENU CODE ***/
     }
 
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         drawerLayout=findViewById(R.id.drawer_layout);
@@ -208,8 +194,6 @@ public class HomeSwipeActivity extends AppCompatActivity {
                 + "&key="
                 + BuildConfig.ApiKey;
 
-        Log.d("GGG", userQuery);
-
         /*** HTTP QUERY PLACES API***/
         Network task = new Network(userQuery,this);
         task.execute();
@@ -219,7 +203,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
         Gson gson = new Gson();
 
         for(LocationData profile : gson.fromJson(myResponse, GoogleQuery.class).getData()) {
-            if (profile.getPhoto().isEmpty() == false && profile.getRating() > 3.5f) {
+            if (profile.getPhoto().isEmpty() == false && profile.getRating() > 3.4f) {
                 // If no photo and low rating, don't make a card
                 mSwipeView = findViewById(R.id.swipeView);
                 mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
@@ -277,7 +261,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Integer useless) {
-            Log.d("YYYY", myResponse);
+
             populateCards();
         }
     }*/
