@@ -15,7 +15,7 @@ public class ViewPagerAdapter2 extends PagerAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    ArrayList<Bitmap> images = null;
+    private ArrayList<Bitmap> images = null;
 
     public ViewPagerAdapter2(Context context, ArrayList<Bitmap> images) {
         this.context = context;

@@ -6,11 +6,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.gogogatchi.gogogatchi.R;
-import com.gogogatchi.gogogatchi.ViewPagerAdapter;
 import com.gogogatchi.gogogatchi.core.LocationData;
 import com.gogogatchi.gogogatchi.core.Profile;
 import com.google.android.gms.location.places.GeoDataClient;
@@ -23,7 +24,8 @@ import com.google.android.gms.location.places.Places;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 public class LocationViewActivity extends AppCompatActivity {
 
@@ -33,11 +35,13 @@ public class LocationViewActivity extends AppCompatActivity {
     protected PlaceDetectionClient mPlaceDetectionClient;
     private Context mContext = this;
 
-    private ArrayList pictures = new ArrayList<Bitmap>();
+    private LinkedList<Bitmap> pictures = new LinkedList<Bitmap>();
+    Iterator<Bitmap> it = null;
 
     private static Profile mProfile;
     private static LocationData mLocationProfile;
-    TextView textView;
+    private TextView textView;
+    private ImageView imgView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,7 @@ public class LocationViewActivity extends AppCompatActivity {
         mPlaceDetectionClient = Places.getPlaceDetectionClient(this);
 
         textView = findViewById(R.id.textView4);
+        imgView = findViewById(R.id.imagess);
 
 
         /*** For use with Google Places API ***/
@@ -76,7 +81,6 @@ public class LocationViewActivity extends AppCompatActivity {
         final Task<PlacePhotoMetadataResponse> photoMetadataResponse = mGeoDataClient
                 .getPlacePhotos(placeId);
 
-
         //Will use this to retrieve list of pictures, working
         photoMetadataResponse.addOnCompleteListener(new OnCompleteListener<PlacePhotoMetadataResponse>() {
             @Override
@@ -94,23 +98,40 @@ public class LocationViewActivity extends AppCompatActivity {
 
                     // Get the full-sized photo
                     Task<PlacePhotoResponse> photoResponse = mGeoDataClient.getPhoto(instance);
-
+                    final boolean[] flag = {false};
                     photoResponse.addOnCompleteListener(new OnCompleteListener<PlacePhotoResponse>() {
                         @Override
                         public void onComplete(@NonNull Task<PlacePhotoResponse> task) {
                             PlacePhotoResponse photo = task.getResult();
                             pictures.add(photo.getBitmap());
+                            imgView.setImageBitmap(photo.getBitmap());
                             photoMetadataBuffer.release();
                         }
                     });
                 }
 
-                viewPager = findViewById(R.id.viewPager2);
-                //ViewPagerAdapter2 viewPagerAdapter = new ViewPagerAdapter2(mContext, pictures);
-                Integer [] imgs = {R.mipmap.fountain1, R.mipmap.tower, R.mipmap.clocktower1};
-                ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(mContext, imgs);
-                viewPager.setAdapter(viewPagerAdapter);
+                jumpTo();
             }
         });
+
+        findViewById(R.id.imagess).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (it.hasNext() == false) {
+                    imgView.setImageBitmap(pictures.getFirst());
+                    it = pictures.iterator();
+                }
+                else {
+                    Bitmap temp = it.next();
+
+                    if (temp!= null)
+                        imgView.setImageBitmap(temp);
+                }
+            }
+        });
+    }
+
+    private void jumpTo() {
+        it = pictures.iterator();
     }
 }
