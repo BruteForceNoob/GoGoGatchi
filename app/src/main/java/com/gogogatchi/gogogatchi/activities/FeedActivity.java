@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.adapters.FeedAdapter;
@@ -20,8 +21,13 @@ public class FeedActivity extends AppCompatActivity {
 
         LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
         rv.setLayoutManager(llm);
-
-        FeedAdapter adapter = new FeedAdapter(HomeSwipeActivity.locationDataList,this);
-        rv.setAdapter(adapter);
+        if(HomeSwipeActivity.locationDataList.isEmpty())
+        {
+            Toast.makeText(getApplicationContext(),"You have not liked any locations yet!",Toast.LENGTH_LONG).show();
+        }
+        else {
+            FeedAdapter adapter = new FeedAdapter(HomeSwipeActivity.locationDataList, this);
+            rv.setAdapter(adapter);
+        }
     }
 }
