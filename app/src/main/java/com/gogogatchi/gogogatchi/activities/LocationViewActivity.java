@@ -1,5 +1,6 @@
 package com.gogogatchi.gogogatchi.activities;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -28,11 +29,10 @@ public class LocationViewActivity extends AppCompatActivity {
     private ViewPager viewPager;
     protected GeoDataClient mGeoDataClient;
     protected PlaceDetectionClient mPlaceDetectionClient;
+    private Context mContext = this;
 
     private ArrayList pictures = new ArrayList<Bitmap>();
-    private ArrayList metadata = new ArrayList<PlacePhotoMetadata>();
 
-    private Bitmap bitmap = null;
     private static Profile mProfile;
     private static LocationData mLocationProfile;
     TextView textView;
@@ -80,8 +80,6 @@ public class LocationViewActivity extends AppCompatActivity {
 
                 // Traverse all photos
                 for (PlacePhotoMetadata instance: photoMetadataBuffer) {
-                    metadata.add(instance);
-
                     // A link to photographer images
                     CharSequence attribution = instance.getAttributions();
 
@@ -97,13 +95,14 @@ public class LocationViewActivity extends AppCompatActivity {
                         }
                     });
                 }
+                viewPager = findViewById(R.id.viewPager2);
+                //ViewPagerAdapter2 viewPagerAdapter = new ViewPagerAdapter2(mContext, pictures);
+                Integer [] imgs = {R.mipmap.icon_legendary, R.mipmap.icon_compass_selected};
+                ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(mContext, imgs);
+                viewPager.setAdapter(viewPagerAdapter);
             }
         });
 
         textView.setText(mLocationProfile.getLocationName());
-
-        viewPager = findViewById(R.id.viewPager);
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
-        viewPager.setAdapter(viewPagerAdapter);
     }
 }

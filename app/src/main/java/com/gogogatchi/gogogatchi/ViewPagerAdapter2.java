@@ -1,6 +1,7 @@
 package com.gogogatchi.gogogatchi;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -8,20 +9,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-public class ViewPagerAdapter extends PagerAdapter {
+import java.util.ArrayList;
+
+public class ViewPagerAdapter2 extends PagerAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private Integer [] images = null;
+    ArrayList<Bitmap> images = null;
 
-    public ViewPagerAdapter(Context context, Integer [] imgs) {
+    public ViewPagerAdapter2(Context context, ArrayList<Bitmap> images) {
         this.context = context;
-        images = imgs;
+        this.images = images;
     }
 
     @Override
     public int getCount() {
-        return images.length;
+        return images.size();
     }
 
     @Override
@@ -34,17 +37,17 @@ public class ViewPagerAdapter extends PagerAdapter {
 
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.activity_main_slider, null);
-        ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
-        imageView.setImageResource(images[position]);
+        ImageView imageView = view.findViewById(R.id.imageView);
+        imageView.setImageBitmap(images.get(position));
 
         ViewPager vp = (ViewPager) container;
         vp.addView(view, 0);
+
         return view;
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-
         ViewPager vp = (ViewPager) container;
         View view = (View) object;
         vp.removeView(view);

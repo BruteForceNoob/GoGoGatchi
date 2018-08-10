@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">>
+    android:fitsSystemWindows="true">
 
         <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -20,13 +20,14 @@
 
                 <TextView
                     android:id="@+id/textView"
-                    android:layout_width="200dp"
+                    android:layout_width="215dp"
                     android:layout_height="150dp"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:text="Looks like we're out of ideas. Please tap here to refresh."
+                    android:fontFamily="@font/gotham"
+                    android:text="@string/no_idea"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textSize="25sp"
@@ -41,8 +42,10 @@
                     android:id="@+id/outOfIdeas"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_marginBottom="55dp"
+                    android:layout_marginBottom="70dp"
                     android:alpha="0.2"
+                    android:background="@color/bg_color"
+                    android:contentDescription="@string/todo"
                     android:gravity="center"
                     app:layout_constraintBottom_toTopOf="@+id/textView5"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -66,36 +69,41 @@
                             android:id="@+id/imageView"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginTop="0dp" />
+                            android:layout_marginTop="0dp"
+                            android:contentDescription="@string/todo" />
                 </com.mindorks.placeholderview.SwipePlaceHolderView>
 
                 <ImageButton
                     android:id="@+id/acceptBtn"
                     android:layout_width="180dp"
                     android:layout_height="60dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="6dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:background="@mipmap/accept2"
+                    android:contentDescription="@string/todo"
                     app:layout_constraintBottom_toTopOf="@+id/textView5"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/outOfIdeas" />
+                    app:layout_constraintTop_toBottomOf="@+id/outOfIdeas"
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <ImageButton
                     android:id="@+id/rejectBtn"
                     android:layout_width="180dp"
                     android:layout_height="60dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="6dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:background="@mipmap/reject2"
+                    android:contentDescription="@string/todo"
                     app:layout_constraintBottom_toTopOf="@+id/textView5"
                     app:layout_constraintEnd_toEndOf="@+id/acceptBtn"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/outOfIdeas" />
+                    app:layout_constraintTop_toBottomOf="@+id/outOfIdeas"
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <TextView
                     android:id="@+id/textView5"
@@ -112,16 +120,17 @@
 
                 <TextView
                     android:id="@+id/textView6"
-                    android:layout_width="236dp"
-                    android:layout_height="34dp"
+                    android:layout_width="289dp"
+                    android:layout_height="42dp"
                     android:layout_gravity="bottom"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginTop="8dp"
-                    android:text="Companion: Play with me"
+                    android:fontFamily="@font/gotham"
+                    android:text="@string/companion"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/textView5"
                     app:layout_constraintEnd_toEndOf="@+id/textView5"
@@ -143,7 +152,8 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="1.0"
                     app:srcCompat="@mipmap/icon_companion"
-                    tools:ignore="MissingConstraints" />
+                    tools:ignore="MissingConstraints"
+                    android:contentDescription="@string/todo" />
 
                 <android.support.constraint.Group
                     android:id="@+id/group"

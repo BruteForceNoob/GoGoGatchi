@@ -34,6 +34,8 @@
     <string name="title_activity_monster_hatch">MonsterHatchActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="companion">Companion: Play with me.</string>
+    <string name="no_idea">Looks like we\'re out of ideas. Please tap here to refresh.</string>
 
     <string name="register2">Register</string>
     <string name="optional">Optional</string>
@@ -46,7 +48,6 @@
     <string name="termsConditions">Privacy</string>
     <string name="todo">TODO</string>
     <string name="todo1">TODO1</string>
-
 
     <!--- gender drop list-->
     <string-array name="gender">

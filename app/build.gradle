@@ -22,7 +22,7 @@ android {
     }
     sourceSets {
         main {
-            assets.srcDirs = ['src/main/assets', 'src/main/assets/']
+            assets.srcDirs = ['src/main/assets', 'src/main/assets/', 'src/main/assets/fonrs', 'src/main/assets/fonts']
             res.srcDirs = ['src/main/res', 'src/main/res/drawable']
         }
     }
