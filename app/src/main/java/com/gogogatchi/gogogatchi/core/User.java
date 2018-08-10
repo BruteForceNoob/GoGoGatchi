@@ -12,6 +12,15 @@ public class User implements Serializable {
     private double lat;
     private double longitude;
     private String email;
+    private Map<String, Boolean> interests= new HashMap<>();
+
+    public String getInterest() {
+        return interest;
+    }
+
+    public void setInterest(String interest) {
+        this.interest = interest;
+    }
 
     public String getProfileImage() {
         return profileImage;
@@ -28,7 +37,6 @@ public class User implements Serializable {
 
     }
     //
-    private Map<String,Boolean> interests= new HashMap<>();
 
     //new (old push)
     private String userId;

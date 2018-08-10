@@ -24,6 +24,7 @@ import com.gogogatchi.gogogatchi.core.GoogleQuery;
 import com.gogogatchi.gogogatchi.core.LocationCard;
 import com.gogogatchi.gogogatchi.core.LocationData;
 import com.gogogatchi.gogogatchi.util.MapUtil;
+import com.gogogatchi.gogogatchi.util.Network;
 import com.google.gson.Gson;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
@@ -34,6 +35,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -48,6 +50,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
     private MapUtil mapUtil;
     private String myResponse = null;
     private Location location;
+    private List<String> keywords=new ArrayList<String>();
 
     public String getResponse() {
         return myResponse;
@@ -59,24 +62,16 @@ public class HomeSwipeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_swipe2);
-        mapUtil=new MapUtil(getApplicationContext());
+
         try{
+            setContentView(R.layout.activity_home_swipe2);
+            mapUtil=new MapUtil(getApplicationContext());
             location=mapUtil.getLocation();
-            String userQuery = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
-                    + "location="
-                    + String.valueOf(location.getLatitude())+","
-                    + String.valueOf(location.getLongitude())
-                    + "&radius=12000"
-                    + "&type=museum"
-                    + "&keyword=art&key="
-                    + BuildConfig.ApiKey;
+            keywords.add("art");
+            mSwipeView = findViewById(R.id.swipeView);
+            mContext = getApplicationContext();
+            makeHttpCall(location,keywords);
 
-            Log.d("GGG", userQuery);
-
-            /*** HTTP QUERY PLACES API***/
-            Network task = new Network(userQuery);
-            task.execute();
 
             /*** Begin Menu Code ***/
             appBar = (Toolbar) findViewById(R.id.app_bar);
@@ -88,8 +83,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
             // actionBar.setIcon(R.drawable.ic_newspaper);
             /*** End Menu Code ***/
 
-            mSwipeView = findViewById(R.id.swipeView);
-            mContext = getApplicationContext();
+
 
             mSwipeView.getBuilder()
                     .setDisplayViewCount(3)
@@ -114,16 +108,13 @@ public class HomeSwipeActivity extends AppCompatActivity {
             findViewById(R.id.outOfIdeas).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String userQuery = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
-                            + "location="+String.valueOf(
-                            location.getLatitude())+","+String.valueOf(location.getLongitude())
-                            + "&radius=30000"
-                            + "&type=museum"
-                            + "&keyword=history|maritime|aeronautical|war"
-                            + "&key="
-                            + BuildConfig.ApiKey;
-                    Network taskB = new Network(userQuery);
-                    taskB.execute();
+                    keywords=new ArrayList<>();
+                    keywords.add("history");
+                    keywords.add("maritime");
+                    keywords.add("aeronautical");
+                    keywords.add("war");
+                    makeHttpCall(location,keywords);
+
                 }
             });
 
@@ -163,19 +154,15 @@ public class HomeSwipeActivity extends AppCompatActivity {
         {
             Toast.makeText(getApplicationContext(),e.getMessage()+" Please relaunch app.",Toast.LENGTH_LONG).show();
         }
+        catch(NullPointerException e)
+        {
+            Toast.makeText(getApplicationContext(),e.getMessage()+" Please relaunch app.",Toast.LENGTH_LONG).show();
+        }
+
         /***END MENU CODE ***/
     }
 
-    public void populateCards() {
-        Gson gson = new Gson();
 
-        for(LocationData profile : gson.fromJson(myResponse, GoogleQuery.class).getData()) {
-            if (profile.getPhoto().isEmpty() == false && profile.getRating() > 3.5f) {
-                // If no photo and low rating, don't make a card
-                mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
-            }
-        }
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -195,7 +182,46 @@ public class HomeSwipeActivity extends AppCompatActivity {
         System.exit(0);
     }
 
-    public class Network extends AsyncTask<Void, Void, Integer> {
+    public void makeHttpCall(Location location,List<String> keywords)
+    {
+        String concatedKeyWords="";
+        for(int i=0;i<keywords.size();i++)
+        {
+            concatedKeyWords+=keywords.get(i);
+            if(i!=keywords.size()-1)
+                concatedKeyWords+="|";
+        }
+        String userQuery = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
+                + "location="
+                + String.valueOf(location.getLatitude())+","
+                + String.valueOf(location.getLongitude())
+                + "&radius=12000"
+                + "&type=museum"
+                + "&keyword="+concatedKeyWords
+                + "&key="
+                + BuildConfig.ApiKey;
+
+        Log.d("GGG", userQuery);
+
+        /*** HTTP QUERY PLACES API***/
+        Network task = new Network(userQuery,this);
+        task.execute();
+    }
+
+    public void populateCards(String myResponse) {
+        Gson gson = new Gson();
+
+        for(LocationData profile : gson.fromJson(myResponse, GoogleQuery.class).getData()) {
+            if (profile.getPhoto().isEmpty() == false && profile.getRating() > 3.5f) {
+                // If no photo and low rating, don't make a card
+                mSwipeView= mSwipeView = findViewById(R.id.swipeView);
+                mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
+            }
+        }
+    }
+
+
+   /* public class Network extends AsyncTask<Void, Void, Integer> {
         String query;
 
         public Network(String userQuery) {
@@ -247,7 +273,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
             Log.d("YYYY", myResponse);
             populateCards();
         }
-    }
+    }*/
 }
 
 
