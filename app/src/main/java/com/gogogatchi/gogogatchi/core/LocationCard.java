@@ -4,11 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.gogogatchi.gogogatchi.R;
+import com.gogogatchi.gogogatchi.activities.HomeSwipeActivity;
 import com.gogogatchi.gogogatchi.activities.LocationViewActivity;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 import com.mindorks.placeholderview.annotations.Click;
@@ -85,6 +87,8 @@ public class LocationCard {
     //Swipe Right
     @SwipeIn
     private void onSwipeIn(){
+        HomeSwipeActivity.locationDataList.add(this.mLocationProfile);
+        Log.i("location",this.mLocationProfile.toString());
     }
 
     // calls method while moving toward right

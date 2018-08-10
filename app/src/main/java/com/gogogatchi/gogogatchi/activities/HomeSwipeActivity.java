@@ -51,6 +51,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
     private String myResponse = null;
     private Location location;
     private List<String> keywords=new ArrayList<String>();
+    public static List<LocationData> locationDataList=new ArrayList<>();
 
     public String getResponse() {
         return myResponse;
@@ -145,6 +146,12 @@ public class HomeSwipeActivity extends AppCompatActivity {
                                     startActivity(intent);
                                     break;
                                 }
+                                case R.id.nav_feed:
+                                {
+                                    Intent intent = new Intent (getApplicationContext(), FeedActivity.class);
+                                    startActivity(intent);
+                                    break;
+                                }
                             }
                             return true;
                         }
@@ -214,7 +221,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
         for(LocationData profile : gson.fromJson(myResponse, GoogleQuery.class).getData()) {
             if (profile.getPhoto().isEmpty() == false && profile.getRating() > 3.5f) {
                 // If no photo and low rating, don't make a card
-                mSwipeView= mSwipeView = findViewById(R.id.swipeView);
+                mSwipeView = findViewById(R.id.swipeView);
                 mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
             }
         }

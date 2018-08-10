@@ -28,13 +28,14 @@
         <activity android:name=".activities.SettingsActivity" />
         <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.MainActivity" />
-        <activity android:name=".activities.PrivacyActivity"/>
+        <activity android:name=".activities.PrivacyActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/api_key" />
 
-        <activity android:name=".activities.UpdateProfileActivity"></activity>
+        <activity android:name=".activities.UpdateProfileActivity" />
+        <activity android:name=".activities.FeedActivity"></activity>
     </application>
 
 </manifest>

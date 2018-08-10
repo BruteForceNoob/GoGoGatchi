@@ -22,6 +22,25 @@ public class LocationData extends LocationAssets implements Parcelable{
     @SerializedName("icon")
     private String icon;
 
+    @Override
+    public String toString() {
+        return "LocationData{" +
+                "geometry=" + geometry +
+                ", icon='" + icon + '\'' +
+                ", id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", opening_hours=" + opening_hours +
+                ", photos=" + photos +
+                ", place_id='" + place_id + '\'' +
+                ", plus_code=" + plus_code +
+                ", rating=" + rating +
+                ", reference='" + reference + '\'' +
+                ", scope='" + scope + '\'' +
+                ", types=" + types +
+                ", vicinity='" + vicinity + '\'' +
+                '}';
+    }
+
     @SerializedName("id")
     private String id; // deprecated, not unique
 
@@ -143,15 +162,14 @@ public class LocationData extends LocationAssets implements Parcelable{
     public URL getImageUrl() throws MalformedURLException {
         String maxWidth = "400";
 
-        if (photos.isEmpty() != true) {
+
             String imgURL = "https://maps.googleapis.com/maps/api/place/photo?";
             imgURL += "&photo_reference=" + photos.get(0).photo_reference;
             imgURL += "&sensor=false&maxwidth=" + maxWidth;
             imgURL += "&key=" + BuildConfig.ApiKey;
 
             return new URL(imgURL);
-        }
-        else return null;
+
     }
 
     public LocationData()
