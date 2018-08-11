@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/location"
-                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:fontFamily="@font/gotham"
                 android:textSize="18sp" />
 
             <Space
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/notifications"
-                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:fontFamily="@font/gotham"
                 android:textSize="18sp" />
 
             <Space
@@ -75,6 +75,7 @@
         android:layout_height="75dp"
         android:layout_marginTop="36dp"
         android:text="@string/update_profile_settings"
+        android:fontFamily="@font/gotham"
         android:onClick="updateUserProfile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
@@ -87,6 +88,7 @@
         android:layout_height="75dp"
         android:layout_marginTop="28dp"
         android:text="@string/update_companion_settings"
+        android:fontFamily="@font/gotham"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
