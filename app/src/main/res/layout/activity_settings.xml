@@ -30,7 +30,7 @@
                 android:textSize="18sp" />
 
             <Space
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content" />
 
             <Switch
@@ -63,8 +63,8 @@
 
             <Switch
                 android:id="@+id/switch2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="16dp"
+                android:layout_height="match_parent" />
         </TableRow>
 
     </TableLayout>
