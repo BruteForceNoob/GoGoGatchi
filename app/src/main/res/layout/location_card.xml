@@ -15,7 +15,7 @@
         android:id="@+id/Card"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="45dp"
+        android:layout_marginBottom="35dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="45dp"

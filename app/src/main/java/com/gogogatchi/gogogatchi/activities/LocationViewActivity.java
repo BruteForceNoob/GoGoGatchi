@@ -24,7 +24,6 @@ import com.google.android.gms.location.places.Places;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 
 public class LocationViewActivity extends AppCompatActivity {
@@ -36,7 +35,7 @@ public class LocationViewActivity extends AppCompatActivity {
     private Context mContext = this;
 
     private LinkedList<Bitmap> pictures = new LinkedList<Bitmap>();
-    Iterator<Bitmap> it = null;
+    private int count = 0;
 
     private static Profile mProfile;
     private static LocationData mLocationProfile;
@@ -117,21 +116,16 @@ public class LocationViewActivity extends AppCompatActivity {
         findViewById(R.id.imagess).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (it.hasNext() == false) {
-                    imgView.setImageBitmap(pictures.getFirst());
-                    it = pictures.iterator();
-                }
-                else {
-                    Bitmap temp = it.next();
+                if (count >= pictures.size())
+                    count = 0;
 
-                    if (temp!= null)
-                        imgView.setImageBitmap(temp);
-                }
+                imgView.setImageBitmap(pictures.get(count));
+                count++;
             }
         });
     }
 
     private void jumpTo() {
-        it = pictures.iterator();
+        //
     }
 }
