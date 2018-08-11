@@ -1,44 +1,34 @@
 package com.gogogatchi.gogogatchi.activities;
 
-import android.provider.ContactsContract;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
+
+import android.util.Base64;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.gogogatchi.gogogatchi.FirebaseDB;
 import com.gogogatchi.gogogatchi.R;
-import com.gogogatchi.gogogatchi.core.User;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private Button mSendData;
+
     private DatabaseReference mRef;
-    //private String user;
-    private CheckBox isCheckAth;
-    private CheckBox isCheckCul;
-    private CheckBox isCheckMonu;
-    private EditText editText;
+    private TextView textViewUsername;
+    private TextView textViewEmail;
+    private TextView textViewGender;
+    private TextView textViewAge;
+    private String encodedImage;
+    private ImageView profilePicture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,20 +37,29 @@ public class ProfileActivity extends AppCompatActivity {
 
         mRef = FirebaseDB.mDatabase;
         final DatabaseReference mChildRef= mRef.child("users");
-        mSendData= findViewById(R.id.updateProfile);
-        editText = findViewById(R.id.userId);
+        textViewUsername = findViewById(R.id.textViewUsername);
+        //textViewEmail = findViewById(R.id.textViewEmail);
+        textViewGender = findViewById(R.id.textViewGender);
+        textViewAge = findViewById(R.id.textViewAge);
+        profilePicture = findViewById(R.id.imageViewProfile);
 
         mChildRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                String uuid = currentFirebaseUser.getUid();
+                final FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                final String uuid = currentFirebaseUser.getUid();
                 String profileName=(dataSnapshot.child(uuid).child("username").getValue().toString());
-                editText.setText(profileName);
-                Log.v("E_VALUE ","DATA - " + currentFirebaseUser.getDisplayName());
+                //String profileEmail=(dataSnapshot.child(uuid).child("email").getValue().toString());
+                String profileGender=(dataSnapshot.child(uuid).child("gender").getValue().toString());
+                String profileAgeGroup=(dataSnapshot.child(uuid).child("age").getValue().toString());
+                encodedImage = (dataSnapshot.child(uuid).child("profileImage").getValue().toString());
+                byte[] decodedString = Base64.decode(encodedImage, Base64.DEFAULT);
+                Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
 
-                Log.v("E_VALUE","DATA" + dataSnapshot.child(uuid).child("username"));
+                textViewUsername.setText(profileName);
+                textViewGender.setText(profileGender);
+                textViewAge.setText(profileAgeGroup);
+                profilePicture.setImageBitmap(decodedByte);
 
             }
 
