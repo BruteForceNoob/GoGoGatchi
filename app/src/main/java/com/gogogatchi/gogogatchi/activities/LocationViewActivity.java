@@ -37,6 +37,7 @@ public class LocationViewActivity extends AppCompatActivity {
     private Context mContext = this;
 
     private LinkedList<Bitmap> pictures = new LinkedList<Bitmap>();
+    private boolean flag = true;
     private int count = 1;
 
     private static Profile mProfile;
@@ -112,14 +113,37 @@ public class LocationViewActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.imagess).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.leftButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (count >= pictures.size())
-                    count = 0;
+                if (flag) {
+                    count = pictures.size() - 1;
+                    flag = false;
+                }
+                else {
+                    --count;
+                    if (count < 0)
+                        count = pictures.size() - 1;
+                }
 
                 imgView.setImageBitmap(pictures.get(count));
-                count++;
+            }
+        });
+
+        findViewById(R.id.rightButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (flag) {
+                    count = 1;
+                    flag = false;
+                }
+                else {
+                    ++count;
+                    if (count >= pictures.size())
+                        count = 0;
+                }
+
+                imgView.setImageBitmap(pictures.get(count));
             }
         });
 
