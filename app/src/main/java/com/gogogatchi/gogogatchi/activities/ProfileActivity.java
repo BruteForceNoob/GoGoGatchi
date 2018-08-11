@@ -23,6 +23,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     private DatabaseReference mRef;
+    private FirebaseAuth mAuth;
     private TextView textViewUsername;
     private TextView textViewEmail;
     private TextView textViewGender;
@@ -36,9 +37,10 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         mRef = FirebaseDB.mDatabase;
+        mAuth = FirebaseAuth.getInstance();
         final DatabaseReference mChildRef= mRef.child("users");
         textViewUsername = findViewById(R.id.textViewUsername);
-        //textViewEmail = findViewById(R.id.textViewEmail);
+        textViewEmail = findViewById(R.id.textViewEmail);
         textViewGender = findViewById(R.id.textViewGender);
         textViewAge = findViewById(R.id.textViewAge);
         profilePicture = findViewById(R.id.imageViewProfile);
@@ -49,7 +51,7 @@ public class ProfileActivity extends AppCompatActivity {
                 final FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
                 final String uuid = currentFirebaseUser.getUid();
                 String profileName=(dataSnapshot.child(uuid).child("username").getValue().toString());
-                //String profileEmail=(dataSnapshot.child(uuid).child("email").getValue().toString());
+                String profileEmail= mAuth.getCurrentUser().getEmail();
                 String profileGender=(dataSnapshot.child(uuid).child("gender").getValue().toString());
                 String profileAgeGroup=(dataSnapshot.child(uuid).child("age").getValue().toString());
                 encodedImage = (dataSnapshot.child(uuid).child("profileImage").getValue().toString());
@@ -59,6 +61,7 @@ public class ProfileActivity extends AppCompatActivity {
                 textViewUsername.setText(profileName);
                 textViewGender.setText(profileGender);
                 textViewAge.setText(profileAgeGroup);
+                textViewEmail.setText(profileEmail);
                 profilePicture.setImageBitmap(decodedByte);
 
             }

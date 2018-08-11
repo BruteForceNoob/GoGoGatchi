@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewProfile" />
 
-<!--    <TextView
+    <TextView
         android:id="@+id/txtEmailProfile"
         android:layout_width="125dp"
         android:layout_height="25dp"
@@ -29,7 +29,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUsernameProfile" />-->
+        app:layout_constraintTop_toBottomOf="@+id/txtAgeProfile" />
 
     <TextView
         android:id="@+id/txtGenderProfile"
@@ -78,7 +78,7 @@
         app:layout_constraintStart_toEndOf="@+id/txtUsernameProfile"
         app:layout_constraintTop_toBottomOf="@+id/imageViewProfile" />
 
-<!--    <TextView
+    <TextView
         android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/txtEmailProfile"
-        app:layout_constraintTop_toBottomOf="@+id/textViewUsername" />-->
+        app:layout_constraintTop_toBottomOf="@+id/textViewAge" />
 
     <TextView
         android:id="@+id/textViewGender"
