@@ -78,18 +78,28 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 mSendData.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String updatedUsername = editText.getText().toString();
-                        mChildRef.child(uuid).child("username").setValue(updatedUsername);
-                        mChildRef.child(uuid).child("profileImage").setValue(encodedImage);
-                        Context context = getApplicationContext();
-                        CharSequence text = "Profile Updated Successfully";
-                        int duration = Toast.LENGTH_SHORT;
+                        try {
+                            String updatedUsername = editText.getText().toString();
+                            mChildRef.child(uuid).child("username").setValue(updatedUsername);
+                            mChildRef.child(uuid).child("profileImage").setValue(encodedImage);
+                            Context context = getApplicationContext();
+                            CharSequence text = "Profile Updated Successfully";
+                            int duration = Toast.LENGTH_SHORT;
 
-                        Toast toast = Toast.makeText(context, text, duration);
-                        toast.show();
+                            Toast toast = Toast.makeText(context, text, duration);
+                            toast.show();
 
-                        Intent i = new Intent(getApplicationContext(),HomeSwipeActivity.class);
-                        startActivity(i);
+                            Intent i = new Intent(getApplicationContext(), HomeSwipeActivity.class);
+                            startActivity(i);
+                        } catch(Exception ex)
+                        {
+                            Context context = getApplicationContext();
+                            CharSequence text = "Profile Update Failed";
+                            int duration = Toast.LENGTH_SHORT;
+
+                            Toast toast = Toast.makeText(context, text, duration);
+                            toast.show();
+                        }
                     }
                 });
             }
@@ -99,9 +109,10 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 Context context = getApplicationContext();
                 CharSequence text = "Profile Update Failed";
                 int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
             }
         });
-
 
         Button buttonLoadImage = (Button) findViewById(R.id.btnUpdateProfileImage);
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {
