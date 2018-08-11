@@ -44,6 +44,7 @@
     <string name="passwordHint">Password (min. 6 char)</string>
     <string name="passwordHintCheck">Re-Enter Password</string>
     <string name="gender">Gender</string>
+    <string name="checkEmail">Re-Enter Email</string>
 
     <string name="termsConditions">Privacy</string>
     <string name="todo">TODO</string>
