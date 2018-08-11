@@ -1,6 +1,7 @@
 package com.gogogatchi.gogogatchi.activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -17,6 +18,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.gogogatchi.gogogatchi.FirebaseDB;
 import com.gogogatchi.gogogatchi.R;
@@ -79,13 +81,21 @@ public class UpdateProfileActivity extends AppCompatActivity {
                         String updatedUsername = editText.getText().toString();
                         mChildRef.child(uuid).child("username").setValue(updatedUsername);
                         mChildRef.child(uuid).child("profileImage").setValue(encodedImage);
+                        Context context = getApplicationContext();
+                        CharSequence text = "Profile Updated Successfully";
+                        int duration = Toast.LENGTH_SHORT;
+
+                        Toast toast = Toast.makeText(context, text, duration);
+                        toast.show();
                     }
                 });
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Context context = getApplicationContext();
+                CharSequence text = "Profile Update Failed";
+                int duration = Toast.LENGTH_SHORT;
             }
         });
 
