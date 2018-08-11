@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.core.LocationData;
 import com.gogogatchi.gogogatchi.core.Profile;
@@ -24,6 +25,7 @@ import com.google.android.gms.location.places.Places;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+import java.net.MalformedURLException;
 import java.util.LinkedList;
 
 public class LocationViewActivity extends AppCompatActivity {
@@ -35,7 +37,7 @@ public class LocationViewActivity extends AppCompatActivity {
     private Context mContext = this;
 
     private LinkedList<Bitmap> pictures = new LinkedList<Bitmap>();
-    private int count = 0;
+    private int count = 1;
 
     private static Profile mProfile;
     private static LocationData mLocationProfile;
@@ -103,13 +105,10 @@ public class LocationViewActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<PlacePhotoResponse> task) {
                             PlacePhotoResponse photo = task.getResult();
                             pictures.add(photo.getBitmap());
-                            imgView.setImageBitmap(photo.getBitmap());
                             photoMetadataBuffer.release();
                         }
                     });
                 }
-
-                jumpTo();
             }
         });
 
@@ -123,9 +122,11 @@ public class LocationViewActivity extends AppCompatActivity {
                 count++;
             }
         });
-    }
 
-    private void jumpTo() {
-        //
+        try {
+            Glide.with(mContext).load(mLocationProfile.getImageUrl()).into(imgView);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 }

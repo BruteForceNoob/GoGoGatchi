@@ -55,9 +55,6 @@ public class LocationCard {
         Bitmap image;
         URL url = mLocationProfile.getImageUrl();
 
-        //Glide.with(mContext).load(BitmapFactory.decodeStream(url.openConnection().getInputStream()))
-         //       .into(profileImageView);
-
         Glide.with(mContext).load(mLocationProfile.getImageUrl()).into(profileImageView);
         destNameTxt.setText(mLocationProfile.getLocationName());
         cityNameTxt.setText(mLocationProfile.getVicinity());
