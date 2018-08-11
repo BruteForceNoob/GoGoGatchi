@@ -32,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity{
     private ProgressBar progressBar;
     private Spinner spinnerGender, spinnerInterest, spinnerAge;
     private EditText editTextEmail, editTextPassword, editUsername;
-    private EditText editTextPasswordCheck;
+    private EditText editTextPasswordCheck, editTextEmailCheck;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
 
@@ -83,6 +83,27 @@ public class RegisterActivity extends AppCompatActivity{
         }
 
     };
+
+    private final TextWatcher mTextEditorWather3 = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        }
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            String emailOG = editTextEmail.getText().toString().trim();
+            String emailCheck = editTextEmailCheck.getText().toString().trim();
+            if (!emailOG.equals(emailCheck)){
+                editTextEmailCheck.setError("Emails do not match");
+                editTextEmailCheck.requestFocus();
+            }
+        }
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+
+    };
+
 
 
     ///Spinner Section
@@ -159,6 +180,7 @@ public class RegisterActivity extends AppCompatActivity{
 
     public void registerUser(View v) {
         String email = editTextEmail.getText().toString().trim();
+        String emailCheck = editTextEmailCheck.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
         String passwordCheck = editTextPasswordCheck.getText().toString().trim();
         final String username = editUsername.getText().toString().trim();
@@ -171,6 +193,16 @@ public class RegisterActivity extends AppCompatActivity{
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             editTextEmail.setError("Please enter a valid email");
             editTextEmail.requestFocus();
+            return;
+        }
+        if (emailCheck.isEmpty()){
+            editTextEmailCheck.setError("Email is required");
+            editTextEmailCheck.requestFocus();
+            return;
+        }
+        if (!emailCheck.equals(email)){
+            editTextEmailCheck.setError("Incorrect email");
+            editTextEmailCheck.requestFocus();
             return;
         }
         if (password.isEmpty()) {
@@ -230,6 +262,10 @@ public class RegisterActivity extends AppCompatActivity{
     private void init() {
         editTextEmail = findViewById(R.id.etCreateEmail);
         editTextEmail.requestFocus();
+
+        editTextEmailCheck = findViewById(R.id.etCheckEmail);
+        editTextEmailCheck.requestFocus();
+        editTextEmailCheck.addTextChangedListener((mTextEditorWather3));
 
         editTextPassword = findViewById(R.id.etCreatePW);
         editTextPassword.addTextChangedListener(mTextEditorWather);
