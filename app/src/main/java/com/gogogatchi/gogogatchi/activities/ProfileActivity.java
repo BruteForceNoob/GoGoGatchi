@@ -10,7 +10,7 @@ import android.util.Base64;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.gogogatchi.gogogatchi.FirebaseDB;
+import com.gogogatchi.gogogatchi.util.FirebaseDB;
 import com.gogogatchi.gogogatchi.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

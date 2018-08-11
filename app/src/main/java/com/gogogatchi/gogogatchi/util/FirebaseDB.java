@@ -1,4 +1,4 @@
-package com.gogogatchi.gogogatchi;
+package com.gogogatchi.gogogatchi.util;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
