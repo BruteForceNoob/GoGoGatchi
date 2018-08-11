@@ -5,7 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/feedCardLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:padding="5dp">
     <!--android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -16,23 +18,25 @@
     <android.support.v7.widget.CardView
         android:id="@+id/cv"
         android:layout_width="match_parent"
-        android:layout_height="700dp"
+        android:layout_height="245dp"
         app:cardCornerRadius="5dp"
-        app:cardElevation="10dp"
-        app:contentPaddingRight="10dp"
+        android:layout_gravity="center_horizontal"
+        app:cardElevation="4dp">
+        <!--app:contentPaddingRight="10dp"
         app:contentPaddingLeft="10dp"
-        app:cardMaxElevation="15dp">
+        app:cardMaxElevation="15dp"-->
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="240dp"
+            android:orientation="vertical"
+            android:padding="8dp">
 
 
             <ImageView
 
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="190dp"
 
 
                 android:id="@+id/cardImage"
@@ -40,12 +44,16 @@
 
             <TextView
                 android:id="@+id/cardTitle"
-                android:gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+
+                android:textColor="#333333"
                 android:text="Card Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_alignBaseline="@id/cardImage"/>
-        </RelativeLayout>
+        </LinearLayout>
 
 
     </android.support.v7.widget.CardView>
