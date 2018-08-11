@@ -87,6 +87,9 @@ public class UpdateProfileActivity extends AppCompatActivity {
 
                         Toast toast = Toast.makeText(context, text, duration);
                         toast.show();
+
+                        Intent i = new Intent(getApplicationContext(),HomeSwipeActivity.class);
+                        startActivity(i);
                     }
                 });
             }
