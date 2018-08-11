@@ -12,7 +12,6 @@ public class User implements Serializable {
     private double lat;
     private double longitude;
     private String email;
-    private Map<String, Boolean> interests= new HashMap<>();
 
     public String getInterest() {
         return interest;
@@ -21,6 +20,8 @@ public class User implements Serializable {
     public void setInterest(String interest) {
         this.interest = interest;
     }
+
+    private Map<String, Boolean> interests= new HashMap<>();
 
     public String getProfileImage() {
         return profileImage;
@@ -49,7 +50,7 @@ public class User implements Serializable {
         this.username = rightUser.username;
         this.gender = rightUser.gender;
         this.age = rightUser.age;
-       // this.interest = rightUser.interest;
+        this.interests = rightUser.interests;
         this.profileImage=rightUser.profileImage;
     }
 
@@ -65,12 +66,12 @@ public class User implements Serializable {
     */
 
     //new user 8-6-18
-    public User(String userId, String username, String gender, String age, String profileImage) {
+    public User(String userId, String username, String gender, String age, String profileImage,Map<String,Boolean> interests) {
         this.userId = userId;
         this.username = username;
         this.gender = gender;
         this.age = age;
-        //this.interest = interest;
+        this.interests = interests;
         this.profileImage=profileImage;
     }
 
