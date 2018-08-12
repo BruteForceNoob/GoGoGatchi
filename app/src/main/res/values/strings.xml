@@ -40,6 +40,7 @@
     <string name="companion">[Insert quirky location facts here]</string>
     <string name="no_idea">Looks like we\'re out of ideas. Please tap here to refresh.</string>
     <string name="call_location">Call</string>
+    <string name="companionFarm">Companion</string>
 
     <string name="profile">profile</string>
     <string name="locationView">Location Details</string>
@@ -270,6 +271,7 @@ By email: proDevs@GoGoGatchi.com
 By visiting this page on our website: http://www.GoGoGatchi.com</string>
 
     <string name="privacyDataTitle">Privacy/Data</string>
+
 
     <!--- gender drop list-->
     <string-array name="gender">
