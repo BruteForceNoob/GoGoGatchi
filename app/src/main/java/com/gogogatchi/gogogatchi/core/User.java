@@ -1,8 +1,7 @@
 package com.gogogatchi.gogogatchi.core;
 
-import android.util.Log;
-
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.io.Serializable;
 
@@ -11,7 +10,18 @@ public class User implements Serializable {
     private String password;
     private double lat;
     private double longitude;
+
+
+    public List<LocationData> getLikedLocations() {
+        return likedLocations;
+    }
+
+    public void setLikedLocations(List<LocationData> likedLocations) {
+        this.likedLocations = likedLocations;
+    }
+
     private String email;
+    private List<LocationData> likedLocations;
 
     public String getInterest() {
         return interest;

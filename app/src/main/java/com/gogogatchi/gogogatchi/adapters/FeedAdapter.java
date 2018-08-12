@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,7 +34,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
     @Override
     public FeedViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.feed_card, parent, false);
-        FeedViewHolder pvh = new FeedViewHolder(v,locationList,context);
+        FeedViewHolder pvh = new FeedViewHolder(v,locationList,context,this);
         return pvh;
     }
 
@@ -65,31 +66,49 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
     public static class FeedViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         CardView cv;
+        ImageButton imageButton;
         TextView locationTitle;
         ImageView locationImage;
         List<LocationData> locationDataList=new ArrayList<>();
         Context context;
+        FeedAdapter feedAdapter;
 
 
-        FeedViewHolder(View itemView, List<LocationData> locationDataList, Context context) {
+        FeedViewHolder(View itemView, List<LocationData> locationDataList, Context context, FeedAdapter feedAdapter) {
             super(itemView);
             this.locationDataList=locationDataList;
             this.context=context;
+            imageButton=(ImageButton) itemView.findViewById(R.id.deleteButton);
+            imageButton.setOnClickListener(this);
+            this.feedAdapter=feedAdapter;
+
+
             cv = (CardView)itemView.findViewById(R.id.cv);
             cv.setOnClickListener(this);
             locationTitle = (TextView)itemView.findViewById(R.id.cardTitle);
             locationImage = (ImageView)itemView.findViewById(R.id.cardImage);
         }
 
+
+
         @Override
         public void onClick(View view) {
-            int position=getAdapterPosition();
-            LocationData locationData=locationDataList.get(position);
-            Intent intent = new Intent(this.context, LocationViewActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putParcelable("mLocationProfile", locationData);
-            intent.putExtras(bundle);
-            this.context.startActivity(intent);
+
+            int position = getAdapterPosition();
+            if(view.getId()==R.id.cv) {
+
+                LocationData locationData = locationDataList.get(position);
+                Intent intent = new Intent(this.context, LocationViewActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("mLocationProfile", locationData);
+                intent.putExtras(bundle);
+                this.context.startActivity(intent);
+            }
+            else if(view.getId()==R.id.deleteButton)
+            {
+                feedAdapter.notifyItemRemoved(position);
+                locationDataList.remove(position);
+            }
 
         }
 
