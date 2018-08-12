@@ -1,15 +1,8 @@
 package com.gogogatchi.gogogatchi.util;
 
-import android.app.Activity;
 import android.os.AsyncTask;
-import android.util.Log;
 
-import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.activities.HomeSwipeActivity;
-import com.gogogatchi.gogogatchi.core.GoogleQuery;
-import com.gogogatchi.gogogatchi.core.LocationCard;
-import com.gogogatchi.gogogatchi.core.LocationData;
-import com.google.gson.Gson;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
 import org.json.JSONException;
@@ -71,12 +64,9 @@ public class Network extends AsyncTask<Void, Void, Integer> {
 
         return null;
     }
-
-
-
+    
     @Override
     protected void onPostExecute(Integer useless) {
-        Log.d("YYYY", myResponse);
         homeSwipeActivity.populateCards(myResponse);
     }
 }

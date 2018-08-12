@@ -34,8 +34,10 @@
     <string name="title_activity_monster_hatch">MonsterHatchActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="companion">Companion: Play with me.</string>
+    <string name="companion">[Insert quirky location facts here]</string>
     <string name="no_idea">Looks like we\'re out of ideas. Please tap here to refresh.</string>
+    <string name="call_location">Call</string>
+
     <string name="profile">profile</string>
     <string name="locationView">Location Details</string>
     <string name="settings">Settings</string>
@@ -65,7 +67,7 @@
         <item>Other</item>
     </string-array>
 
-    <!--- interest drop list-->
+    <!--- ethnicity drop list-->
     <string-array name="interest">
         <item>Select Option..</item>
         <item>Athletics</item>

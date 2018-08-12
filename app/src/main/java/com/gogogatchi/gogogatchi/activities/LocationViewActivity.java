@@ -3,21 +3,25 @@ package com.gogogatchi.gogogatchi.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.core.LocationData;
-import com.gogogatchi.gogogatchi.core.Profile;
 import com.google.android.gms.location.places.GeoDataClient;
+import com.google.android.gms.location.places.PlaceBufferResponse;
 import com.google.android.gms.location.places.PlaceDetectionClient;
 import com.google.android.gms.location.places.PlacePhotoMetadata;
 import com.google.android.gms.location.places.PlacePhotoMetadataBuffer;
@@ -42,10 +46,15 @@ public class LocationViewActivity extends AppCompatActivity {
     private boolean flag = true;
     private int count = 1;
 
-    private static Profile mProfile;
     private static LocationData mLocationProfile;
     private TextView textView;
     private ImageView imgView;
+    private ImageButton navi;
+
+    private String pno = null;
+    private String url = null;
+    private String address = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,23 +78,38 @@ public class LocationViewActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.textView4);
         imgView = findViewById(R.id.imagess);
-
+        navi = findViewById(R.id.navigateButton);
+        navi.bringToFront();
 
         /*** For use with Google Places API ***/
         Bundle bundle = this.getIntent().getExtras();
         if (bundle != null)
             mLocationProfile = bundle.getParcelable("mLocationProfile");
 
-        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        ratingBar = findViewById(R.id.ratingBar);
         ratingBar.setMax(5);
-        //ratingBar.setNumStars(5);
-
+        ratingBar.setStepSize(0.5f);
         ratingBar.setRating((float) mLocationProfile.getRating());
         textView.setText(mLocationProfile.getLocationName());
 
         final String placeId = mLocationProfile.getPlaceID();
-        final Task<PlacePhotoMetadataResponse> photoMetadataResponse = mGeoDataClient
-                .getPlacePhotos(placeId);
+        final Task<PlacePhotoMetadataResponse> photoMetadataResponse =
+                mGeoDataClient.getPlacePhotos(placeId);
+
+        mGeoDataClient.getPlaceById(placeId).addOnCompleteListener(new OnCompleteListener<PlaceBufferResponse>() {
+            @Override
+            public void onComplete(@NonNull Task<PlaceBufferResponse> task) {
+                if (task.isSuccessful()) {
+                    PlaceBufferResponse places = task.getResult();
+
+                    pno = places.get(0).getPhoneNumber().toString();
+                    url = places.get(0).getWebsiteUri().toString();
+                    address = places.get(0).getAddress().toString();
+
+                    places.release();
+                }
+            }
+        });
 
         //Will use this to retrieve list of pictures, working
         photoMetadataResponse.addOnCompleteListener(new OnCompleteListener<PlacePhotoMetadataResponse>() {
@@ -104,7 +128,7 @@ public class LocationViewActivity extends AppCompatActivity {
 
                     // Get the full-sized photo
                     Task<PlacePhotoResponse> photoResponse = mGeoDataClient.getPhoto(instance);
-                    final boolean[] flag = {false};
+
                     photoResponse.addOnCompleteListener(new OnCompleteListener<PlacePhotoResponse>() {
                         @Override
                         public void onComplete(@NonNull Task<PlacePhotoResponse> task) {
@@ -148,6 +172,56 @@ public class LocationViewActivity extends AppCompatActivity {
                 }
 
                 imgView.setImageBitmap(pictures.get(count));
+            }
+        });
+
+        findViewById(R.id.callButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (pno != null) {
+                    startActivity(new Intent(Intent.ACTION_DIAL,
+                            Uri.fromParts("tel", pno, null)));
+                }
+                else {
+                    Toast.makeText(mContext, mLocationProfile.getLocationName()
+                            + " does not have an associated phone number.", Toast.LENGTH_LONG);
+                }
+            }
+        });
+
+
+        findViewById(R.id.websiteButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (url != null)
+                    startActivity(new Intent(Intent.ACTION_VIEW)
+                            .setData(Uri.parse(url)));
+                else
+                    Toast.makeText(mContext, mLocationProfile.getLocationName()
+                            + " does not have an associated website.", Toast.LENGTH_LONG);
+            }
+        });
+
+        findViewById(R.id.navigateButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (address != null) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Uri gmmIntentUri = Uri.parse("google.navigation:q=" + address);
+                            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                            mapIntent.setPackage("com.google.android.apps.maps");
+                            startActivity(mapIntent);
+                        }
+                    }, 1000);
+                }
+                else {
+                    Toast.makeText(mContext,
+                            "Looks like we're having some problems navigating to "
+                                    + mLocationProfile.getLocationName() + ".", Toast.LENGTH_LONG);
+                }
             }
         });
 
