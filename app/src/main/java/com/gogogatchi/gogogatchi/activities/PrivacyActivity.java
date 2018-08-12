@@ -3,31 +3,19 @@ package com.gogogatchi.gogogatchi.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
+import android.transition.TransitionManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.gogogatchi.gogogatchi.R;
 
-public class PrivacyActivity extends AppCompatActivity implements View.OnClickListener{
+public class PrivacyActivity extends AppCompatActivity{
 
-    private void init() {
-        Button btnAgree;
-        btnAgree = (Button) findViewById(R.id.userAgree);
-        btnAgree.setOnClickListener(this);
-    }
-
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.userAgree:
-                Intent goHome = new Intent(PrivacyActivity.this, SplitHomeActivity.class);
-                startActivity(goHome);
-                break;
-        }
-    }
-
+    private ScrollView privacyLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +24,34 @@ public class PrivacyActivity extends AppCompatActivity implements View.OnClickLi
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         setContentView(R.layout.activity_privacy);
-        init();
+        privacyLayout = (ScrollView) findViewById(R.id.activity_privacy);
     }
 
+    public void TermsConditions(View v) {
+        CardView cardView = findViewById(R.id.cardViewTermsConditions);
+        TextView text = findViewById(R.id.textViewTermsText);
+
+        if(text.getVisibility() == View.GONE){
+            TransitionManager.beginDelayedTransition(cardView);
+            text.setVisibility(View.VISIBLE);
+        }else{
+            TransitionManager.beginDelayedTransition(cardView);
+            text.setVisibility(View.GONE);
+        }
+    }
+
+    public void PrivacyData(View v) {
+        CardView cardView = findViewById(R.id.cardViewPrivacyData);
+        TextView text = findViewById(R.id.textViewPrivacyText);
+
+        if(text.getVisibility() == View.GONE){
+            TransitionManager.beginDelayedTransition(cardView);
+            text.setVisibility(View.VISIBLE);
+        }else{
+            TransitionManager.beginDelayedTransition(cardView);
+            text.setVisibility(View.GONE);
+        }
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
