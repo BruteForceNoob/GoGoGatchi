@@ -27,6 +27,9 @@
     <string name="zoo">Zoo</string>
     <string name="location">Allow Location Access</string>
     <string name="notifications">Allow Push Notifications</string>
+    <string name="distance">Select Distance to Search</string>
+    <string name="miles">miles</string>
+
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="menu_icon">menu_icon</string>

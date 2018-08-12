@@ -30,12 +30,12 @@
                 android:textSize="18sp" />
 
             <Space
-                android:layout_width="80dp"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content" />
 
             <Switch
                 android:id="@+id/switch1"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content" />
 
         </TableRow>
@@ -63,7 +63,7 @@
 
             <Switch
                 android:id="@+id/switch2"
-                android:layout_width="16dp"
+                android:layout_width="60dp"
                 android:layout_height="match_parent" />
         </TableRow>
 
@@ -82,16 +82,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout3" />
 
-    <Button
-        android:id="@+id/btnUpdateCompanionSettings"
-        android:layout_width="200dp"
-        android:layout_height="75dp"
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="28dp"
-        android:text="@string/update_companion_settings"
+        android:max="100"
+        android:progress="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSearchDistance" />
+
+    <TextView
+        android:id="@+id/txtSearchDistance"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="48dp"
         android:fontFamily="@font/gotham"
+        android:text="@string/distance"
+        android:textAlignment="center"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnUpdateProfileSettings" />
+
+    <TextView
+        android:id="@+id/txtDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/gotham"
+        android:text="100"
+        android:textAlignment="textEnd"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="150dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/gotham"
+        android:text="@string/miles"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
 
 </android.support.constraint.ConstraintLayout>
