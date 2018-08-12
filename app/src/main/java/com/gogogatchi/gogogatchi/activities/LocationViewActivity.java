@@ -1,11 +1,13 @@
 package com.gogogatchi.gogogatchi.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -48,6 +50,8 @@ public class LocationViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setTitle(getString(R.string.locationView));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_location_view);
 
         /** PLACES SDK
@@ -151,6 +155,17 @@ public class LocationViewActivity extends AppCompatActivity {
             Glide.with(mContext).load(mLocationProfile.getImageUrl()).into(imgView);
         } catch (MalformedURLException e) {
             e.printStackTrace();
+        }
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent reHash = new Intent(this, HomeSwipeActivity.class);
+                reHash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(reHash);
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.gogogatchi.gogogatchi.activities;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.util.Base64;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,6 +36,8 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setTitle(getString(R.string.profileLarge));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_profile);
 
         mRef = FirebaseDB.mDatabase;
@@ -73,5 +77,17 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
         }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent reHash = new Intent(this, HomeSwipeActivity.class);
+                reHash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(reHash);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 
 }

@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Patterns;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -94,6 +95,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setTitle(getString(R.string.login));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_main);
 
         init();
@@ -110,6 +113,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Integer [] images = {R.mipmap.clocktower1, R.mipmap.fountain1, R.mipmap.csulb1};
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this, images);
         viewPager.setAdapter(viewPagerAdapter);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent reHash = new Intent(this, SplitHomeActivity.class);
+                reHash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(reHash);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
 

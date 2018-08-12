@@ -11,6 +11,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -58,6 +59,8 @@ public class UpdateProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setTitle(getString(R.string.update_profile_settings));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_update_profile);
 
         mRef = FirebaseDB.mDatabase;
@@ -236,6 +239,18 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 startActivityForResult(new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI), RESULT_LOAD_IMAGE);
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent reHash = new Intent(this, SettingsActivity.class);
+                reHash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(reHash);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

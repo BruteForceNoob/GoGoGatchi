@@ -13,7 +13,7 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/icon_logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:theme="@style/Theme.AppCompat.Light">
         <activity android:name=".activities.SplitHomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
         </activity>
         <activity android:name=".activities.LocationViewActivity" />
         <activity android:name=".activities.MonsterHatchActivity" />
-        <activity android:name=".activities.HomeSwipeActivity" />
+        <activity android:name=".activities.HomeSwipeActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".activities.ProfileActivity" />
         <activity android:name=".activities.SettingsActivity" />
         <activity android:name=".activities.RegisterActivity" />

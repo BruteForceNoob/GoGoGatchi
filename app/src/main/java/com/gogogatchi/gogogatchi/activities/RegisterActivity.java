@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Patterns;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -294,10 +295,24 @@ public class RegisterActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setTitle(getString(R.string.register2));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_register);
 
         // initialize activity
         init();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent reHash = new Intent(this, SplitHomeActivity.class);
+                reHash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(reHash);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 

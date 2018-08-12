@@ -14,6 +14,7 @@ public class MonsterHatchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_monster_hatch);
 
         new Timer().schedule(new TimerTask() {

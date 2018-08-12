@@ -36,6 +36,11 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="companion">Companion: Play with me.</string>
     <string name="no_idea">Looks like we\'re out of ideas. Please tap here to refresh.</string>
+    <string name="profile">profile</string>
+    <string name="locationView">Location Details</string>
+    <string name="settings">Settings</string>
+    <string name="newsFeed">Feed</string>
+    <string name="profileLarge">Profile</string>
 
     <string name="register2">Register</string>
     <string name="optional">Optional</string>
@@ -60,7 +65,7 @@
         <item>Other</item>
     </string-array>
 
-    <!--- ethnicity drop list-->
+    <!--- interest drop list-->
     <string-array name="interest">
         <item>Select Option..</item>
         <item>Athletics</item>

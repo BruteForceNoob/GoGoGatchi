@@ -1,9 +1,11 @@
 package com.gogogatchi.gogogatchi.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.gogogatchi.gogogatchi.R;
@@ -14,6 +16,8 @@ public class FeedActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setTitle(getString(R.string.newsFeed));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_feed);
 
         RecyclerView rv = (RecyclerView)findViewById(R.id.rv);
@@ -30,4 +34,17 @@ public class FeedActivity extends AppCompatActivity {
             rv.setAdapter(adapter);
         }
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent reHash = new Intent(this, HomeSwipeActivity.class);
+                reHash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(reHash);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }
