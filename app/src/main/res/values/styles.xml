@@ -24,6 +24,5 @@
         <item name="android:displayOptions">homeAsUp</item>
         <item name="displayOptions">homeAsUp</item>
     </style>
-
-
+    
 </resources>
