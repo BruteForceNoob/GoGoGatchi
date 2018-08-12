@@ -106,6 +106,13 @@ public class HomeSwipeActivity extends AppCompatActivity {
 
                 }
             });
+            findViewById(R.id.companion_bottom).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent= new Intent(getApplicationContext(), CompanionActivity.class);
+                    startActivity(intent);
+                }
+            });
 
             /*** BEGIN MENU CODE ***/
             NavigationView navigationView = findViewById(R.id.navMenu);
@@ -210,61 +217,6 @@ public class HomeSwipeActivity extends AppCompatActivity {
             }
         }
     }
-
-
-   /* public class Network extends AsyncTask<Void, Void, Integer> {
-        String query;
-
-        public Network(String userQuery) {
-            query = userQuery;
-        }
-
-        public String queryGooglePlaces(String url) throws IOException, JSONException {
-            int response_code;
-            HttpsURLConnection con;
-            con = (HttpsURLConnection) new URL(url).openConnection();
-            con.connect();
-            con.setRequestMethod("GET");
-            response_code = con.getResponseCode();
-
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            String inputLine = null;
-            StringBuffer response = new StringBuffer();
-
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-
-            in.close();
-            myResponse = response.toString();
-            looper();
-
-            return null;
-        }
-
-        public void looper() {
-            while(myResponse == null) {}
-        }
-
-        @Override
-        protected Integer doInBackground(Void... Voids) {
-            try {
-                queryGooglePlaces(query);
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Integer useless) {
-
-            populateCards();
-        }
-    }*/
 }
 
 

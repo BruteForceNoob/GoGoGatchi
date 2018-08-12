@@ -135,12 +135,12 @@
                     app:layout_constraintBottom_toBottomOf="@+id/textView5"
                     app:layout_constraintEnd_toEndOf="@+id/textView5"
                     app:layout_constraintHorizontal_bias="0.372"
-                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintStart_toEndOf="@+id/companion_bottom"
                     app:layout_constraintTop_toTopOf="@+id/textView5"
                     app:layout_constraintVertical_bias="0.511" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/companion_bottom"
                 android:layout_width="81dp"
                 android:layout_height="70dp"
                 android:layout_marginEnd="8dp"
