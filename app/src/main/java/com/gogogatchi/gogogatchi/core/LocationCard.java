@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.gogogatchi.gogogatchi.R;
@@ -25,6 +26,7 @@ import com.mindorks.placeholderview.annotations.swipe.SwipeOutState;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 
 @Layout(R.layout.location_card)
 public class LocationCard {
@@ -76,16 +78,43 @@ public class LocationCard {
         //mSwipeView.addView(this);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof LocationCard)) return false;
+        LocationCard that = (LocationCard) o;
+        return Objects.equals(profileImageView, that.profileImageView) &&
+                Objects.equals(destNameTxt, that.destNameTxt) &&
+                Objects.equals(cityNameTxt, that.cityNameTxt) &&
+                Objects.equals(mLocationProfile, that.mLocationProfile) &&
+                Objects.equals(mProfile, that.mProfile) &&
+                Objects.equals(mContext, that.mContext) &&
+                Objects.equals(mSwipeView, that.mSwipeView);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(profileImageView, destNameTxt, cityNameTxt, mLocationProfile, mProfile, mContext, mSwipeView);
+    }
+
     // Swiped, but let go
     @SwipeCancelState
     private void onSwipeCancelState(){
+
     }
 
     //Swipe Right
     @SwipeIn
     private void onSwipeIn(){
-        HomeSwipeActivity.locationDataList.add(this.mLocationProfile);
-        Log.i("location",this.mLocationProfile.toString());
+        if(!HomeSwipeActivity.locationDataList.contains(this.mLocationProfile)) {
+            HomeSwipeActivity.locationDataList.add(this.mLocationProfile);
+            Log.i("location", this.mLocationProfile.toString());
+        }
+        else
+        {
+            Toast.makeText(mContext,"You have already liked this location!",Toast.LENGTH_LONG).show();
+        }
     }
 
     // calls method while moving toward right

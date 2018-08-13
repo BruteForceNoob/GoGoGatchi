@@ -1,4 +1,4 @@
-package com.gogogatchi.gogogatchi.Exceptions;
+package com.gogogatchi.gogogatchi.exceptions;
 
 public class LocationException extends Exception {
     private String message;
