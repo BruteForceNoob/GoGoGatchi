@@ -29,6 +29,7 @@
     <string name="notifications">Allow Push Notifications</string>
     <string name="distance">Select Distance to Search</string>
     <string name="miles">miles</string>
+    <string name="reviews">See Reviews</string>
 
     <string name="open">Open</string>
     <string name="close">Close</string>

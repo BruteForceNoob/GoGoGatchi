@@ -114,9 +114,14 @@ public class LocationViewActivity extends AppCompatActivity{
                 if (task.isSuccessful()) {
                     PlaceBufferResponse places = task.getResult();
 
-                    pno = places.get(0).getPhoneNumber().toString();
-                    url = places.get(0).getWebsiteUri().toString();
-                    address = places.get(0).getAddress().toString();
+                    if (places.get(0).getPhoneNumber() != null)
+                        pno = places.get(0).getPhoneNumber().toString();
+
+                    if (places.get(0).getWebsiteUri() != null)
+                        url = places.get(0).getWebsiteUri().toString();
+
+                    if (places.get(0).getAddress() != null)
+                        address = places.get(0).getAddress().toString();
 
                     places.release();
                 }
@@ -191,7 +196,7 @@ public class LocationViewActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
 
-                if (pno != null) {
+                if (pno != null || pno.length() < 7) {
                     startActivity(new Intent(Intent.ACTION_DIAL,
                             Uri.fromParts("tel", pno, null)));
                 }
@@ -207,14 +212,26 @@ public class LocationViewActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 if (url != null) {
-                    Log.d("666666", String.valueOf(Uri.parse(url).getQueryParameters("data-description")));
-
                     startActivity(new Intent(Intent.ACTION_VIEW)
                             .setData(Uri.parse(url)));
                 }
                 else
                     Toast.makeText(mContext, mLocationProfile.getLocationName()
                             + " does not have an associated website.", Toast.LENGTH_LONG);
+            }
+        });
+
+        findViewById(R.id.reviewButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String newName = mLocationProfile.getLocationName()
+                        .replace(' ', '+');
+                String reviewUrl = "https://www.google.com/search?q="
+                        + newName + "+reviews&oq=" + newName;
+
+                startActivity(new Intent(Intent.ACTION_VIEW)
+                        .setData(Uri.parse(reviewUrl)));
             }
         });
 
