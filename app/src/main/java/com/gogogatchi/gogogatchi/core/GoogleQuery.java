@@ -17,6 +17,10 @@ public class GoogleQuery{
     @SerializedName("status")
     private String status;
 
+    @SerializedName("reviews")
+    private ArrayList<Reviews> reviews;
+
+    public ArrayList<Reviews> getReviews() { return reviews; }
     public List<LocationData> getData() { return data; }
 
     public String getStatus() { return status; }

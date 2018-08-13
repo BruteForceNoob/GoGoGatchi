@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -34,7 +35,7 @@ import com.google.android.gms.tasks.Task;
 import java.net.MalformedURLException;
 import java.util.LinkedList;
 
-public class LocationViewActivity extends AppCompatActivity {
+public class LocationViewActivity extends AppCompatActivity{
 
     private RatingBar ratingBar;
     private ViewPager viewPager;
@@ -95,6 +96,17 @@ public class LocationViewActivity extends AppCompatActivity {
         final String placeId = mLocationProfile.getPlaceID();
         final Task<PlacePhotoMetadataResponse> photoMetadataResponse =
                 mGeoDataClient.getPlacePhotos(placeId);
+
+        //get reviews
+        String reviews_api_call = "https://maps.googleapis.com/maps/api/place/details/json?reference="
+                + mLocationProfile.getLocationReference()
+                + "&sensor=false&key="
+                + com.gogogatchi.gogogatchi.BuildConfig.ApiKey;
+
+        /*
+        ExtractDescription task_ret = new ExtractDescription(reviews_api_call);
+        task_ret.execute();
+        */
 
         mGeoDataClient.getPlaceById(placeId).addOnCompleteListener(new OnCompleteListener<PlaceBufferResponse>() {
             @Override
@@ -194,9 +206,12 @@ public class LocationViewActivity extends AppCompatActivity {
         findViewById(R.id.websiteButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (url != null)
+                if (url != null) {
+                    Log.d("666666", String.valueOf(Uri.parse(url).getQueryParameters("data-description")));
+
                     startActivity(new Intent(Intent.ACTION_VIEW)
                             .setData(Uri.parse(url)));
+                }
                 else
                     Toast.makeText(mContext, mLocationProfile.getLocationName()
                             + " does not have an associated website.", Toast.LENGTH_LONG);
@@ -242,4 +257,65 @@ public class LocationViewActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    /*
+    private class ExtractDescription extends AsyncTask<Void, Void, Integer> {
+        String query;
+        String myResponse;
+
+        public ExtractDescription(String userQuery) {
+            query = userQuery;
+        }
+
+        public String queryGooglePlaces(String url) throws IOException, JSONException {
+            int response_code;
+            HttpsURLConnection con;
+            con = (HttpsURLConnection) new URL(url).openConnection();
+            con.connect();
+            con.setRequestMethod("GET");
+            response_code = con.getResponseCode();
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String inputLine = null;
+            StringBuffer response = new StringBuffer();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+
+            in.close();
+            myResponse = response.toString();
+            looper();
+
+            return null;
+        }
+
+        public void looper() {
+            while(myResponse == null) {}
+        }
+
+        @Override
+        protected Integer doInBackground(Void... voids) {
+
+            try {
+                queryGooglePlaces(query);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Integer useless) {
+            Gson gson = new Gson();
+
+            gson.fromJson(myResponse, Reviews.class).toString();
+
+            ArrayList<Reviews> reviews = gson.fromJson(myResponse, GoogleQuery.class).getReviews();
+            Log.d("%%%%%", myResponse);
+        }
+    }
+    */
 }

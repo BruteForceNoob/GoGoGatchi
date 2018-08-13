@@ -1,7 +1,6 @@
 package com.gogogatchi.gogogatchi.activities;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -10,16 +9,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gogogatchi.gogogatchi.R;
-import com.koushikdutta.ion.Ion;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CompanionActivity extends AppCompatActivity {
     //private String GIF_IMAGE_URL = "https://steamusercontent-a.akamaihd.net/ugc/318998465884632614/0A024D21926010A676CB753164E6C5F3ACEC21F9/?interpolation=lanczos-none&output-format=jpeg&output-quality=95&fit=inside%7C1024%3A576&composite-to=*,*%7C1024%3A576&background-color=black";
-    //private ImageView mImageView;
-    List<String> messages = new ArrayList<String>();
-    int count=0;
+
+    private ImageView mImageView;
+    private List<String> messages = new ArrayList<String>();
+    private int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +32,7 @@ public class CompanionActivity extends AppCompatActivity {
         messages.add("Hi, please feed me!!!");
         messages.add("Thank you, I love you!");
 
-        /*
-        mImageView = (ImageView) findViewById(R.id.imageView);
-
-        Ion.with(mImageView)
-                .placeholder(R.drawable.ic_launcher_background)
-                .error(R.drawable.ic_launcher_background)
-                .load(GIF_IMAGE_URL);
-        */
+        mImageView = findViewById(R.id.gifImageView);
 
         if(count==0)
         {
