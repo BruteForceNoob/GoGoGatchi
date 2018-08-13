@@ -11,6 +11,16 @@ public class User implements Serializable {
     private double lat;
     private double longitude;
 
+    public Integer getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Integer distance) {
+        this.distance = distance;
+    }
+
+    private Integer distance;
+
 
     public List<LocationData> getLikedLocations() {
         return likedLocations;
@@ -62,6 +72,7 @@ public class User implements Serializable {
         this.age = rightUser.age;
         this.interests = rightUser.interests;
         this.profileImage=rightUser.profileImage;
+        this.distance=rightUser.distance;
     }
 
     /* old
@@ -76,13 +87,14 @@ public class User implements Serializable {
     */
 
     //new user 8-6-18
-    public User(String userId, String username, String gender, String age, String profileImage,Map<String,Boolean> interests) {
+    public User(String userId, String username, String gender, String age, String profileImage,Map<String,Boolean> interests, Integer distance) {
         this.userId = userId;
         this.username = username;
         this.gender = gender;
         this.age = age;
         this.interests = interests;
         this.profileImage=profileImage;
+        this.distance=distance;
     }
 
     public String getGender() {
