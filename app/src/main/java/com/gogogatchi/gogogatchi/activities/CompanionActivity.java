@@ -1,6 +1,7 @@
 package com.gogogatchi.gogogatchi.activities;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -19,6 +20,8 @@ public class CompanionActivity extends AppCompatActivity {
     private ImageView mImageView;
     private List<String> messages = new ArrayList<String>();
     private int count = 0;
+    private MediaPlayer ring;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,8 @@ public class CompanionActivity extends AppCompatActivity {
 
         //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_companion);
+
+        ring= MediaPlayer.create(CompanionActivity.this,R.raw.chinese2);ring.start();
 
         messages.add("Hi, please feed me!!!");
         messages.add("Thank you, I love you!");
@@ -64,6 +69,17 @@ public class CompanionActivity extends AppCompatActivity {
                 startActivity(reHash);
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+    @Override
+    public void onPause(){
+        super.onPause();
+        if (ring != null) {
+            ring.pause();
+            if (isFinishing()) {
+                ring.stop();
+                ring.release();
+            }
         }
     }
 }
