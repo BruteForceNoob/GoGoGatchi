@@ -44,7 +44,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
     private List<String> keywords=new ArrayList<String>();
     public static List<LocationData> locationDataList=new ArrayList<>();
     private UserUtil userUtil;
-
+    public static boolean dbFlag;
     public String getResponse() {
         return myResponse;
     }
@@ -58,6 +58,9 @@ public class HomeSwipeActivity extends AppCompatActivity {
 
         try{
             userUtil=UserUtil.getInstance();
+            if(dbFlag)
+            {locationDataList= userUtil.getLikedLocations(); dbFlag=false;}
+
 
             setContentView(R.layout.activity_home_swipe2);
             mapUtil=new MapUtil(getApplicationContext());

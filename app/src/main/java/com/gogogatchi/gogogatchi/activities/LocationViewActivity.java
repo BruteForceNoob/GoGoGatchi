@@ -103,11 +103,6 @@ public class LocationViewActivity extends AppCompatActivity{
                 + "&sensor=false&key="
                 + com.gogogatchi.gogogatchi.BuildConfig.ApiKey;
 
-        /*
-        ExtractDescription task_ret = new ExtractDescription(reviews_api_call);
-        task_ret.execute();
-        */
-
         mGeoDataClient.getPlaceById(placeId).addOnCompleteListener(new OnCompleteListener<PlaceBufferResponse>() {
             @Override
             public void onComplete(@NonNull Task<PlaceBufferResponse> task) {
@@ -196,7 +191,7 @@ public class LocationViewActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
 
-                if (pno != null || pno.length() < 7) {
+                if (pno != null ) {
                     startActivity(new Intent(Intent.ACTION_DIAL,
                             Uri.fromParts("tel", pno, null)));
                 }
@@ -204,6 +199,8 @@ public class LocationViewActivity extends AppCompatActivity{
                     Toast.makeText(mContext, mLocationProfile.getLocationName()
                             + " does not have an associated phone number.", Toast.LENGTH_LONG);
                 }
+
+                Log.d("PHONE:", pno);
             }
         });
 
@@ -214,6 +211,7 @@ public class LocationViewActivity extends AppCompatActivity{
                 if (url != null) {
                     startActivity(new Intent(Intent.ACTION_VIEW)
                             .setData(Uri.parse(url)));
+                    Log.d("PHONE:", pno);
                 }
                 else
                     Toast.makeText(mContext, mLocationProfile.getLocationName()
@@ -274,65 +272,4 @@ public class LocationViewActivity extends AppCompatActivity{
                 return super.onOptionsItemSelected(item);
         }
     }
-
-    /*
-    private class ExtractDescription extends AsyncTask<Void, Void, Integer> {
-        String query;
-        String myResponse;
-
-        public ExtractDescription(String userQuery) {
-            query = userQuery;
-        }
-
-        public String queryGooglePlaces(String url) throws IOException, JSONException {
-            int response_code;
-            HttpsURLConnection con;
-            con = (HttpsURLConnection) new URL(url).openConnection();
-            con.connect();
-            con.setRequestMethod("GET");
-            response_code = con.getResponseCode();
-
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            String inputLine = null;
-            StringBuffer response = new StringBuffer();
-
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-
-            in.close();
-            myResponse = response.toString();
-            looper();
-
-            return null;
-        }
-
-        public void looper() {
-            while(myResponse == null) {}
-        }
-
-        @Override
-        protected Integer doInBackground(Void... voids) {
-
-            try {
-                queryGooglePlaces(query);
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Integer useless) {
-            Gson gson = new Gson();
-
-            gson.fromJson(myResponse, Reviews.class).toString();
-
-            ArrayList<Reviews> reviews = gson.fromJson(myResponse, GoogleQuery.class).getReviews();
-            Log.d("%%%%%", myResponse);
-        }
-    }
-    */
 }

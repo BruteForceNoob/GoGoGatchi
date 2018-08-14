@@ -31,8 +31,8 @@ import java.util.TimerTask;
 public class SplitHomeActivity extends AppCompatActivity implements View.OnClickListener{
 
     private void init() {
+         HomeSwipeActivity.dbFlag=true;
         ActivityCompat.requestPermissions(SplitHomeActivity.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},10);
-        HomeSwipeActivity.locationDataList= UserUtil.getInstance().getLikedLocations();
         Button btnLogin, btnReg, btnPrivacy;
         btnLogin = (Button) findViewById(R.id.loginSplit);
         btnReg = (Button) findViewById(R.id.createAccountSplit);
