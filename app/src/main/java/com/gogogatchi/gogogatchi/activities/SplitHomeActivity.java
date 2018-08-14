@@ -79,6 +79,10 @@ public class SplitHomeActivity extends AppCompatActivity implements View.OnClick
 
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
 
 
 }
