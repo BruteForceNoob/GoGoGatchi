@@ -11,6 +11,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -218,22 +219,15 @@ public class HomeSwipeActivity extends AppCompatActivity {
         Gson gson = new Gson();
         mSwipeView = findViewById(R.id.swipeView);
 
-        // Traverse all locations returned from Query
         for (LocationData profile : gson.fromJson(myResponse, GoogleQuery.class).getData()) {
             if (profile.getPhoto().isEmpty() == false && profile.getRating() > 3.4f
-                    && !isDuplicate(profile))
+                    && isDuplicate(profile) == false)
                 mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
         }
     }
 
-    public boolean  isDuplicate(LocationData profile) {
-        for (LocationData location :locationDataList) {
-            if (location.getPlaceID() == profile.getPlaceID()) {
-                return true; // There is a duplicate
-            }
-        }
-
-        return false;
+    public boolean isDuplicate(LocationData profile) {
+        return locationDataList.contains(profile);
     }
 }
 

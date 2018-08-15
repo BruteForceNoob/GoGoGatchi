@@ -64,11 +64,7 @@ public class LocationCard {
 
     @Click(R.id.profileImageView)
     private void onClick(){
-        Intent intent = new Intent(mContext.getApplicationContext(), LocationViewActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putParcelable("mLocationProfile", mLocationProfile);
-        intent.putExtras(bundle);
-        mContext.startActivity(intent);
+        goToNewView();
     }
 
     // Swipe Left
@@ -125,5 +121,13 @@ public class LocationCard {
     // calls method while moving toward left
     @SwipeOutState
     private void onSwipeOutState(){
+    }
+
+    private void goToNewView() {
+        Intent intent = new Intent(mContext.getApplicationContext(), LocationViewActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("mLocationProfile", mLocationProfile);
+        intent.putExtras(bundle);
+        mContext.startActivity(intent);
     }
 }
