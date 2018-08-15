@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.gogogatchi.gogogatchi.R;
+import com.gogogatchi.gogogatchi.activities.HomeSwipeActivity;
 import com.gogogatchi.gogogatchi.activities.LocationViewActivity;
 import com.gogogatchi.gogogatchi.core.LocationData;
+import com.gogogatchi.gogogatchi.util.UserUtil;
 
 import java.net.MalformedURLException;
 import java.util.ArrayList;
@@ -106,8 +109,16 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
             }
             else if(view.getId()==R.id.deleteButton)
             {
-                feedAdapter.notifyItemRemoved(position);
+
+                Log.i("position", String.valueOf(position)+" "+String.valueOf(HomeSwipeActivity.locationDataList.size())+" "+String.valueOf(locationDataList.size()));
                 locationDataList.remove(position);
+                //HomeSwipeActivity.locationDataList.remove(position);
+                feedAdapter.notifyItemRemoved(position);
+
+
+
+
+
             }
 
         }

@@ -29,6 +29,7 @@
     <string name="notifications">Allow Push Notifications</string>
     <string name="distance">Select Distance to Search</string>
     <string name="miles">miles</string>
+    <string name="reviews">See Reviews</string>
 
     <string name="open">Open</string>
     <string name="close">Close</string>
@@ -37,7 +38,7 @@
     <string name="title_activity_monster_hatch">MonsterHatchActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="companion">[Insert quirky location facts here]</string>
+    <string name="companion">PLay with me.</string>
     <string name="no_idea">Looks like we\'re out of ideas. Please tap here to refresh.</string>
     <string name="call_location">Call</string>
     <string name="companionFarm">Companion</string>

@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -34,7 +35,7 @@ import com.google.android.gms.tasks.Task;
 import java.net.MalformedURLException;
 import java.util.LinkedList;
 
-public class LocationViewActivity extends AppCompatActivity {
+public class LocationViewActivity extends AppCompatActivity{
 
     private RatingBar ratingBar;
     private ViewPager viewPager;
@@ -96,15 +97,26 @@ public class LocationViewActivity extends AppCompatActivity {
         final Task<PlacePhotoMetadataResponse> photoMetadataResponse =
                 mGeoDataClient.getPlacePhotos(placeId);
 
+        //get reviews
+        String reviews_api_call = "https://maps.googleapis.com/maps/api/place/details/json?reference="
+                + mLocationProfile.getLocationReference()
+                + "&sensor=false&key="
+                + com.gogogatchi.gogogatchi.BuildConfig.ApiKey;
+
         mGeoDataClient.getPlaceById(placeId).addOnCompleteListener(new OnCompleteListener<PlaceBufferResponse>() {
             @Override
             public void onComplete(@NonNull Task<PlaceBufferResponse> task) {
                 if (task.isSuccessful()) {
                     PlaceBufferResponse places = task.getResult();
 
-                    pno = places.get(0).getPhoneNumber().toString();
-                    url = places.get(0).getWebsiteUri().toString();
-                    address = places.get(0).getAddress().toString();
+                    if (places.get(0).getPhoneNumber() != null)
+                        pno = places.get(0).getPhoneNumber().toString();
+
+                    if (places.get(0).getWebsiteUri() != null)
+                        url = places.get(0).getWebsiteUri().toString();
+
+                    if (places.get(0).getAddress() != null)
+                        address = places.get(0).getAddress().toString();
 
                     places.release();
                 }
@@ -179,7 +191,7 @@ public class LocationViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (pno != null) {
+                if (pno != null ) {
                     startActivity(new Intent(Intent.ACTION_DIAL,
                             Uri.fromParts("tel", pno, null)));
                 }
@@ -187,6 +199,8 @@ public class LocationViewActivity extends AppCompatActivity {
                     Toast.makeText(mContext, mLocationProfile.getLocationName()
                             + " does not have an associated phone number.", Toast.LENGTH_LONG);
                 }
+
+                Log.d("PHONE:", pno);
             }
         });
 
@@ -194,12 +208,28 @@ public class LocationViewActivity extends AppCompatActivity {
         findViewById(R.id.websiteButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (url != null)
+                if (url != null) {
                     startActivity(new Intent(Intent.ACTION_VIEW)
                             .setData(Uri.parse(url)));
+                    Log.d("PHONE:", pno);
+                }
                 else
                     Toast.makeText(mContext, mLocationProfile.getLocationName()
                             + " does not have an associated website.", Toast.LENGTH_LONG);
+            }
+        });
+
+        findViewById(R.id.reviewButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String newName = mLocationProfile.getLocationName()
+                        .replace(' ', '+');
+                String reviewUrl = "https://www.google.com/search?q="
+                        + newName + "+reviews&oq=" + newName;
+
+                startActivity(new Intent(Intent.ACTION_VIEW)
+                        .setData(Uri.parse(reviewUrl)));
             }
         });
 

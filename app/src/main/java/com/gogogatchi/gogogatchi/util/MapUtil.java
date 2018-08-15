@@ -11,7 +11,7 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.gogogatchi.gogogatchi.Exceptions.LocationException;
+import com.gogogatchi.gogogatchi.exceptions.LocationException;
 
 import static android.support.v4.app.ActivityCompat.requestPermissions;
 

@@ -21,6 +21,7 @@ import android.widget.Toast;
 import android.widget.ProgressBar;
 
 import com.gogogatchi.gogogatchi.R;
+import com.gogogatchi.gogogatchi.util.UserUtil;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
@@ -30,8 +31,8 @@ import java.util.TimerTask;
 public class SplitHomeActivity extends AppCompatActivity implements View.OnClickListener{
 
     private void init() {
+         HomeSwipeActivity.dbFlag=true;
         ActivityCompat.requestPermissions(SplitHomeActivity.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},10);
-
         Button btnLogin, btnReg, btnPrivacy;
         btnLogin = (Button) findViewById(R.id.loginSplit);
         btnReg = (Button) findViewById(R.id.createAccountSplit);
@@ -76,6 +77,10 @@ public class SplitHomeActivity extends AppCompatActivity implements View.OnClick
 
         init();
 
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 
 

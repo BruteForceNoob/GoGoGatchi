@@ -139,21 +139,21 @@
                     app:layout_constraintTop_toTopOf="@+id/textView5"
                     app:layout_constraintVertical_bias="0.511" />
 
-            <ImageView
-                android:id="@+id/companion_bottom"
-                android:layout_width="81dp"
-                android:layout_height="70dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@string/todo"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/textView5"
-                app:layout_constraintHorizontal_bias="0.049"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView5"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@mipmap/icon_compass_selected"
-                tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/companion_bottom"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:contentDescription="@string/todo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView5"
+                    app:layout_constraintHorizontal_bias="0.049"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView5"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@mipmap/icon_companion"
+                    tools:ignore="MissingConstraints" />
 
                 <android.support.constraint.Group
                     android:id="@+id/group"

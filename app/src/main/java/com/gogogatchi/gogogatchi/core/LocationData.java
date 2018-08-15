@@ -10,11 +10,13 @@ import com.gogogatchi.gogogatchi.core.LocationAssets;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Objects;
 
-public class LocationData extends LocationAssets implements Parcelable{
+public class LocationData extends LocationAssets implements Parcelable,Serializable{
 
     @SerializedName("geometry")
     private Geometry geometry;
@@ -22,7 +24,25 @@ public class LocationData extends LocationAssets implements Parcelable{
     @SerializedName("icon")
     private String icon;
 
+
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof LocationData)) return false;
+        LocationData that = (LocationData) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(place_id, that.place_id);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, name, place_id);
+    }
+
+    @Override
+
     public String toString() {
         return "LocationData{" +
                 "geometry=" + geometry +

@@ -16,13 +16,14 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.gogogatchi.gogogatchi.BuildConfig;
-import com.gogogatchi.gogogatchi.Exceptions.LocationException;
+import com.gogogatchi.gogogatchi.exceptions.LocationException;
 import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.core.GoogleQuery;
 import com.gogogatchi.gogogatchi.core.LocationCard;
 import com.gogogatchi.gogogatchi.core.LocationData;
 import com.gogogatchi.gogogatchi.util.MapUtil;
 import com.gogogatchi.gogogatchi.util.Network;
+import com.gogogatchi.gogogatchi.util.UserUtil;
 import com.google.gson.Gson;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
@@ -42,7 +43,8 @@ public class HomeSwipeActivity extends AppCompatActivity {
     private Location location;
     private List<String> keywords=new ArrayList<String>();
     public static List<LocationData> locationDataList=new ArrayList<>();
-
+    private UserUtil userUtil;
+    public static boolean dbFlag;
     public String getResponse() {
         return myResponse;
     }
@@ -55,6 +57,11 @@ public class HomeSwipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         try{
+            userUtil=UserUtil.getInstance();
+            if(dbFlag)
+            {locationDataList= userUtil.getLikedLocations(); dbFlag=false;}
+
+
             setContentView(R.layout.activity_home_swipe2);
             mapUtil=new MapUtil(getApplicationContext());
             location=mapUtil.getLocation();
@@ -137,6 +144,8 @@ public class HomeSwipeActivity extends AppCompatActivity {
                                 }
                                 case R.id.nav_logout:{
                                     //finishAffinity();
+
+                                    userUtil.updateLikedLocations(locationDataList);
                                     Intent intent = new Intent (getApplicationContext(), SplitHomeActivity.class);
                                     startActivity(intent);
                                     break;

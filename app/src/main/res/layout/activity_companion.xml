@@ -9,13 +9,11 @@
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifImageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="-100dp"
-        android:layout_marginEnd="-120dp"
-        android:layout_marginStart="-120dp"
-        android:layout_marginTop="-20dp"
-        android:background="@drawable/companionarea"
-        android:scaleType="fitXY"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/forest_stream"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,14 +35,20 @@
         android:layout_above="@+id/companion_bottom"
         android:textColor="#000000"/>
 
-    <ImageView
+    <pl.droidsonroids.gif.GifImageView
         android:id="@+id/companion_bottom"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="20dp"
-        android:layout_marginLeft="100dp"
-        app:srcCompat="@mipmap/poliwag" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="11dp"
+        android:background="@drawable/poli_wag"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </RelativeLayout>
