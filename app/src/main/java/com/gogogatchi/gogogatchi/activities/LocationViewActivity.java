@@ -56,23 +56,12 @@ public class LocationViewActivity extends AppCompatActivity{
     private String url = null;
     private String address = null;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setTitle(getString(R.string.locationView));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_location_view);
-
-        /** PLACES SDK
-         The GeoDataClient provides access to Google's database of local place and business
-         information.
-         The PlaceDetectionClient provides quick access to the device's current place, and offers
-         the opportunity to report the location of the device at a particular place.
-
-         See Link for more information:
-         https://google-developer-training.gitbooks.io/android-developer-advanced-course-concepts/unit-4-add-geo-features-to-your-apps/lesson-8-places/8-1-c-places-api/8-1-c-places-api.html
-         **/
 
         mGeoDataClient = Places.getGeoDataClient(this);
         mPlaceDetectionClient = Places.getPlaceDetectionClient(this);
@@ -157,13 +146,12 @@ public class LocationViewActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 if (flag) {
-                    count = pictures.size() - 1;
-                    flag = false;
+                    resetCount(pictures.size() - 1);
                 }
                 else {
                     --count;
                     if (count < 0)
-                        count = pictures.size() - 1;
+                        resetCount(pictures.size() - 1);
                 }
 
                 imgView.setImageBitmap(pictures.get(count));
@@ -174,13 +162,12 @@ public class LocationViewActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 if (flag) {
-                    count = 1;
-                    flag = false;
+                    resetCount(1);
                 }
                 else {
                     ++count;
                     if (count >= pictures.size())
-                        count = 0;
+                        resetCount(0);
                 }
 
                 imgView.setImageBitmap(pictures.get(count));
@@ -197,10 +184,8 @@ public class LocationViewActivity extends AppCompatActivity{
                 }
                 else {
                     Toast.makeText(mContext, mLocationProfile.getLocationName()
-                            + " does not have an associated phone number.", Toast.LENGTH_LONG);
+                            + " does not have an associated phone number.", Toast.LENGTH_LONG).show();
                 }
-
-                Log.d("PHONE:", pno);
             }
         });
 
@@ -215,7 +200,7 @@ public class LocationViewActivity extends AppCompatActivity{
                 }
                 else
                     Toast.makeText(mContext, mLocationProfile.getLocationName()
-                            + " does not have an associated website.", Toast.LENGTH_LONG);
+                            + " does not have an associated website.", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -250,7 +235,8 @@ public class LocationViewActivity extends AppCompatActivity{
                 else {
                     Toast.makeText(mContext,
                             "Looks like we're having some problems navigating to "
-                                    + mLocationProfile.getLocationName() + ".", Toast.LENGTH_LONG);
+                                    + mLocationProfile.getLocationName()
+                                    + ".", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -261,6 +247,12 @@ public class LocationViewActivity extends AppCompatActivity{
             e.printStackTrace();
         }
     }
+
+    private void resetCount(Integer param) {
+        count = param;
+        flag = false;
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

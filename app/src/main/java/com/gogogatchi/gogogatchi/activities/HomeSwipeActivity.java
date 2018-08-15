@@ -61,7 +61,6 @@ public class HomeSwipeActivity extends AppCompatActivity {
             if(dbFlag)
             {locationDataList= userUtil.getLikedLocations(); dbFlag=false;}
 
-
             setContentView(R.layout.activity_home_swipe2);
             mapUtil=new MapUtil(getApplicationContext());
             location=mapUtil.getLocation();
@@ -217,14 +216,24 @@ public class HomeSwipeActivity extends AppCompatActivity {
 
     public void populateCards(String myResponse) {
         Gson gson = new Gson();
+        mSwipeView = findViewById(R.id.swipeView);
 
-        for(LocationData profile : gson.fromJson(myResponse, GoogleQuery.class).getData()) {
-            if (profile.getPhoto().isEmpty() == false && profile.getRating() > 3.4f) {
-                // If no photo and low rating, don't make a card
-                mSwipeView = findViewById(R.id.swipeView);
+        // Traverse all locations returned from Query
+        for (LocationData profile : gson.fromJson(myResponse, GoogleQuery.class).getData()) {
+            if (profile.getPhoto().isEmpty() == false && profile.getRating() > 3.4f
+                    && !isDuplicate(profile))
                 mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
+        }
+    }
+
+    public boolean  isDuplicate(LocationData profile) {
+        for (LocationData location :locationDataList) {
+            if (location.getPlaceID() == profile.getPlaceID()) {
+                return true; // There is a duplicate
             }
         }
+
+        return false;
     }
 }
 
