@@ -266,7 +266,7 @@ public class RegisterActivity extends AppCompatActivity{
         editTextEmail.requestFocus();
 
         editTextEmailCheck = findViewById(R.id.etCheckEmail);
-        editTextEmailCheck.requestFocus();
+        //editTextEmailCheck.requestFocus();
         editTextEmailCheck.addTextChangedListener((mTextEditorWather3));
 
         editTextPassword = findViewById(R.id.etCreatePW);
