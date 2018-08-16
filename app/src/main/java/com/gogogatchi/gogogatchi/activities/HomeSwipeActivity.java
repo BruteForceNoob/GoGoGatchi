@@ -16,6 +16,7 @@ import android.text.Layout;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,7 +53,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
     private MapUtil mapUtil;
     private String myResponse = null;
     private Location location;
-    private Integer dist = 5;
+    private static Integer dist = 5;
     private List<String> keywords=new ArrayList<String>();
     public static List<LocationData> locationDataList=new ArrayList<>();
     private UserUtil userUtil;
@@ -66,9 +67,10 @@ public class HomeSwipeActivity extends AppCompatActivity {
     private TextView distanceTextView;
     private FirebaseAuth mAuth;
     private DatabaseReference mRef;
+    private FirebaseUser currentFirebaseUser;
 
-    private DatabaseReference mChildRef;
-    private String uuid;
+    private static DatabaseReference mChildRef;
+    private static String uuid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +91,32 @@ public class HomeSwipeActivity extends AppCompatActivity {
             mContext = getApplicationContext();
             makeHttpCall(location,keywords);
 
+            /*
+            currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+            uuid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            mChildRef.addValueEventListener(new ValueEventListener() {
+
+                private void getSeekbarValue(DataSnapshot dataSnapshot) {
+                    if (Integer.valueOf(dataSnapshot.child(uuid).child("distance").getValue()
+                            .toString()) != null) {
+                        dist = Integer.valueOf(dataSnapshot.child(uuid).child("distance").getValue()
+                                .toString());
+                    }
+                    else
+                        dist = 5;
+                }
+
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    //
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    dist = 5;
+                }
+            });
+            */
             /*** Begin Menu Code ***/
             appBar = (Toolbar) findViewById(R.id.app_bar);
             setSupportActionBar(appBar);
@@ -98,26 +126,6 @@ public class HomeSwipeActivity extends AppCompatActivity {
             actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24px);
             // actionBar.setIcon(R.drawable.ic_newspaper);
             /*** End Menu Code ***/
-
-            /* distance */
-            uuid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
-            mChildRef.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    getSeekbarValue(dataSnapshot);
-                }
-
-                private void getSeekbarValue(DataSnapshot dataSnapshot) {
-                    dist = Integer.valueOf(dataSnapshot.child(uuid).child("distance").getValue()
-                            .toString());
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
 
             mSwipeView.getBuilder()
                     .setDisplayViewCount(3)
@@ -241,11 +249,11 @@ public class HomeSwipeActivity extends AppCompatActivity {
         }
 
         String userQuery = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
-                + "location="
-                + String.valueOf(location.getLatitude())+","
-                + String.valueOf(location.getLongitude())
-                + "&radius=" + String.valueOf(dist * 1069)
-                //+ "&rankby=distance"
+                + "location=33.77,-118.194"
+                //+ String.valueOf(location.getLatitude())+","
+                //+ String.valueOf(location.getLongitude())
+                //+ "&radius=" + String.valueOf(dist * 1069)
+                + "&rankby=distance"
                 + "&type=museum"
                 + "&keyword="+concatedKeyWords
                 + "&key="
