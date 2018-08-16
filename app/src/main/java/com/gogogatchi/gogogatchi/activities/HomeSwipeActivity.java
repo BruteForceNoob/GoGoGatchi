@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,8 +13,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Layout;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gogogatchi.gogogatchi.BuildConfig;
@@ -22,9 +25,16 @@ import com.gogogatchi.gogogatchi.R;
 import com.gogogatchi.gogogatchi.core.GoogleQuery;
 import com.gogogatchi.gogogatchi.core.LocationCard;
 import com.gogogatchi.gogogatchi.core.LocationData;
+import com.gogogatchi.gogogatchi.util.FirebaseDB;
 import com.gogogatchi.gogogatchi.util.MapUtil;
 import com.gogogatchi.gogogatchi.util.Network;
 import com.gogogatchi.gogogatchi.util.UserUtil;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
@@ -42,6 +52,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
     private MapUtil mapUtil;
     private String myResponse = null;
     private Location location;
+    private Integer dist = 5;
     private List<String> keywords=new ArrayList<String>();
     public static List<LocationData> locationDataList=new ArrayList<>();
     private UserUtil userUtil;
@@ -52,12 +63,20 @@ public class HomeSwipeActivity extends AppCompatActivity {
     public Context getmContext() {
         return mContext;
     }
+    private TextView distanceTextView;
+    private FirebaseAuth mAuth;
+    private DatabaseReference mRef;
+
+    private DatabaseReference mChildRef;
+    private String uuid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         try{
+            mAuth = FirebaseAuth.getInstance();
+            mRef = FirebaseDB.mDatabase;
             userUtil=UserUtil.getInstance();
             if(dbFlag)
             {locationDataList= userUtil.getLikedLocations(); dbFlag=false;}
@@ -79,6 +98,26 @@ public class HomeSwipeActivity extends AppCompatActivity {
             actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24px);
             // actionBar.setIcon(R.drawable.ic_newspaper);
             /*** End Menu Code ***/
+
+            /* distance */
+            uuid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+            mChildRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    getSeekbarValue(dataSnapshot);
+                }
+
+                private void getSeekbarValue(DataSnapshot dataSnapshot) {
+                    dist = Integer.valueOf(dataSnapshot.child(uuid).child("distance").getValue()
+                            .toString());
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
 
             mSwipeView.getBuilder()
                     .setDisplayViewCount(3)
@@ -200,15 +239,19 @@ public class HomeSwipeActivity extends AppCompatActivity {
             if(i!=keywords.size()-1)
                 concatedKeyWords+="|";
         }
+
         String userQuery = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
                 + "location="
                 + String.valueOf(location.getLatitude())+","
                 + String.valueOf(location.getLongitude())
-                + "&radius=12000"
+                + "&radius=" + String.valueOf(dist * 1069)
+                //+ "&rankby=distance"
                 + "&type=museum"
                 + "&keyword="+concatedKeyWords
                 + "&key="
                 + BuildConfig.ApiKey;
+
+        Log.d("///", userQuery);
 
         /*** HTTP QUERY PLACES API***/
         Network task = new Network(userQuery,this);
@@ -220,7 +263,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
         mSwipeView = findViewById(R.id.swipeView);
 
         for (LocationData profile : gson.fromJson(myResponse, GoogleQuery.class).getData()) {
-            if (profile.getPhoto().isEmpty() == false && profile.getRating() > 3.4f
+            if (profile.getPhoto().isEmpty() == false && profile.getRating() > 3.0f
                     && isDuplicate(profile) == false)
                 mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
         }
