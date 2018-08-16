@@ -26,12 +26,15 @@ public class CompanionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Enables the back button as action bar
         getSupportActionBar().setTitle(getString(R.string.companionFarm));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_companion);
 
+        //Uses mediaplayer library to play sounds and starts the sound
         ring= MediaPlayer.create(CompanionActivity.this,R.raw.chinese2);ring.start();
 
         messages.add("Hi, please feed me!!!");
@@ -60,6 +63,7 @@ public class CompanionActivity extends AppCompatActivity {
         });
     }
 
+    //Enables the back button as action bar
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -71,6 +75,7 @@ public class CompanionActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    //When user hits back button, song will stop
     @Override
     public void onPause(){
         super.onPause();

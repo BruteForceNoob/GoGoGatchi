@@ -18,6 +18,7 @@ public class FeedActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Enables the back button as action bar
         getSupportActionBar().setTitle(getString(R.string.newsFeed));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_feed);
@@ -37,6 +38,7 @@ public class FeedActivity extends AppCompatActivity {
         }
     }
 
+    //Enables the back button as action bar and logic for which screen to go back to
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

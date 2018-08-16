@@ -255,6 +255,7 @@ public class LocationViewActivity extends AppCompatActivity{
         flag = false;
     }
 
+    //Enables the back button as action bar and logic for which screen to go back to
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

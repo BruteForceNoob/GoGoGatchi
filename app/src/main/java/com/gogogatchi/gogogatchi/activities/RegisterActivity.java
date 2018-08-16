@@ -65,6 +65,7 @@ public class RegisterActivity extends AppCompatActivity{
         }
     };
 
+    //Watches changes in text for password checking between 2 fields
     private final TextWatcher mTextEditorWather2 = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -85,6 +86,7 @@ public class RegisterActivity extends AppCompatActivity{
 
     };
 
+    //Text watcher for emails to match
     private final TextWatcher mTextEditorWather3 = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -115,17 +117,6 @@ public class RegisterActivity extends AppCompatActivity{
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerGender.setAdapter(adapter);
     }
-
-    //Took out interest on creation, default all values to true
-    /*
-    private void handleInterestSpinner() {
-        // create spinner or dropdown box class
-        ArrayAdapter<CharSequence> adapter =
-                ArrayAdapter.createFromResource(this, R.array.interest, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerInterest.setAdapter(adapter);
-    }
-    */
 
     private void handleAgeSpinner() {
         // create spinner or dropdown box class
@@ -165,13 +156,6 @@ public class RegisterActivity extends AppCompatActivity{
         if (textAge.equals("Select Option..")) {
             textAge = "";
         }
-        //Took out Interests
-        /*
-        if (textEthnicity.equals("Select Option..") ||
-                textEthnicity.equals("Decline to State")) {
-            textEthnicity = "";
-        }
-        */
 
         DatabaseReference profileDB = mDatabase.child("users").child(userId);
 
@@ -180,6 +164,7 @@ public class RegisterActivity extends AppCompatActivity{
 
     }
 
+    //Additional checks on registration activity
     public void registerUser(View v) {
         String email = editTextEmail.getText().toString().trim();
         String emailCheck = editTextEmailCheck.getText().toString().trim();
@@ -304,6 +289,7 @@ public class RegisterActivity extends AppCompatActivity{
         init();
     }
 
+    //Enables the back button as action bar and logic for which screen to go back to
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

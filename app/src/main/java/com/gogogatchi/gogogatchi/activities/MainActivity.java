@@ -27,10 +27,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText editTextEmail, editTextPassword;
     ProgressBar progressBar;
 
+    //Function for user log in activity
     private void userLogin() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
+        //Checks for email validation using pattern library
         if (email.isEmpty()) {
             editTextEmail.setError("Username is required");
             editTextEmail.requestFocus();
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             editTextEmail.requestFocus();
             return;
         }
+        //Checks password fields
         if (password.isEmpty()) {
             editTextPassword.setError("Password is required");
             editTextPassword.requestFocus();
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             editTextPassword.requestFocus();
             return;
         }
+        //Once those tasks have been completed, it will log in the user.
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -109,11 +113,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
         */
 
+        //View pager implementation so user can see images of locations preview
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         Integer [] images = {R.mipmap.clocktower1, R.mipmap.fountain1, R.mipmap.csulb1};
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this, images);
         viewPager.setAdapter(viewPagerAdapter);
     }
+    //Enables the back button as action bar and logic for which screen to go back to
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

@@ -16,6 +16,7 @@ public class MonsterHatchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Hides the action bar on top
         getSupportActionBar().hide();
         setContentView(R.layout.activity_monster_hatch);
 

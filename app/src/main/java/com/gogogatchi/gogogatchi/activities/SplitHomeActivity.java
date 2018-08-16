@@ -46,6 +46,7 @@ public class SplitHomeActivity extends AppCompatActivity implements View.OnClick
     }
 
 
+    //Based on what button is pressed, will go to those screens
     @Override
     public void onClick(View v){
         switch (v.getId()) {
@@ -68,9 +69,11 @@ public class SplitHomeActivity extends AppCompatActivity implements View.OnClick
     }
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        //Hide action bar
         getSupportActionBar().hide();
 
         setContentView(R.layout.activity_split_home);
@@ -79,6 +82,7 @@ public class SplitHomeActivity extends AppCompatActivity implements View.OnClick
 
     }
 
+    //Disables Androids built in back button
     @Override
     public void onBackPressed() {
     }

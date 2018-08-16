@@ -27,6 +27,7 @@ public class PrivacyActivity extends AppCompatActivity{
         privacyLayout = (ScrollView) findViewById(R.id.activity_privacy);
     }
 
+    //Card view creation
     public void TermsConditions(View v) {
         CardView cardView = findViewById(R.id.cardViewTermsConditions);
         TextView text = findViewById(R.id.textViewTermsText);
@@ -40,6 +41,7 @@ public class PrivacyActivity extends AppCompatActivity{
         }
     }
 
+    //Card view creation
     public void PrivacyData(View v) {
         CardView cardView = findViewById(R.id.cardViewPrivacyData);
         TextView text = findViewById(R.id.textViewPrivacyText);
@@ -53,6 +55,7 @@ public class PrivacyActivity extends AppCompatActivity{
         }
     }
 
+    //Enables the back button as action bar and logic for which screen to go back to
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
