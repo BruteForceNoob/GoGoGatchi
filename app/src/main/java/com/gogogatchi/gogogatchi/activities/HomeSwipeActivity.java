@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,11 +11,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Layout;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.SeekBar;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,10 +30,7 @@ import com.gogogatchi.gogogatchi.util.Network;
 import com.gogogatchi.gogogatchi.util.UserUtil;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
@@ -53,7 +48,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
     private MapUtil mapUtil;
     private String myResponse = null;
     private Location location;
-    private static Integer dist = 5;
+    private static Integer dist;
     private List<String> keywords=new ArrayList<String>();
     public static List<LocationData> locationDataList=new ArrayList<>();
     private UserUtil userUtil;
@@ -68,6 +63,13 @@ public class HomeSwipeActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference mRef;
     private FirebaseUser currentFirebaseUser;
+    private static ArrayList<String> types_of_loc= new ArrayList<>();
+    private static Integer typePos = 0;
+    private static boolean flag = true;
+
+    private static TextView locT;
+    private static ImageButton rewind;
+    private static ImageButton fastforward;
 
     private static DatabaseReference mChildRef;
     private static String uuid;
@@ -75,6 +77,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        build();
 
         try{
             mAuth = FirebaseAuth.getInstance();
@@ -89,21 +92,23 @@ public class HomeSwipeActivity extends AppCompatActivity {
             keywords.add("art");
             mSwipeView = findViewById(R.id.swipeView);
             mContext = getApplicationContext();
+
+            locT = findViewById(R.id.type_of_loc);
+            locT.setText(types_of_loc.get(typePos));
+            rewind = findViewById(R.id.rewind);
+            fastforward = findViewById(R.id.fastforward);
             makeHttpCall(location,keywords);
-
             /*
+            mChildRef= mRef.child("users");
             currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-            uuid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-            mChildRef.addValueEventListener(new ValueEventListener() {
+            uuid = currentFirebaseUser.getUid();
 
+            mChildRef.addValueEventListener(new ValueEventListener() {
                 private void getSeekbarValue(DataSnapshot dataSnapshot) {
-                    if (Integer.valueOf(dataSnapshot.child(uuid).child("distance").getValue()
-                            .toString()) != null) {
-                        dist = Integer.valueOf(dataSnapshot.child(uuid).child("distance").getValue()
-                                .toString());
-                    }
-                    else
-                        dist = 5;
+                    dist = Integer.valueOf(dataSnapshot.child(uuid).child("distance").getValue()
+                            .toString());
+
+                    makeHttpCall(location,keywords);
                 }
 
                 @Override
@@ -113,7 +118,6 @@ public class HomeSwipeActivity extends AppCompatActivity {
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
-                    dist = 5;
                 }
             });
             */
@@ -130,7 +134,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
             mSwipeView.getBuilder()
                     .setDisplayViewCount(3)
                     .setSwipeDecor(new SwipeDecor()
-                            .setPaddingTop(-40)
+                            //.setPaddingTop(-40)
                             .setPaddingLeft(30)
                             .setRelativeScale(0.01f)
                             .setSwipeInMsgLayoutId(R.layout.location_swipe_right)
@@ -167,6 +171,44 @@ public class HomeSwipeActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+
+            rewind.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (flag) {
+                        typePos = types_of_loc.size() - 1;
+                        flag = false;
+                    }
+                    else {
+                        --typePos;
+                        if (typePos < 0)
+                            typePos = types_of_loc.size() - 1;
+                    }
+                    mSwipeView.removeAllViews();
+
+                    locT.setText(types_of_loc.get(typePos));
+                    makeHttpCall(location,keywords);
+                }
+            });
+            fastforward.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (flag) {
+                        typePos = 1;
+                        flag = false;
+                    }
+                    else {
+                        ++typePos;
+                        if (typePos >= types_of_loc.size())
+                            typePos = 0;
+                    }
+
+                    mSwipeView.removeAllViews();
+                    locT.setText(types_of_loc.get(typePos));
+                    makeHttpCall(location,keywords);
+                }
+            });
+
 
             /*** BEGIN MENU CODE ***/
             NavigationView navigationView = findViewById(R.id.navMenu);
@@ -249,13 +291,13 @@ public class HomeSwipeActivity extends AppCompatActivity {
         }
 
         String userQuery = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
-                + "location=33.77,-118.194"
-                //+ String.valueOf(location.getLatitude())+","
-                //+ String.valueOf(location.getLongitude())
+                + "&location="
+                + String.valueOf(location.getLatitude()) + ","
+                + String.valueOf(location.getLongitude())
                 //+ "&radius=" + String.valueOf(dist * 1069)
                 + "&rankby=distance"
-                + "&type=museum"
-                + "&keyword="+concatedKeyWords
+                + "&type=" + types_of_loc.get(typePos)
+                //+ "&keyword="+concatedKeyWords
                 + "&key="
                 + BuildConfig.ApiKey;
 
@@ -271,7 +313,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
         mSwipeView = findViewById(R.id.swipeView);
 
         for (LocationData profile : gson.fromJson(myResponse, GoogleQuery.class).getData()) {
-            if (profile.getPhoto().isEmpty() == false && profile.getRating() > 3.0f
+            if (profile.getPhoto().isEmpty() == false && profile.getRating() > 3.4f
                     && isDuplicate(profile) == false)
                 mSwipeView.addView(new LocationCard(mContext, profile, mSwipeView));
         }
@@ -279,6 +321,27 @@ public class HomeSwipeActivity extends AppCompatActivity {
 
     public boolean isDuplicate(LocationData profile) {
         return locationDataList.contains(profile);
+    }
+
+    public void build() {
+        types_of_loc.add("museum");
+        types_of_loc.add("amusement_park");
+        types_of_loc.add("art_gallery");
+        types_of_loc.add("cafe");
+        types_of_loc.add("campground");
+        types_of_loc.add("lodging");
+        types_of_loc.add("movie_theater");
+        types_of_loc.add("night_club");
+        types_of_loc.add("bar");
+        types_of_loc.add("park");
+        types_of_loc.add("restaurant");
+        types_of_loc.add("shopping_mall");
+        types_of_loc.add("stadium");
+        types_of_loc.add("travel_agency");
+        types_of_loc.add("zoo");
+        typePos = 0;
+        flag = true;
+
     }
 }
 
