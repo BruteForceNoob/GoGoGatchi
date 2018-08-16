@@ -35,7 +35,7 @@ public class SettingsActivity extends AppCompatActivity {
         final FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         final String uuid = currentFirebaseUser.getUid();
         final SeekBar seekBar = findViewById(R.id.seekBar);
-        mChildRef.addValueEventListener(new ValueEventListener() {
+        /*mChildRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 getSeekbarValue(dataSnapshot);
@@ -52,7 +52,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override

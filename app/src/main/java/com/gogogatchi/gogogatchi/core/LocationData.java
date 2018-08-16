@@ -25,6 +25,7 @@ public class LocationData extends LocationAssets implements Parcelable,Serializa
     private String icon;
 
 
+    // to compare locations based on hash code
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

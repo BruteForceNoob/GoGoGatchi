@@ -11,6 +11,8 @@ import java.util.TimerTask;
 
 public class MonsterHatchActivity extends AppCompatActivity {
 
+    // loads initial egg hatch animation after registering an account
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

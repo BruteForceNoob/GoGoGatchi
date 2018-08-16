@@ -66,6 +66,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
         super.onAttachedToRecyclerView(recyclerView);
     }
 
+    // adapter to manage contents in the feed
     public static class FeedViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         CardView cv;
@@ -98,6 +99,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
         public void onClick(View view) {
 
             int position = getAdapterPosition();
+            // checks type of view
             if(view.getId()==R.id.cv) {
 
                 LocationData locationData = locationDataList.get(position);

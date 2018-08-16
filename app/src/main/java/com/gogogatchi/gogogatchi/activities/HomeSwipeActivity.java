@@ -188,7 +188,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
             });
 
 
-            /*** BEGIN MENU CODE ***/
+            /*** BEGIN MENU CODE ***/ //provides access to other activities
             NavigationView navigationView = findViewById(R.id.navMenu);
             navigationView.setNavigationItemSelectedListener(
                     new NavigationView.OnNavigationItemSelectedListener() {

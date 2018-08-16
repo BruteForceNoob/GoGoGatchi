@@ -13,6 +13,8 @@ import com.gogogatchi.gogogatchi.adapters.FeedAdapter;
 
 public class FeedActivity extends AppCompatActivity {
 
+    //provides feed functionality wherein users can see what they have liked
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +22,7 @@ public class FeedActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_feed);
 
-        RecyclerView rv = (RecyclerView)findViewById(R.id.rv);
+        RecyclerView rv = (RecyclerView)findViewById(R.id.rv);  // recycler view for feeds
         rv.setHasFixedSize(true);
 
         LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
@@ -30,7 +32,7 @@ public class FeedActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"You have not liked any locations yet!",Toast.LENGTH_LONG).show();
         }
         else {
-            FeedAdapter adapter = new FeedAdapter(HomeSwipeActivity.locationDataList, this);
+            FeedAdapter adapter = new FeedAdapter(HomeSwipeActivity.locationDataList, this); // initiate feed adapter for managing recycler view
             rv.setAdapter(adapter);
         }
     }

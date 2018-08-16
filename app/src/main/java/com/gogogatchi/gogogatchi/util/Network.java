@@ -14,6 +14,7 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
+// http helper class
 public class Network extends AsyncTask<Void, Void, Integer> {
     String query;
     String myResponse;
