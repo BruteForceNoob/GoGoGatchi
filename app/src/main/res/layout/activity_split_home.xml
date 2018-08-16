@@ -60,31 +60,42 @@
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifImageView"
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:layout_marginBottom="-100dp"
-        android:layout_marginEnd="-120dp"
-        android:layout_marginStart="-120dp"
-        android:layout_marginTop="-20dp"
-        android:background="@drawable/spinegg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/lac"
 
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintDimensionRatio=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageView
         android:id="@+id/gogoLogo"
-        android:layout_width="286dp"
-        android:layout_height="196dp"
+        android:layout_width="305dp"
+        android:layout_height="231dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
 
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
 
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/gogo2" />
+
+    <ImageView
+        android:id="@+id/imageButton"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TermsAndConditions"
+        app:srcCompat="@color/black" />
 
 </android.support.constraint.ConstraintLayout>

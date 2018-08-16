@@ -145,32 +145,34 @@ public class LocationViewActivity extends AppCompatActivity{
         findViewById(R.id.leftButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (flag) {
-                    resetCount(pictures.size() - 1);
-                }
-                else {
-                    --count;
-                    if (count < 0)
+                if (pictures.size() > 1) {
+                    if (flag) {
                         resetCount(pictures.size() - 1);
-                }
+                    } else {
+                        --count;
+                        if (count < 0)
+                            resetCount(pictures.size() - 1);
+                    }
 
-                imgView.setImageBitmap(pictures.get(count));
+                    imgView.setImageBitmap(pictures.get(count));
+                }
             }
         });
 
         findViewById(R.id.rightButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (flag) {
-                    resetCount(1);
-                }
-                else {
-                    ++count;
-                    if (count >= pictures.size())
-                        resetCount(0);
-                }
+                if (pictures.size() > 1) {
+                    if (flag) {
+                        resetCount(1);
+                    } else {
+                        ++count;
+                        if (count >= pictures.size())
+                            resetCount(0);
+                    }
 
-                imgView.setImageBitmap(pictures.get(count));
+                    imgView.setImageBitmap(pictures.get(count));
+                }
             }
         });
 

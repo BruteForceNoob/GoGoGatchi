@@ -38,7 +38,7 @@
     <string name="title_activity_monster_hatch">MonsterHatchActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="companion">PLay with me.</string>
+    <string name="companion">Companion: Play with me.</string>
     <string name="no_idea">Looks like we\'re out of ideas. Please tap here to refresh.</string>
     <string name="call_location">Call</string>
     <string name="companionFarm">Companion</string>

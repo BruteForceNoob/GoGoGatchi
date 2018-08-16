@@ -98,29 +98,7 @@ public class HomeSwipeActivity extends AppCompatActivity {
             rewind = findViewById(R.id.rewind);
             fastforward = findViewById(R.id.fastforward);
             makeHttpCall(location,keywords);
-            /*
-            mChildRef= mRef.child("users");
-            currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-            uuid = currentFirebaseUser.getUid();
 
-            mChildRef.addValueEventListener(new ValueEventListener() {
-                private void getSeekbarValue(DataSnapshot dataSnapshot) {
-                    dist = Integer.valueOf(dataSnapshot.child(uuid).child("distance").getValue()
-                            .toString());
-
-                    makeHttpCall(location,keywords);
-                }
-
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    //
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                }
-            });
-            */
             /*** Begin Menu Code ***/
             appBar = (Toolbar) findViewById(R.id.app_bar);
             setSupportActionBar(appBar);
