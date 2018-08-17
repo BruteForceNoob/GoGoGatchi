@@ -56,6 +56,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
     private CheckBox TravelAgency;
     private CheckBox Zoo;
 
+    //This method loads and updates the user profile for the user. It includes profile photo, username, interests.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +88,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
 
         mChildRef.addValueEventListener(new ValueEventListener() {
             @Override
+            //This method is for loading the data into appropriate placeholders as well as stores into Firebase on click of Update button
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
 
                 final FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -220,7 +222,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
                     }
                 });
             }
-
+            //Raises a toast if error occurs during update of database
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Context context = getApplicationContext();
@@ -253,7 +255,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
+    //This method is to upload the image from the user phone gallery by converting it to default size of the app
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);

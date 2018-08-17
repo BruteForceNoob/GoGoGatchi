@@ -23,6 +23,7 @@ public class SettingsActivity extends AppCompatActivity {
     TextView distance;
     private DatabaseReference mRef;
 
+    //Method which generates and displays user data on Settings tab
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,11 +56,12 @@ public class SettingsActivity extends AppCompatActivity {
         });*/
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            //Listener to check if value is changed for the seekbar
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 setSeekbarValue(seekBar,i,b);
             }
-
+            //Method to set the value of seekbar in database and Textview
             private void setSeekbarValue(SeekBar seekBar, int i, boolean b) {
                 String progress = ((Integer)i).toString();
                 distance.setText(progress);
@@ -90,7 +92,7 @@ public class SettingsActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
+    //Method which initiates start of updateprofile activity on click of update profile button
     public void updateUserProfile(View view) {
         Intent intent = new Intent (getApplicationContext(), UpdateProfileActivity.class);
         startActivity(intent);

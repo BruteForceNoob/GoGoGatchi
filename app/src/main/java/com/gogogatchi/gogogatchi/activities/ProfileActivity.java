@@ -33,6 +33,7 @@ public class ProfileActivity extends AppCompatActivity {
     private String encodedImage;
     private ImageView profilePicture;
 
+    //This method shows the static data of the user on profile tab from the Firebase
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +51,7 @@ public class ProfileActivity extends AppCompatActivity {
         profilePicture = findViewById(R.id.imageViewProfile);
 
         mChildRef.addValueEventListener(new ValueEventListener() {
+            //When a value is updated or changed for the current user, this method updates the information
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 final FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
